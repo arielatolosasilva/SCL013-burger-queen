@@ -1,0 +1,56 @@
+[debug] [2020-06-25T16:49:10.398Z] ----------------------------------------------------------------------
+[debug] [2020-06-25T16:49:10.405Z] Command:       /usr/bin/node /usr/bin/firebase functions:shell
+[debug] [2020-06-25T16:49:10.406Z] CLI Version:   8.4.3
+[debug] [2020-06-25T16:49:10.407Z] Platform:      linux
+[debug] [2020-06-25T16:49:10.407Z] Node Version:  v12.16.1
+[debug] [2020-06-25T16:49:10.409Z] Time:          Thu Jun 25 2020 12:49:10 GMT-0400 (GMT-04:00)
+[debug] [2020-06-25T16:49:10.409Z] ----------------------------------------------------------------------
+[debug] [2020-06-25T16:49:10.409Z] 
+[debug] [2020-06-25T16:49:10.429Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-25T16:49:10.430Z] > authorizing via signed-in user
+[debug] [2020-06-25T16:49:10.431Z] [iam] checking project burger-queen2020 for permissions ["firebase.projects.get"]
+[debug] [2020-06-25T16:49:10.444Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/burger-queen2020:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-06-25T16:49:11.538Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 25 Jun 2020 16:49:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=940","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version "10" doesn't match your global version "12" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"10\" doesn't match your global version \"12\""}}
+[debug] [2020-06-25T16:49:11.587Z] [functions] Watching "/home/loreto/Desktop/burger-queen/SCL013-burger-queen/functions" for Cloud Functions...
+[debug] [2020-06-25T16:49:11.618Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-06-25T16:49:11.620Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-06-25T16:49:11.622Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-06-25T16:49:11.623Z] DEBUG: [worker-~diagnostic~-88f47b87-7a2d-4327-9054-33d717246fc2]: Assigning socketPath: /tmp/fire_emu_22653.sock
+[debug] [2020-06-25T16:49:11.624Z] DEBUG: [worker-~diagnostic~-88f47b87-7a2d-4327-9054-33d717246fc2]: BUSY
+[debug] [2020-06-25T16:49:12.313Z] DEBUG: [runtime-status] [22653] Functions runtime initialized. {"cwd":"/home/loreto/Desktop/burger-queen/SCL013-burger-queen/functions","node_version":"12.16.1"}
+[debug] [2020-06-25T16:49:12.318Z] DEBUG: [runtime-status] [22653] Disabled runtime features: undefined
+[debug] [2020-06-25T16:49:12.321Z] DEBUG: [runtime-status] [22653] Resolved module firebase-admin {"declared":true,"installed":true,"version":"6.0.0","resolution":"/home/loreto/Desktop/burger-queen/SCL013-burger-queen/functions/node_modules/firebase-admin/lib/index.js"}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.9.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"message":"The Cloud Functions emulator requires the module \"firebase-admin\" to be version >8.9.0 so your version is too old. You can probably fix this by running \"npm install firebase-admin@latest\" in your functions directory."}}
+[debug] [2020-06-25T16:49:12.323Z] [functions] Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-06-25T16:49:12.346Z] DEBUG: [worker-~diagnostic~-88f47b87-7a2d-4327-9054-33d717246fc2]: exited
+[debug] [2020-06-25T16:49:12.347Z] DEBUG: [worker-~diagnostic~-88f47b87-7a2d-4327-9054-33d717246fc2]: FINISHED
+[debug] [2020-06-25T16:49:53.741Z] ----------------------------------------------------------------------
+[debug] [2020-06-25T16:49:53.745Z] Command:       /usr/bin/node /usr/bin/firebase functions:shell
+[debug] [2020-06-25T16:49:53.746Z] CLI Version:   8.4.3
+[debug] [2020-06-25T16:49:53.746Z] Platform:      linux
+[debug] [2020-06-25T16:49:53.746Z] Node Version:  v12.16.1
+[debug] [2020-06-25T16:49:53.747Z] Time:          Thu Jun 25 2020 12:49:53 GMT-0400 (GMT-04:00)
+[debug] [2020-06-25T16:49:53.748Z] ----------------------------------------------------------------------
+[debug] [2020-06-25T16:49:53.748Z] 
+[debug] [2020-06-25T16:49:53.763Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-25T16:49:53.764Z] > authorizing via signed-in user
+[debug] [2020-06-25T16:49:53.764Z] [iam] checking project burger-queen2020 for permissions ["firebase.projects.get"]
+[debug] [2020-06-25T16:49:53.770Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/burger-queen2020:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-06-25T16:49:54.827Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 25 Jun 2020 16:50:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=942","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version "10" doesn't match your global version "12" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"10\" doesn't match your global version \"12\""}}
+[debug] [2020-06-25T16:49:54.875Z] [functions] Watching "/home/loreto/Desktop/burger-queen/SCL013-burger-queen/functions" for Cloud Functions...
+[debug] [2020-06-25T16:49:54.906Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-06-25T16:49:54.907Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-06-25T16:49:54.909Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-06-25T16:49:54.910Z] DEBUG: [worker-~diagnostic~-cd02e813-569d-4419-9aa5-5269c18d61af]: Assigning socketPath: /tmp/fire_emu_22730.sock
+[debug] [2020-06-25T16:49:54.911Z] DEBUG: [worker-~diagnostic~-cd02e813-569d-4419-9aa5-5269c18d61af]: BUSY
+[debug] [2020-06-25T16:49:55.506Z] DEBUG: [runtime-status] [22730] Functions runtime initialized. {"cwd":"/home/loreto/Desktop/burger-queen/SCL013-burger-queen/functions","node_version":"12.16.1"}
+[debug] [2020-06-25T16:49:55.509Z] DEBUG: [runtime-status] [22730] Disabled runtime features: undefined
+[debug] [2020-06-25T16:49:55.515Z] DEBUG: [runtime-status] [22730] Resolved module firebase-admin {"declared":true,"installed":true,"version":"6.0.0","resolution":"/home/loreto/Desktop/burger-queen/SCL013-burger-queen/functions/node_modules/firebase-admin/lib/index.js"}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.9.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"message":"The Cloud Functions emulator requires the module \"firebase-admin\" to be version >8.9.0 so your version is too old. You can probably fix this by running \"npm install firebase-admin@latest\" in your functions directory."}}
+[debug] [2020-06-25T16:49:55.516Z] [functions] Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-06-25T16:49:55.534Z] DEBUG: [worker-~diagnostic~-cd02e813-569d-4419-9aa5-5269c18d61af]: exited
+[debug] [2020-06-25T16:49:55.535Z] DEBUG: [worker-~diagnostic~-cd02e813-569d-4419-9aa5-5269c18d61af]: FINISHED
