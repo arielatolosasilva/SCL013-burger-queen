@@ -1,42 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
+  Button,
+  ModalHeader,
+  ModalBody,
+  Modal,
+  ModalFooter,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Input
+} from 'reactstrap';
 
-//importamos componentes
-import Logo from './components/Logo.js';
-import  ModalLogin from './components/ModalLogin';
+import Logo from './components/Logo'
+const App = (props) => {
+
+    const {
+      /*buttonLabel,*/
+      className
+    } = props;
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
+    return (
+      <BrowserRouter>
+        <div>
+          <Logo/>
+        <Button color="danger" onClick={toggle}>Entrar</Button>
+        <Modal isOpen={modal} toggle={toggle} className={className}>
+        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalBody>
+         <InputGroup>
+          <InputGroupAddon addonType="prepend">
+            <InputGroupText>@</InputGroupText>
+          </InputGroupAddon>
+          <Input placeholder="username" />
+         </InputGroup>
+         <InputGroup>
+          <InputGroupAddon addonType="prepend">
+            <InputGroupText>#</InputGroupText>
+          </InputGroupAddon>
+          <Input placeholder="contraseña" />
+         </InputGroup>
+         <InputGroup>
+          <InputGroupAddon addonType="prepend">
+            <InputGroupText>Rol</InputGroupText>
+          </InputGroupAddon>
+          <Input placeholder="Mesero/Chef" />
+         </InputGroup>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={toggle}>Entrar</Button>{' '}
+        </ModalFooter>
+      </Modal>
+        <Switch>
+          <Route path="/login">
 
 
+          </Route>
 
-
-
-function App() {
-  return (
-
-    <Router>
-    <div className="App">
-    <Switch>
-        <Route path='/'exact>
-
-        <Logo/>
-        <button><Link to="/login">Mesero</Link></button>
-        <button><Link to="/login">Chef</Link></button>
-        </Route>
-
-        <Route path='/login'>
-          <ModalLogin/>
-
-</Route>
-
-      </Switch>
-    </div>
-    </Router>
-  );
+        </Switch>
+        </div>
+      </BrowserRouter>
+    );
 }
-
 export default App;
