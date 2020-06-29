@@ -1,65 +1,36 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {
-  Button,
-  ModalHeader,
-  ModalBody,
-  Modal,
-  ModalFooter,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Input
-} from 'reactstrap';
-
+//importando los componentes
 import Logo from './components/Logo'
-const App = (props) => {
+import ModalLogin from './components/ModalLogin';
+import firebase from 'firebase';
+import Menu from './components/Menu';
 
-    const {
-      /*buttonLabel,*/
-      className
-    } = props;
-    const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
-    return (
+
+function App() {
+  return (
       <BrowserRouter>
         <div>
-          <Logo/>
-        <Button color="danger" onClick={toggle}>Entrar</Button>
-        <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
-         <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText>@</InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="username" />
-         </InputGroup>
-         <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText>#</InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="contraseña" />
-         </InputGroup>
-         <InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText>Rol</InputGroupText>
-          </InputGroupAddon>
-          <Input placeholder="Mesero/Chef" />
-         </InputGroup>
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>Entrar</Button>{' '}
-        </ModalFooter>
-      </Modal>
         <Switch>
-          <Route path="/login">
-
-
+          <Route path="/" exact>
+          {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
+          <Logo/>
+          <ModalLogin/>
+          
           </Route>
-
+          <Route path="/mesero" exact>
+            <p>hola</p>
+          </Route>
+          <Route path="/mesero/menu-desayuno" exact>
+            <Menu/>
+          </Route>
+          <Route path="/mesero/menu-almuerzo-cena" exact>
+            <p>no lo pienses más</p>
+          </Route>
+          <Route path="/chef" exact>
+            <p>atrevete a aceptarlo</p>
+          </Route>
         </Switch>
         </div>
       </BrowserRouter>
