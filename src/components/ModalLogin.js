@@ -11,6 +11,8 @@ import {
  FormGroup,
   Input
 } from 'reactstrap';
+import firebase from 'firebase';
+
 
 
 const ModalLogin = (props) => {
@@ -20,14 +22,38 @@ const ModalLogin = (props) => {
   } = props;
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-  return (
 
+  const submitInput = (event) => {
+    event.preventDefault();
+    let form = event.target;
+    let password = form.password.value;
+    let email = form.email.value;
+    console.log(password, email);
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      const user = firebase.auth().currentUser;
+      console.log('usuario ingresado');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Contraseña Incorrecta');
+      } else if (errorCode === 'auth/user-not-found') {
+        alert('Usuario no encontrado');
+      } else {
+        alert('Problemas para iniciar sesión, verifique sus datos y vuelva a ingresar');
+      }
+    });
+};
+
+  return (
       <div>
         <Button color="danger" onClick={toggle}>Entrar</Button>
         <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-        <Form>
+        <Form onSubmit={(event) => submitInput(event)}>
       <FormGroup>
         <Label for="exampleEmail">Email</Label>
         <Input type="email" name="email" id="exampleEmail" placeholder="Correo Electronico" />
@@ -36,24 +62,13 @@ const ModalLogin = (props) => {
         <Label for="examplePassword">Password</Label>
         <Input type="password" name="password" id="examplePassword" placeholder="Contraseña" />
       </FormGroup>
-      <FormGroup>
-        <Label for="exampleSelect">Select</Label>
-        <Input type="select" name="select" id="exampleSelect">
-          <option>Chef</option>
-          <option>Mesero</option>
-
-        </Input>
-      </FormGroup>
-      <Button color="primary" >Entrar</Button>{' '}
+      <Button color="primary">Entrar</Button>{' '}
       </Form>
-
         </ModalBody>
         <ModalFooter>
-
         </ModalFooter>
       </Modal>
     </div>
   );
 }
-
 export default ModalLogin;
