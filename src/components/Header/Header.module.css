@@ -1,0 +1,21 @@
+.header{
+
+width: 100vw;
+height: 225px;
+left: 0px;
+top: 225px;
+
+background: #101113;
+
+
+}
+.logoHeader{
+  position: absolute;
+  width: 187px;
+  height: 187px;
+  left: 426px;
+  top: 20px;
+
+
+
+}

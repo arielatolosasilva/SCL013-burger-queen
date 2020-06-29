@@ -17,7 +17,7 @@ function App() {
           {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
           <Logo/>
           <ModalLogin/>
-          
+
           </Route>
           <Route path="/mesero" exact>
             <p>hola</p>

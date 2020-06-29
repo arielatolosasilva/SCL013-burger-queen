@@ -46,7 +46,7 @@ const ModalLogin = (props) => {
       }
     });
 };
-  
+
   return (
       <div>
         <Button color="danger" onClick={toggle}>Entrar</Button>
