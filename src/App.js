@@ -9,12 +9,19 @@ import Menu from './components/Menu';
 
 
 function App() {
+  let path = '/';
+  let loggedIn = false;
+  if (firebase.auth().currentUser !== null) {
+    loggedIn = true;
+    path = '/mesero';
+  } 
   return (
       <BrowserRouter>
         <div>
+          {console.log(firebase.auth().currentUser)}
         <Switch>
-          <Route path="/" exact>
-          {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
+          <Route path={path} exact>
+          {/* {loggedIn ? <Redirect to="/mesero" /> : console.log('no hay usuario conectado')} */}
           <Logo/>
           <ModalLogin/>
           
@@ -22,8 +29,8 @@ function App() {
           <Route path="/mesero" exact>
             <p>hola</p>
           </Route>
-          <Route path="/mesero/menu-desayuno" exact>
-            <Menu/>
+          <Route path="/mesero/menu-desayuno" exact component={Menu}>
+            {/* <Menu/> */}
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <p>no lo pienses más</p>

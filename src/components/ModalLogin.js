@@ -12,6 +12,8 @@ import {
   Input
 } from 'reactstrap';
 import firebase from 'firebase';
+import { Redirect } from 'react-router-dom';
+import Menu from './Menu';
 
 
 
@@ -33,7 +35,8 @@ const ModalLogin = (props) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
       const user = firebase.auth().currentUser;
-      console.log('usuario ingresado');
+      return <Redirect to='/mesero' />
+      
     })
     .catch((error) => {
       const errorCode = error.code;
