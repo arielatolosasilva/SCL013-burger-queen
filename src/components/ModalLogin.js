@@ -6,64 +6,69 @@ import {
   ModalBody,
   Modal,
   ModalFooter,
-  Input,
-  FormGroup,
-  Label,
-  Form
+ Form,
+ Label,
+ FormGroup,
+  Input
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import firebase from 'firebase';
+
+
+
 const ModalLogin = (props) => {
   const {
-    buttonLabel,
-    className,
+    /*buttonLabel,*/
+    className
   } = props;
-
   const [modal, setModal] = useState(false);
-
   const toggle = () => setModal(!modal);
-  
+
   const submitInput = (event) => {
     event.preventDefault();
     let form = event.target;
-    let userName = form.password.value;
+    let password = form.password.value;
     let email = form.email.value;
-    let role = form.select.value;
-    console.log(userName, email, role);
-    firebase.auth().
-    
-  }
+    console.log(password, email);
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      const user = firebase.auth().currentUser;
+      console.log('usuario ingresado');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Contraseña Incorrecta');
+      } else if (errorCode === 'auth/user-not-found') {
+        alert('Usuario no encontrado');
+      } else {
+        alert('Problemas para iniciar sesión, verifique sus datos y vuelva a ingresar');
+      }
+    });
+};
+  
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>Entrar</Button>
+      <div>
+        <Button color="danger" onClick={toggle}>Entrar</Button>
         <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          <Form onSubmit={(event) => submitInput(event)}>
-            <FormGroup>
-            <Label for="exampleEmail">Correo</Label>
-            <Input type="email" name="email" id="exampleEmail" placeholder="Correo" />
-            </FormGroup>
-            <FormGroup>
-            <Label for="examplePassword">Contraseña</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="Contraseña" />
-            </FormGroup>
-            <FormGroup>
-            <Label for="exampleSelect">Rol</Label>
-            <Input type="select" name="select" id="exampleSelect">
-              <option>Mesero</option>
-              <option>Chef</option>
-            </Input>
-            </FormGroup>
-            <Button color="primary">Entrar</Button>
-          </Form>
+        <Form onSubmit={(event) => submitInput(event)}>
+      <FormGroup>
+        <Label for="exampleEmail">Email</Label>
+        <Input type="email" name="email" id="exampleEmail" placeholder="Correo Electronico" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="examplePassword">Password</Label>
+        <Input type="password" name="password" id="examplePassword" placeholder="Contraseña" />
+      </FormGroup>
+      <Button color="primary">Entrar</Button>{' '}
+      </Form>
         </ModalBody>
         <ModalFooter>
-          <Link to="/algo">ALGO
-          </Link>
         </ModalFooter>
       </Modal>
     </div>
   );
 }
-
 export default ModalLogin;

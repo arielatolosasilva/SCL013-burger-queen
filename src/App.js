@@ -1,40 +1,36 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+//importando los componentes
 import Logo from './components/Logo'
 import ModalLogin from './components/ModalLogin';
-import style from './App.module.css';
-class App extends Component {
-  sayHi = () => {
-    console.log('Hi!');
-  }
-  componentDidMount() {
-    this.sayHi();
-  }
+import firebase from 'firebase';
+import Menu from './components/Menu';
 
-  componentWillUnmount() {
-    console.log('se va a desmontar');
-  }
-  render () {
-    return (
-      
-       <BrowserRouter>
+
+function App() {
+  return (
+      <BrowserRouter>
         <div>
-           <p className={style.hello}>HOLA</p>
         <Switch>
-          <Route path="/algo">
-              <p>ALGO</p>
-            </Route>
-          <Route path="/mesero/menu">
-            
+          <Route path="/" exact>
+          {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
+          <Logo/>
+          <ModalLogin/>
+          
           </Route>
-          <Route path="/">
-            <Logo/>
-            <ModalLogin />
-            
+          <Route path="/mesero" exact>
+            <p>hola</p>
           </Route>
-
+          <Route path="/mesero/menu-desayuno" exact>
+            <Menu/>
+          </Route>
+          <Route path="/mesero/menu-almuerzo-cena" exact>
+            <p>no lo pienses más</p>
+          </Route>
+          <Route path="/chef" exact>
+            <p>atrevete a aceptarlo</p>
+          </Route>
         </Switch>
         </div>
       </BrowserRouter>
@@ -42,5 +38,4 @@ class App extends Component {
     );
   }
     
-}
 export default App;
