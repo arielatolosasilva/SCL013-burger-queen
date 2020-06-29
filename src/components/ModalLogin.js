@@ -11,7 +11,7 @@ import {
   Label,
   Form
 } from 'reactstrap';
-
+import { Link } from 'react-router-dom';
 const ModalLogin = (props) => {
   const {
     buttonLabel,
@@ -29,6 +29,8 @@ const ModalLogin = (props) => {
     let email = form.email.value;
     let role = form.select.value;
     console.log(userName, email, role);
+    firebase.auth().
+    
   }
   return (
     <div>
@@ -52,11 +54,12 @@ const ModalLogin = (props) => {
               <option>Chef</option>
             </Input>
             </FormGroup>
-            <Button color="primary">Entrar</Button>{' '}
+            <Button color="primary">Entrar</Button>
           </Form>
         </ModalBody>
         <ModalFooter>
-          
+          <Link to="/algo">ALGO
+          </Link>
         </ModalFooter>
       </Modal>
     </div>
