@@ -1,29 +1,55 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {
+  Button,
+  ModalHeader,
+  ModalBody,
+  Modal,
+  ModalFooter,
+ Form,
+ Label,
+ FormGroup,
+  Input
+} from 'reactstrap';
 
 
 const ModalLogin = (props) => {
   const {
-    buttonLabel,
+    /*buttonLabel,*/
     className
   } = props;
-
   const [modal, setModal] = useState(false);
-
   const toggle = () => setModal(!modal);
-
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
-      <Modal isOpen={modal}  className={className}>
-        <ModalHeader >Modal title</ModalHeader>
+
+      <div>
+        <Button color="danger" onClick={toggle}>Entrar</Button>
+        <Modal isOpen={modal} toggle={toggle} className={className}>
+        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <Form>
+      <FormGroup>
+        <Label for="exampleEmail">Email</Label>
+        <Input type="email" name="email" id="exampleEmail" placeholder="Correo Electronico" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="examplePassword">Password</Label>
+        <Input type="password" name="password" id="examplePassword" placeholder="Contraseña" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleSelect">Select</Label>
+        <Input type="select" name="select" id="exampleSelect">
+          <option>Chef</option>
+          <option>Mesero</option>
+
+        </Input>
+      </FormGroup>
+      <Button color="primary" >Entrar</Button>{' '}
+      </Form>
+
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+
         </ModalFooter>
       </Modal>
     </div>
