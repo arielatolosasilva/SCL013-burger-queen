@@ -6,6 +6,7 @@ import Logo from './components/Logo'
 import ModalLogin from './components/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
+import Header from './components/Header/Header';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
           </Route>
           <Route path="/mesero" exact>
-            <p>hola</p>
+            <Header/>
           </Route>
           <Route path="/mesero/menu-desayuno" exact>
             <Menu/>
