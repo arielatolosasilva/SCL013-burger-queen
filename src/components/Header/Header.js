@@ -5,11 +5,11 @@ import logoinicio from '../../assets/images/logo.png'
 
 const Header =()=> {
   return (
-<div className={style.header}>
+<header className={style.header}>
     <div >
     <img  className={style.logoHeader}  src={logoinicio} alt="logo-header"/>
     </div>
-  </div>
+  </header>
   )
 }
 export default Header

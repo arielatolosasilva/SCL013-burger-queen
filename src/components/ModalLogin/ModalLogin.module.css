@@ -1,0 +1,18 @@
+
+
+.modal {
+  position: absolute;
+  width: 575px;
+  height: 368px;
+  left: 0px;
+  top: 0px;
+
+  background: #C4C4C4;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#form{
+  display: flex;
+
+}
