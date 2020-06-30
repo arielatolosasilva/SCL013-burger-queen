@@ -5,7 +5,7 @@ const Logo =()=> {
   return (
 <div>
 
-<img src={logoinicio} alt="user pic" />
+<img src={logoinicio} alt="user pic"/>
 </div>
   )
 }

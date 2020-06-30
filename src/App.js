@@ -3,9 +3,10 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
-import ModalLogin from './components/ModalLogin';
+import ModalLogin from './components/ModalLogin/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
+import Header from './components/Header/Header';
 
 
 class App extends Component {
@@ -38,10 +39,11 @@ class App extends Component {
           {this.state.auth && this.state.role === 'mesero' ? <Redirect from='/' to='/mesero/menu-desayuno' /> : null}
           <Logo/>
           <ModalLogin/>
-          
+
           </Route>
           <Route path="/mesero" exact>
             <p>hola</p>
+            <Header/>
           </Route>
           <Route path="/mesero/menu-desayuno" exact component={Menu}>
             {/* <Menu/> */}
@@ -57,8 +59,5 @@ class App extends Component {
       </BrowserRouter>
      
     );
-  }
-  
-  }
-    
+}
 export default App;
