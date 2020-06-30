@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Product from './Product';
 
 class Menu extends Component { 
-    state = {
+    state = { 
       menuDesayuno: {
           products: [
             {nombre: 'Café americano', valor: '$2000'},
@@ -42,12 +42,20 @@ class Menu extends Component {
          ]
       }
     }
-    render() { 
+    
+    render() {
+      let bkMenu = null;
+      bkMenu = this.state.menuDesayuno.products.map(product => {
+        return <li>{product.nombre}&nbsp;<span>{product.valor}</span>&nbsp;<span>&times;</span></li>;
+      })
         return (
             <div>
                 {/* <Product name="loreto"/> */}
-                <Product name={this.state.menuDesayuno.products[0].nombre}/>
-                {/*{console.log(this.props.match.url)}*/}
+               <Product name={this.state.menuDesayuno.products[0].nombre}/>
+                
+                <ul>
+                {bkMenu}
+                </ul>
             </div>
         );
     }

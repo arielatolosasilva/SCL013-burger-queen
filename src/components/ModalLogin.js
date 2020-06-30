@@ -35,7 +35,7 @@ const ModalLogin = (props) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
       const user = firebase.auth().currentUser;
-      return <Redirect to='/mesero' />
+      console.log('entra al then');
       
     })
     .catch((error) => {
