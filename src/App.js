@@ -7,6 +7,7 @@ import ModalLogin from './components/ModalLogin/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
+import Order from './components/Order/Order';
 
 
 function App() {
@@ -18,11 +19,10 @@ function App() {
           {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
           <Logo/>
           <ModalLogin/>
-
           </Route>
           <Route path="/mesero" exact>
-            <p>hola</p>
             <Header/>
+            <Order name="Charlie" product="Gyozas" total="Caleta de plata"/>
           </Route>
           <Route path="/mesero/menu-desayuno" exact>
             <Menu/>
