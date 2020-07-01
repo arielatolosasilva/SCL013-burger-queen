@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Button,
-  ModalHeader,
   ModalBody,
   Modal,
-  ModalFooter,
   Form,
   FormGroup,
   Input,
@@ -51,13 +49,13 @@ const ModalLogin = (props) => {
   };
 
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>
+
+      <div className={style.boton}>
+      <Button className={style.entrar} onClick={toggle}>
         Entrar
       </Button>
-      <Modal  isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody className={style.modal}>
+      <Modal  className={style.modal} isOpen={modal} toggle={toggle}>
+        <ModalBody className={style.modal} >
           <Form onSubmit={(event) => submitInput(event)}>
             <FormGroup id={style.form}>
 
@@ -87,7 +85,7 @@ const ModalLogin = (props) => {
             <Button color="danger">Entrar</Button>{" "}
           </Form>
         </ModalBody>
-        <ModalFooter></ModalFooter>
+
       </Modal>
     </div>
   );

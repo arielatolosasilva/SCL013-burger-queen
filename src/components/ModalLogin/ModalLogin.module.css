@@ -1,9 +1,9 @@
 
 
 .modal {
-  position: absolute;
-  width: 575px;
-  height: 368px;
+
+  width: 54vw;
+  height:27vh;
   left: 0px;
   top: 0px;
 
@@ -15,4 +15,19 @@
 #form{
   display: flex;
 
+}
+
+.entrar {
+    position: absolute;
+    width: 145px;
+    height: 45px;
+    left: 570px;
+    top: 508px;
+    border: none;
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 23px;
+    color: #FFFFFF;
+    background-color: #ED1522;
+    display: flex;
+    justify-content: center;
 }

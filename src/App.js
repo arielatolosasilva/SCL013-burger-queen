@@ -13,6 +13,9 @@ import {
   Button,
 } from 'reactstrap';
 import style from './App.module.css';
+import IncomingOrders from './components/IncomingOrders/IncomingOrders';
+
+
 
 
 function App() {
@@ -28,8 +31,8 @@ function App() {
           {console.log(firebase.auth().currentUser)}
         <Switch>
           <Route path="/" exact>
-            
-          {/* {loggedIn ? <Redirect to="/mesero" /> : console.log('no hay usuario conectado')} */}
+          {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
+        
           <Logo/>
           <ModalLogin/>
           </Route>
@@ -52,7 +55,9 @@ function App() {
             <p>no lo pienses más</p>
           </Route>
           <Route path="/chef" exact>
-            <p>atrevete a aceptarlo</p>
+            <Header/>
+           <IncomingOrders/>
+
           </Route>
         </Switch>
         </div>
