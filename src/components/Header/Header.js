@@ -6,7 +6,7 @@ import logoinicio from '../../assets/images/logo.png';
 const Header =()=> {
   return (
 <header className={style.header}>
-    <div >
+    <div className={style.fatherLogo}>
     <img  className={style.logoHeader}  src={logoinicio} alt="logo-header"/>
     </div>
   </header>

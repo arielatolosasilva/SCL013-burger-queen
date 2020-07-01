@@ -8,6 +8,8 @@ import firebase from 'firebase';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
 import Order from './components/Order/Order';
+import IncomingOrders from './components/IncomingOrders/IncomingOrders';
+
 
 
 
@@ -33,7 +35,9 @@ function App() {
             <p>no lo pienses más</p>
           </Route>
           <Route path="/chef" exact>
-            <p>atrevete a aceptarlo</p>
+            <Header/>
+           <IncomingOrders/>
+
           </Route>
         </Switch>
         </div>
