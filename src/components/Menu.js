@@ -8,15 +8,17 @@ class Menu extends Component {
     }
     render(){
         let menu = null;
+        let breakfastMenu = Object.entries(DataMenu[0])[0][1].products;
+        
+        console.log(breakfastMenu);
 
-        console.table(Object.entries(DataMenu[0]));
 
 
         return (
             <div>
 <Contador/>
                 <li>
-                {menu}
+                {/* {menu} */}
               </li>
             </div>
         );

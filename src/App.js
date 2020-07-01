@@ -1,49 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
-import ModalLogin from './components/ModalLogin/ModalLogin';
+import ModalLogin from './components/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
-import Header from './components/Header/Header';
 
 
-class App extends Component {
-  state = {
-    auth: false,
-  }
-
-
-  firebaseAuth = firebase.auth().onAuthStateChanged(() => {
-    if (firebase.auth().currentUser !== null) {
-      let role = firebase.auth().currentUser.email.split('');
-      role = role[0];
-      let loginRole; // role: true (waitress) / false (chef)
-      role === 'm' ? loginRole = 'mesero' : loginRole = 'chef';
-      this.setState({
-        auth: true,
-        role: loginRole
-      })
-    }
-  })
-  
-  render() {
-    
-
-    return (
+function App() {
+  let path = '/';
+  let loggedIn = false;
+  if (firebase.auth().currentUser !== null) {
+    loggedIn = true;
+    path = '/mesero';
+  } 
+  return (
       <BrowserRouter>
         <div>
+          {console.log(firebase.auth().currentUser)}
         <Switch>
-          <Route path='/' exact>
-          {this.state.auth && this.state.role === 'mesero' ? <Redirect from='/' to='/mesero/menu-desayuno' /> : null}
+          <Route path={path} exact>
+          {/* {loggedIn ? <Redirect to="/mesero" /> : console.log('no hay usuario conectado')} */}
           <Logo/>
           <ModalLogin/>
-
+          
           </Route>
           <Route path="/mesero" exact>
             <p>hola</p>
-            <Header/>
           </Route>
           <Route path="/mesero/menu-desayuno" exact component={Menu}>
             {/* <Menu/> */}
@@ -59,5 +43,6 @@ class App extends Component {
       </BrowserRouter>
      
     );
-}
+  }
+    
 export default App;
