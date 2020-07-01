@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
@@ -18,25 +18,48 @@ import IncomingOrders from './components/IncomingOrders/IncomingOrders';
 
 
 
-function App() {
-  let path = '/';
-  let loggedIn = false;
-  if (firebase.auth().currentUser !== null) {
-    loggedIn = true;
-    path = '/mesero';
-  } 
-  return (
+class App extends Component {
+  state = {
+    auth: false
+  }
+
+  firebaseAuth = firebase.auth().onAuthStateChanged(() => {
+    if (firebase.auth().currentUser !== null) {
+      let splittedEmail = firebase.auth().currentUser.email.split('');
+      let emailFirstLetter = splittedEmail[0];
+      let loginRole;
+      emailFirstLetter === 'm' ? loginRole = 'mesero' : loginRole = 'chef';
+      this.setState({
+        auth: true,
+        role: loginRole
+      });
+    }
+    
+  })
+  render() {
+    let path = null;
+    let role = null;
+    if (this.state.auth) {
+      if (this.state.role === 'chef') {
+        path = <Redirect to="/chef" />;
+        role = 'chef';
+      } else if (this.state.role === 'mesero') {
+        path = <Redirect to="/mesero" />;
+        role = 'mesero';
+      }
+    }
+    
+
+    return (
       <BrowserRouter>
         <div>
-          {console.log(firebase.auth().currentUser)}
         <Switch>
           <Route path="/" exact>
-          {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
-        
-          <Logo/>
-          <ModalLogin/>
+            {this.state.role ===  role ? path : null}
+            {console.log(this.state.role, path)}
+            <Logo/>
+            <ModalLogin/>
           </Route>
-          {/*CAMBIOS LORETO*/}
           <Route path="/mesero" exact>
              <Header />
              <div className={style.mainContainer}>
@@ -65,5 +88,7 @@ function App() {
      
     );
   }
+  
+}
     
 export default App;
