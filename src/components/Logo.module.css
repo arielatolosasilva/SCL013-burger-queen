@@ -1,0 +1,32 @@
+.logoApp {
+display: flex;
+justify-content: center;
+}
+
+.father {
+    background-color: black;
+    height: 100vh;
+    background-size: cover;
+}
+
+.inicio{
+margin-top: 6%;
+}
+.entrar {
+width: 67px;
+height: 30px;
+left: 478px;
+top: 559px;
+font-family: 'Sedgwick Ave',  cursive;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 30px;
+color: #FFFFFF;
+}
+
+.boton {
+display: flex;
+justify-content: center;
+}
+

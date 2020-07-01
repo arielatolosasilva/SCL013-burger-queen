@@ -12,6 +12,7 @@ import IncomingOrders from './components/IncomingOrders/IncomingOrders';
 
 
 
+
 function App() {
   return (
       <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
         <Switch>
           <Route path="/" exact>
           {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
+        
           <Logo/>
           <ModalLogin/>
           </Route>
