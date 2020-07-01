@@ -34,28 +34,40 @@ class App extends Component {
         role: loginRole
       });
     }
+
+    //Función para probar flujo con logout automático al cerrar app (solo prueba)
+    setTimeout(() => {
+      firebase.auth().signOut().then(() => {
+        this.setState({
+          auth: false,
+          role: null
+        })
+        console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
+        alert('Redireccionando a la página de inicio');
+      })
+    }, 3000);
     
   })
+  
   render() {
     let path = null;
-    let role = null;
+    let pathRole = null;
     if (this.state.auth) {
       if (this.state.role === 'chef') {
         path = <Redirect to="/chef" />;
-        role = 'chef';
+        pathRole = 'chef';
       } else if (this.state.role === 'mesero') {
         path = <Redirect to="/mesero" />;
-        role = 'mesero';
+        pathRole = 'mesero';
       }
     }
-    
-
+  
     return (
       <BrowserRouter>
         <div>
         <Switch>
           <Route path="/" exact>
-            {this.state.role ===  role ? path : null}
+            {this.state.role ===  pathRole ? path : null}
             {console.log(this.state.role, path)}
             <Logo/>
             <ModalLogin/>
