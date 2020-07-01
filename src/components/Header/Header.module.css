@@ -1,21 +1,18 @@
-.header{
+.header {
+  width: 100vw;
+  height: 225px;
+  left: 0px;
+  top: 225px;
 
-width: 100vw;
-height: 225px;
-left: 0px;
-top: 225px;
-
-background: #101113;
-
-
+  background: #101113;
 }
-.logoHeader{
-  position: absolute;
+.fatherLogo {
+  display: flex;
+  justify-content: center;
+}
+.logoHeader {
   width: 187px;
   height: 187px;
   left: 426px;
-  top: 20px;
-
-
-
+  margin-top: 1.2rem;
 }
