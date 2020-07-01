@@ -49,7 +49,7 @@ const ModalLogin = (props) => {
   };
 
   return (
-    <div>
+
       <div className={style.boton}>
       <Button className={style.entrar} onClick={toggle}>
         Entrar
