@@ -8,8 +8,6 @@ import firebase from 'firebase';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
 import Order from './components/Order/Order';
-import IncomingOrders from './components/IncomingOrders/IncomingOrders';
-
 
 
 
@@ -20,7 +18,6 @@ function App() {
         <Switch>
           <Route path="/" exact>
           {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
-        
           <Logo/>
           <ModalLogin/>
           </Route>
@@ -35,9 +32,7 @@ function App() {
             <p>no lo pienses más</p>
           </Route>
           <Route path="/chef" exact>
-            <Header/>
-           <IncomingOrders/>
-
+            <p>atrevete a aceptarlo</p>
           </Route>
         </Switch>
         </div>
