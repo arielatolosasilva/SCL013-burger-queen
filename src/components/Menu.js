@@ -3,6 +3,7 @@ import Product from './Product';
 import Contador from './Contador';
 import DataMenu from '../DataMenu.json';
 import Order from './Order/Order';
+import { Route, Redirect } from 'react-router-dom';
 class Menu extends Component {
     state = {
 
@@ -26,6 +27,7 @@ class Menu extends Component {
                 <ul>   
                 {menu}
                 </ul>
+         <Order name="Charlie" product="Gyozas" total="Caleta de plata"/>
        
             </div>
         );
