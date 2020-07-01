@@ -36,7 +36,7 @@ function App() {
           <Logo/>
           <ModalLogin/>
           </Route>
-
+          {/*CAMBIOS LORETO*/}
           <Route path="/mesero" exact>
              <Header />
              <div className={style.mainContainer}>
