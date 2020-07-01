@@ -6,6 +6,8 @@ import Logo from './components/Logo'
 import ModalLogin from './components/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
+import Header from './components/Header/Header';
+import Order from './components/Order/Order';
 
 
 function App() {
@@ -24,10 +26,10 @@ function App() {
           {/* {loggedIn ? <Redirect to="/mesero" /> : console.log('no hay usuario conectado')} */}
           <Logo/>
           <ModalLogin/>
-          
           </Route>
           <Route path="/mesero" exact>
-            <p>hola</p>
+            <Header/>
+            <Order name="Charlie" product="Gyozas" total="Caleta de plata"/>
           </Route>
           <Route path="/mesero/menu-desayuno" exact component={Menu}>
             {/* <Menu/> */}
