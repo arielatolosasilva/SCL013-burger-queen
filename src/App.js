@@ -10,6 +10,7 @@ import Header from './components/Header/Header';
 import Order from './components/Order/Order';
 
 
+
 function App() {
   return (
       <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route path="/" exact>
           {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
+        
           <Logo/>
           <ModalLogin/>
           </Route>

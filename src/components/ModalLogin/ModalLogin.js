@@ -52,9 +52,11 @@ const ModalLogin = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <div className={style.boton}>
+      <Button className={style.entrar} onClick={toggle}>
         Entrar
       </Button>
+      </div>
       <Modal  isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody className={style.modal}>
