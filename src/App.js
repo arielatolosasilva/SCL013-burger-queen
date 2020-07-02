@@ -36,16 +36,20 @@ class App extends Component {
     }
 
     //Función para probar flujo con logout automático al cerrar app (solo prueba)
-    setTimeout(() => {
-      firebase.auth().signOut().then(() => {
-        this.setState({
-          auth: false,
-          role: null
+    if (firebase.auth().currentUser !== null) {
+      setTimeout(() => {
+        firebase.auth().signOut().then(() => {
+          this.setState({
+            auth: false,
+            role: null
+          })
+          console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
+          alert('Sesión cerrada automáticamente (prueba) - Después de esto se debería redireccionar a la pantalla de inicio.');
+
         })
-        console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
-        alert('Redireccionando a la página de inicio');
-      })
-    }, 3000);
+      }, 8000);
+    }
+    
     
   })
   
@@ -74,13 +78,13 @@ class App extends Component {
           </Route>
           <Route path="/mesero" exact>
              <Header />
-             <div className={style.mainContainer}>
+             <section className={style.mainContainer}>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
                 <Button className={style.optionBtn}>Menú desayuno</Button>
                 <Button className={style.optionBtn}>Menú almuerzo y cena</Button>
               </div>
-             </div>
+             </section>
           </Route>
           <Route path="/mesero/menu-desayuno" exact>
             <Header/>
