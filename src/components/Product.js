@@ -2,9 +2,13 @@ import React from 'react';
 
 function Product(props) {
     return (
-        <div>
-            <h1>{props.name}</h1>
-        </div>
+        
+        <tr>
+        <td>{props.name}</td>
+        <td>{props.price}</td>
+        <td>{props.qty}</td>
+      </tr>
+        
     );
 }
 
