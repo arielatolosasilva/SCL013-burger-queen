@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
@@ -17,33 +17,74 @@ import IncomingOrders from './components/IncomingOrders/IncomingOrders';
 
 
 
-function App() {
-  let path = '/';
-  let loggedIn = false;
-  if (firebase.auth().currentUser !== null) {
-    loggedIn = true;
-    path = '/mesero';
-  } 
-  return (
+
+class App extends Component {
+  state = {
+    auth: false
+  }
+
+  firebaseAuth = firebase.auth().onAuthStateChanged(() => {
+    if (firebase.auth().currentUser !== null) {
+      let splittedEmail = firebase.auth().currentUser.email.split('');
+      let emailFirstLetter = splittedEmail[0];
+      let loginRole;
+      emailFirstLetter === 'm' ? loginRole = 'mesero' : loginRole = 'chef';
+      this.setState({
+        auth: true,
+        role: loginRole
+      });
+    }
+
+    //Función para probar flujo con logout automático al cerrar app (solo prueba)
+    if (firebase.auth().currentUser !== null) {
+      setTimeout(() => {
+        firebase.auth().signOut().then(() => {
+          this.setState({
+            auth: false,
+            role: null
+          })
+          console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
+          alert('Sesión cerrada automáticamente (prueba) - Después de esto se debería redireccionar a la pantalla de inicio.');
+
+        })
+      }, 8000);
+    }
+    
+    
+  })
+  
+  render() {
+    let path = null;
+    let pathRole = null;
+    if (this.state.auth) {
+      if (this.state.role === 'chef') {
+        path = <Redirect to="/chef" />;
+        pathRole = 'chef';
+      } else if (this.state.role === 'mesero') {
+        path = <Redirect to="/mesero" />;
+        pathRole = 'mesero';
+      }
+    }
+  
+    return (
       <BrowserRouter>
         <div>
-          {console.log(firebase.auth().currentUser)}
         <Switch>
           <Route path="/" exact>
-          {firebase.auth().currentUser !== null ? <Redirect to="/mesero" />:null}
-          <Logo/>
-          <ModalLogin/>
+            {this.state.role ===  pathRole ? path : null}
+            {console.log(this.state.role, path)}
+            <Logo/>
+            <ModalLogin/>
           </Route>
-          {/*CAMBIOS LORETO*/}
           <Route path="/mesero" exact>
              <Header />
-             <div className={style.mainContainer}>
+             <section className={style.mainContainer}>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
                 <Button className={style.optionBtn}>Menú desayuno</Button>
                 <Button className={style.optionBtn}>Menú almuerzo y cena</Button>
               </div>
-             </div>
+             </section>
           </Route>
           <Route path="/mesero/menu-desayuno" exact>
             <Header/>
@@ -62,5 +103,7 @@ function App() {
      
     );
   }
+  
+}
     
 export default App;
