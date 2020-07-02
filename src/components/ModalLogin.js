@@ -47,8 +47,8 @@ const ModalLogin = (props) => {
       <Button className={style.entrar} onClick={toggle}>
         Entrar
       </Button>
-      <Modal  className={style.modal} isOpen={modal} toggle={toggle}>
-        <ModalBody className={style.modal} >
+      <Modal  className={style.modal} contentClassName={style.modalContent} isOpen={modal} toggle={toggle}>
+        <ModalBody className={style.modal}>
           <Form onSubmit={(event) => submitInput(event)}>
             <FormGroup id={style.form}>
             <span> <FontAwesomeIcon icon={faKey} /></span>
