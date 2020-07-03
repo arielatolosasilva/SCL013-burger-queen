@@ -69,6 +69,7 @@ const ModalLogin = (props) => {
 
             </FormGroup>
             <FormGroup id={style.form}>
+
             <span> <FontAwesomeIcon icon={faEnvelopeOpen} /></span>
               <Input
                 type="password"

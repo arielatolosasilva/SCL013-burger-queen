@@ -99,7 +99,7 @@ class App extends Component {
             <Route path="/mesero/menu-desayuno" exact>
               <Header />
               <Menu />
-              <CounterOne />
+
             </Route>
             <Route path="/mesero/menu-almuerzo-cena" exact>
               <p>no lo pienses más</p>
