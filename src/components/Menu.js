@@ -22,14 +22,6 @@ class Menu extends Component {
             )
         })
       } 
-       /*  let order = null;
-        order = this.state.products.map((product) => {
-          return (
-          <React.Fragment key={product.id}>
-            <Order name={product.name} price={product.price} />
-          </React.Fragment>
-          )
-        }) */
         return (
           <React.Fragment>
           
