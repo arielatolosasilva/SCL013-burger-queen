@@ -4,7 +4,7 @@ import Contador from './Contador';
 import DataMenu from '../DataMenu.json';
 import Order from './Order/Order';
 import { Route, Redirect } from 'react-router-dom';
-import { Table, Button } from 'reactstrap';
+import { Table } from 'reactstrap';
 class Menu extends Component {
     state = {
     }
@@ -42,7 +42,6 @@ class Menu extends Component {
                   </thead>
                   <tbody>
                     {menuBreakfast}
-
                   </tbody>
           </Table>
           </React.Fragment>
