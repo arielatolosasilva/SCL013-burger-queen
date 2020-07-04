@@ -22,14 +22,7 @@ class Menu extends Component {
             )
         })
       }
-       /*  let order = null;
-        order = this.state.products.map((product) => {
-          return (
-          <React.Fragment key={product.id}>
-            <Order name={product.name} price={product.price} />
-          </React.Fragment>
-          )
-        }) */
+       /*este es el comentario de carla*/
         return (
           <React.Fragment>
             <Table borderless>
