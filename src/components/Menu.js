@@ -6,7 +6,19 @@ import Order from './Order/Order';
 import { Route, Redirect } from 'react-router-dom';
 class Menu extends Component {
     state = {
+      products: [{}],
+      total: 0,
+      currency: '$'
+    }
 
+    newOrder = (event) => {
+      let product = {
+        ...event.target.value
+      };
+      let products = [];
+
+      products.push(product);
+      console.log(products);
     }
     render(){
         let menu = null;
