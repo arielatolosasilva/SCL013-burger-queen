@@ -50,7 +50,7 @@ const ModalLogin = (props) => {
 
   return (
 
-      <React.Fragment >
+      <React.Fragment>
       <Button className={style.entrar} onClick={toggle}>
         Entrar
       </Button>
