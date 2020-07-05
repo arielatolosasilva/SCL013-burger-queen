@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
-import ModalLogin from './components/ModalLogin';
+import ModalLogin from './components/ModalLogin/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
