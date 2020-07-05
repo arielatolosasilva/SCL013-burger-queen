@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Product from './Product';
-import Contador from './Contador';
+
 import DataMenu from '../DataMenu.json';
-import Order from './Order/Order';
-import { Route, Redirect } from 'react-router-dom';
+
+
 import { Table } from 'reactstrap';
 class Menu extends Component {
     state = {
@@ -11,8 +11,9 @@ class Menu extends Component {
     render(){
       let menuBreakfast = null;
       let menuLunchDinner = null;
+      let menuArray = null;
       if (window.location.href === "http://localhost:3000/mesero/menu-desayuno"){
-        let menuArray = Object.entries(DataMenu[0])[0][1].products;
+        menuArray = Object.entries(DataMenu[0])[0][1].products;
         menuBreakfast = menuArray.map(product => {
             return (
               <React.Fragment key={product.id}>
@@ -34,7 +35,8 @@ class Menu extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {menuBreakfast}
+                    {console.log(menuBreakfast)}
+                    {menuArray}
                   </tbody>
           </Table>
           </React.Fragment>
