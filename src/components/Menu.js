@@ -4,6 +4,7 @@ import Contador from './Contador';
 import DataMenu from '../DataMenu.json';
 import Order from './Order/Order';
 import { Route, Redirect } from 'react-router-dom';
+import { Table } from 'reactstrap';
 class Menu extends Component {
     state = {
       products: [{}],
@@ -20,30 +21,47 @@ class Menu extends Component {
       products.push(product);
       console.log(products);
     }
+
+
     render(){
-        let menu = null;
-        let breakfastMenu = Object.entries(DataMenu[0])[0][1].products;
-        console.log(typeof(breakfastMenu));
-        menu = breakfastMenu.map(product => {
+      // Uno u otro menú se guarda aquí dependiendo del resultado del if/else if
+      let currentMenu = null;
+      // Condicional según la propiedad type pasada en App.js al comp. Menu
+      if (this.props.type === 'breakfast') {
+        let menuArray = Object.entries(DataMenu[0])[0][1].products;
+        currentMenu = menuArray.map(product => {
             return (
-                <React.Fragment key={product.id}>
-                <li>
-                    {product.nombre}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{product.valor}</span>
-            </li>
-            </React.Fragment>
+              <React.Fragment key={product.id}>
+                  <Product name={product.nombre} price={product.valor} qty="2"/>
+              </React.Fragment>
             )
         })
-        return (
-            <div>
-                <ul>   
-                {menu}
-                </ul>
-         <Order name="Charlie" product="Gyozas" total="Caleta de plata"/>
-       
-            </div>
+      } else if (this.props.type === 'lunch-dinner') {
+        //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
+        currentMenu = (
+              <React.Fragment key="alm5">
+                  <Product name="almuercito 1" price="$1000" qty="2"/>
+              </React.Fragment>
         );
-    }
-}
+      }
 
+        return (
+          <React.Fragment>
+          
+            <Table borderless>
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Valor</th>
+                      <th>Cantidad</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentMenu}
+                  </tbody>
+          </Table>
+          </React.Fragment>
+        );
+    }  
+}
 export default Menu;

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
-import ModalLogin from './components/ModalLogin';
+import ModalLogin from './components/ModalLogin/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
@@ -36,16 +36,20 @@ class App extends Component {
     }
 
     //Función para probar flujo con logout automático al cerrar app (solo prueba)
-    setTimeout(() => {
-      firebase.auth().signOut().then(() => {
-        this.setState({
-          auth: false,
-          role: null
+    if (firebase.auth().currentUser !== null) {
+      setTimeout(() => {
+        firebase.auth().signOut().then(() => {
+          this.setState({
+            auth: false,
+            role: null
+          })
+          console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
+          alert('Sesión cerrada automáticamente (prueba) - Después de esto se debería redireccionar a la pantalla de inicio.');
+
         })
-        console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
-        alert('Redireccionando a la página de inicio');
-      })
-    }, 3000);
+      }, 8000);
+    }
+    
     
   })
   
@@ -68,26 +72,27 @@ class App extends Component {
         <Switch>
           <Route path="/" exact>
             {this.state.role ===  pathRole ? path : null}
-            {console.log(this.state.role, path)}
             <Logo/>
             <ModalLogin/>
           </Route>
           <Route path="/mesero" exact>
              <Header />
-             <div className={style.mainContainer}>
+             <section className={style.mainContainer}>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
                 <Button className={style.optionBtn}>Menú desayuno</Button>
                 <Button className={style.optionBtn}>Menú almuerzo y cena</Button>
               </div>
-             </div>
+             </section>
           </Route>
+          {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
             <Header/>
-            <Menu />
+            <Menu type="breakfast"/>
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
-            <p>no lo pienses más</p>
+            <Header/>
+            <Menu type="lunch-dinner" />
           </Route>
           <Route path="/chef" exact>
             <Header/>
