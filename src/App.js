@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
-import ModalLogin from './components/ModalLogin';
+import ModalLogin from './components/ModalLogin/ModalLogin';
 import firebase from 'firebase';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
@@ -72,7 +72,6 @@ class App extends Component {
         <Switch>
           <Route path="/" exact>
             {this.state.role ===  pathRole ? path : null}
-            {console.log(this.state.role, path)}
             <Logo/>
             <ModalLogin/>
           </Route>
@@ -86,12 +85,14 @@ class App extends Component {
               </div>
              </section>
           </Route>
+          {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
             <Header/>
-            <Menu />
+            <Menu type="breakfast"/>
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
-            <p>no lo pienses más</p>
+            <Header/>
+            <Menu type="lunch-dinner" />
           </Route>
           <Route path="/chef" exact>
             <Header/>
