@@ -18,8 +18,8 @@
     position: absolute;
     width: 145px;
     height: 45px;
-    left: 319px;
-    top: 464px;
+    left: 40%;
+    top: 80%;
     border: none;
     font-family: 'Sedgwick Ave', cursive;
     font-size: 23px;
@@ -49,7 +49,9 @@
 
 @media (min-width: 1040px) {
   .entrar {
-  left: 570px;
-  top: 508px;
+    left: 44%;
+    top: 80%;
+  }
 }
-}
+
+
