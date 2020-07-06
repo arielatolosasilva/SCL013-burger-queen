@@ -3,35 +3,35 @@
     "products": [{
         "id": "ca",
         "nombre": "Café americano",
-        "valor": "$2000"
+        "valor": "2000"
     }, {
         "id": "cl",
         "nombre": "Café con leche",
-          "valor": "$2500"
+          "valor": "2500"
     }, {
         "id": "jd",
         "nombre": "Jugo del día",
-        "valor": " $1800"
+        "valor": " 1800"
     }, {
         "id": "tm",
         "nombre": "Té Matcha",
-        "valor": "$3000"
+        "valor": "3000"
     }, {
         "id": "gy",
         "nombre": "Gyozas (6 unidades)",
-        "valor": "$4000"
+        "valor": "4000"
     }, {
         "id" : "ta",
         "nombre": "Tamagoyaki",
-        "valor": "$2500"
+        "valor": "2500"
     }, {
         "id": "to",
         "nombre": "Tostadas",
-        "valor": "$2000"
+        "valor": "2000"
     },{ 
         "id": "ya",
         "nombre": "Yakimanju",
-        "valor": "$800"
+        "valor": "800"
     }
 ]
 },
@@ -39,73 +39,73 @@
   "PlatoFondo": [{
       "id": "rc",
       "nombre": "Ramen de cerdo",
-      "valor": "$5990"
+      "valor": "5990"
   }, {
       "id": "rv",
       "nombre": "Ramen vegetariano",
-      "valor": "$5990"
+      "valor": "5990"
   }, {
       "id": "rr",
       "nombre": "Ramen de res",
-      "valor": "$5990"
+      "valor": "5990"
   }, {
       "id": "sh",
       "nombre": "Shirashi",
-      "valor": "$5990"
+      "valor": "5990"
   }, {
       "id":"yak",
       "nombre": "Yakisoba",
-      "valor": "$4500"
+      "valor": "4500"
   }
 ],
 "Acompañamiento": [{
   "id": "yaki",
   "nombre": "Yakimeshi",
-  "valor": "$3500"
+  "valor": "3500"
 }, {
   "id": "tak",
   "nombre": "Takoyaki (6 unidades)",
-  "valor": "$4500"
+  "valor": "4500"
 }, {
   "id": "go",
   "nombre": "Gohan",
-  "valor": "$3500"
+  "valor": "3500"
 }
 ],
 "bebestibles": [{
   "id":"ag",
   "nombre": "Agua 500 ml",
-  "valor": "$1500"
+  "valor": "1500"
 }, {
   "id": "be",
   "nombre": "Bebida gaseosa",
-  "valor": "$2000"
+  "valor": "2000"
 }, {
   "id": "sa",
   "nombre": "Sake",
-  "valor": "$3500"
+  "valor": "3500"
 }, {
   "id": "te",
   "nombre": "Té verde",
-  "valor": "$2000"
+  "valor": "2000"
 }, {
   "id": "av",
   "nombre": "Aloe vera",
-  "valor": "$2500"
+  "valor": "2500"
 }
 ],
 "extras": [{
   "id": "qc",
   "nombre": "Queso crema",
-  "valor": "$900"
+  "valor": "900"
 }, {
   "id": "pal",
   "nombre": "Palta",
-  "valor": "$900"
+  "valor": "900"
 }, {
   "id": "sal",
   "nombre": "Salsa Teriyaki",
-  "valor": "$400"
+  "valor": "400"
 }]
 }
 

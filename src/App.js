@@ -1,5 +1,5 @@
 import React, { useState, Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
@@ -80,8 +80,16 @@ class App extends Component {
              <section className={style.mainContainer}>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
-                <Button className={style.optionBtn}>Menú desayuno</Button>
-                <Button className={style.optionBtn}>Menú almuerzo y cena</Button>
+                <Link to="/mesero/menu-desayuno">
+                    <Button  className={style.optionBtn}>
+                      Menú desayuno
+                    </Button>
+                  </Link>
+                  <Link to="/mesero/menu-almuerzo-cena">
+                    <Button className={style.optionBtn}>
+                      Menú almuerzo y cena
+                    </Button>
+                  </Link>
               </div>
              </section>
           </Route>

@@ -1,27 +1,14 @@
 import React, { Component } from 'react';
 import Product from './Product';
-import Contador from './Contador';
 import DataMenu from '../DataMenu.json';
-import Order from './Order/Order';
-import { Route, Redirect } from 'react-router-dom';
 import { Table } from 'reactstrap';
-import style from '../components/Menu.module.css'
 class Menu extends Component {
     state = {
       products: [{}],
       total: 0,
       currency: '$'
     }
-
-    newOrder = (event) => {
-      let product = {... event.target.value};
-      let products = [];
-
-      products.push(product);
-      console.log(products);
-    }
-
-
+   
     render(){
       // Uno u otro menú se guarda aquí dependiendo del resultado del if/else if
       let currentMenu = null;
@@ -35,7 +22,6 @@ class Menu extends Component {
               </React.Fragment>
             )
         })
-
       } else if (this.props.type === 'lunch-dinner') {
         //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
         currentMenu = (
@@ -44,20 +30,14 @@ class Menu extends Component {
               </React.Fragment>
         );
       }
-
-
-      } 
-       /*este es el comentario de carla*/
-
         return (
           <React.Fragment>
-            <Table borderless className={style.menu}>
+            <Table borderless>
                   <thead>
-                  <h2 className={style.menuDesayuno}>Menu Desayuno</h2>
                     <tr>
                       <th>Producto</th>
                       <th>Valor</th>
-                      <th>cantidad</th>
+                      <th>Cantidad</th>
                     </tr>
                   </thead>
                   <tbody>

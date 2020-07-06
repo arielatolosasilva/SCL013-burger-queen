@@ -16,7 +16,7 @@ import { faKey, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
 
 const ModalLogin = (props) => {
-  const {} = props;
+  
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
@@ -31,7 +31,7 @@ const ModalLogin = (props) => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        const user = firebase.auth().currentUser;
+        //const user = firebase.auth().currentUser;
         console.log("usuario ingresado");
       })
       .catch((error) => {
