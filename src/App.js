@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from './components/Logo'
 import ModalLogin from './components/ModalLogin/ModalLogin';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
 import Order from './components/Order/Order';
@@ -89,6 +91,10 @@ class App extends Component {
           <Route path="/mesero/menu-desayuno" exact>
             <Header/>
             <Menu type="breakfast"/>
+          </Route>
+          <Route path="/mesero/menu-desayuno/resumen-pedido">
+            <Header/>
+            <Order />
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header/>

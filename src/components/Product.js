@@ -3,9 +3,10 @@ import React from 'react';
 function Product(props) {
     return (
       <tr>
-        <td>{props.name}</td>
-        <td>{props.price}</td>
-        <td>{props.qty}</td>
+        <td name={props.name}>{props.name}</td>
+        <td data-price={props.price}>{props.price}</td>
+        <td data-qty={props.qty}>{props.qty}</td>
+        <td><input onClick={props.clicked} type="checkbox" id={props.id}></input></td>
       </tr>
     );
 }

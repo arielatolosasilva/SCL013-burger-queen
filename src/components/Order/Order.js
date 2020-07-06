@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Order(props) {
-  console.log(props);
     return (
         <div>
             <h1>{props.name}</h1>
