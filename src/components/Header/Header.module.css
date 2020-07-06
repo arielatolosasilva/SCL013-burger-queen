@@ -11,8 +11,15 @@
   justify-content: center;
 }
 .logoHeader {
-  width: 187px;
-  height: 187px;
+  width: 25vw;
+  height: 25vw;
   left: 426px;
   margin-top: 1.2rem;
+}
+
+@media (min-width: 1040px) {
+  .logoHeader {
+    width: 15vw;
+    height: 14vw;
+  }
 }

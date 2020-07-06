@@ -1,6 +1,6 @@
-import React, { useState, Component } from "react";
-import { BrowserRouter, Switch, Route, Redirect , Link} from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, Component } from 'react';
+import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from "./components/Logo/Logo";
 import ModalLogin from "./components/ModalLogin/ModalLogin";
@@ -70,43 +70,44 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Switch>
-            <Route path="/" exact>
-              {this.state.role === pathRole ? path : null}
-
-              <Logo />
-              <ModalLogin />
-            </Route>
-            <Route path="/mesero" exact>
-              <Header />
-              <section className={style.mainContainer}>
-                <div className={style.btnContainer}>
-                  <h4 className={style.meseroH1}>Mesero</h4>
-                  <Link to="/mesero/menu-desayuno">
-                    <button type="button" className={style.optionBtn}>
+        <Switch>
+          <Route path="/" exact>
+            {this.state.role ===  pathRole ? path : null}
+            <Logo/>
+            <ModalLogin/>
+          </Route>
+          <Route path="/mesero" exact>
+             <Header />
+             <section className={style.mainContainer}>
+              <div className={style.btnContainer}>
+                <h4 className={style.meseroH1}>Mesero</h4>
+                <Link to="/mesero/menu-desayuno">
+                    <Button  className={style.optionBtn}>
                       Menú desayuno
-                    </button>
+                    </Button>
                   </Link>
                   <Link to="/mesero/menu-almuerzo-cena">
-                    <button type="button" className={style.optionBtn}>
+                    <Button className={style.optionBtn}>
                       Menú almuerzo y cena
-                    </button>
+                    </Button>
                   </Link>
-                </div>
-              </section>
-            </Route>
-            <Route path="/mesero/menu-desayuno" exact>
-              <Header />
-              <Menu />
-            </Route>
-            <Route path="/mesero/menu-almuerzo-cena" exact>
-              <p>no lo pienses más</p>
-            </Route>
-            <Route path="/chef" exact>
-              <Header />
-              <IncomingOrders />
-            </Route>
-          </Switch>
+              </div>
+             </section>
+          </Route>
+          {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
+          <Route path="/mesero/menu-desayuno" exact>
+            <Header/>
+            <Menu type="breakfast"/>
+          </Route>
+          <Route path="/mesero/menu-almuerzo-cena" exact>
+            <Header/>
+            <Menu type="lunch-dinner" />
+          </Route>
+          <Route path="/chef" exact>
+            <Header/>
+            <IncomingOrders/>
+          </Route>
+        </Switch>
         </div>
       </BrowserRouter>
     );

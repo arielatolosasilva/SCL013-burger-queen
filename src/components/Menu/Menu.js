@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
-import Product from '../Products/Product';
-
-import DataMenu from '../../DataMenu.json';
-
-
+import Product from './Product';
+import DataMenu from '../DataMenu.json';
 import { Table } from 'reactstrap';
 class Menu extends Component {
     state = {
+      products: [{}],
+      total: 0,
+      currency: '$'
     }
+
     render(){
-      let menuBreakfast = null;
-      let menuLunchDinner = null;
-      let menuArray = null;
-      if (window.location.href === "http://localhost:3001/mesero/menu-desayuno"){
-        menuArray = Object.entries(DataMenu[0])[0][1].products;
-        menuBreakfast = menuArray.map(product => {
+      // Uno u otro menú se guarda aquí dependiendo del resultado del if/else if
+      let currentMenu = null;
+      // Condicional según la propiedad type pasada en App.js al comp. Menu
+      if (this.props.type === 'breakfast') {
+        let menuArray = Object.entries(DataMenu[0])[0][1].products;
+        currentMenu = menuArray.map(product => {
             return (
               <React.Fragment key={product.id}>
-                  <Product name={product.nombre} id={product.id} price={product.valor} qty="2"/>
-                   {/*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{product.valor}</span> */}
+                  <Product name={product.nombre} price={product.valor} qty="2"/>
               </React.Fragment>
             )
         })
+      } else if (this.props.type === 'lunch-dinner') {
+        //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
+        currentMenu = (
+              <React.Fragment key="alm5">
+                  <Product name="almuercito 1" price="$1000" qty="2"/>
+              </React.Fragment>
+        );
       }
-       /*este es el comentario de carla*/
         return (
           <React.Fragment>
             <Table borderless>
@@ -31,12 +37,11 @@ class Menu extends Component {
                     <tr>
                       <th>Producto</th>
                       <th>Valor</th>
-                      <th>cantidad</th>
+                      <th>Cantidad</th>
                     </tr>
                   </thead>
                   <tbody>
-
-                    {menuBreakfast}
+                    {currentMenu}
                   </tbody>
           </Table>
           </React.Fragment>
