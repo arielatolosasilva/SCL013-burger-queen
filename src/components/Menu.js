@@ -109,7 +109,7 @@ class Menu extends Component {
                   </tbody>
           </Table>
             {/* para que el botón solo se muestre si se seleccionó al menos 1 prod. */}
-            {this.state.products && this.state.products.length > 0 ? <Button><Link to="/mesero/menu-desayuno/resumen-pedido" onClick={() => orderDetailsHandler()}>Ver resumen del pedido</Link></Button> : null
+            {this.state.products && this.state.products.length > 0 ? <Button><Link to="/mesero/menu-desayuno/resumen-pedido" component={Order} onClick={() => orderDetailsHandler()}>Ver resumen del pedido</Link></Button> : null
             
             } 
                

@@ -94,7 +94,7 @@ class App extends Component {
           </Route>
           <Route path="/mesero/menu-desayuno/resumen-pedido">
             <Header/>
-            <Order />
+            {/* <Order /> */}
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header/>
