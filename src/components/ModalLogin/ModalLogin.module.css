@@ -1,10 +1,9 @@
 .modal {
-
   width: 54vw;
   height:27vh;
   left: 0px;
-  top: 0px;
-
+  top: 24%;
+  height: 10%;
   background: #C4C4C4;
   border-radius: 6px;
   text-align: center;
@@ -30,15 +29,22 @@
     justify-content: center;
 }
 
+.entrar:hover {
+  background-color: #ED1522;
+}
+.entrar:focus {
+  background-color: #ED1522;
+  outline: none;
+}
 
 .modalContent {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-clip: padding-box;
-    border: 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  /*background-clip: padding-box;*/
+  border: 0px;
 }
 
 @media (min-width: 1040px) {
@@ -47,3 +53,5 @@
     top: 80%;
   }
 }
+
+

@@ -50,11 +50,11 @@ const ModalLogin = (props) => {
 
   return (
 
-      <div className={style.boton}>
+      <React.Fragment>
       <Button className={style.entrar} onClick={toggle}>
         Entrar
       </Button>
-      <Modal  className={style.modal} isOpen={modal} toggle={toggle}>
+      <Modal  className={style.modal} contentClassName={style.modalContent} isOpen={modal} toggle={toggle}>
         <ModalBody className={style.modal} >
           <Form onSubmit={(event) => submitInput(event)}>
             <FormGroup id={style.form}>
@@ -87,7 +87,7 @@ const ModalLogin = (props) => {
         </ModalBody>
 
       </Modal>
-    </div>
+    </React.Fragment>
   );
 };
 export default ModalLogin;

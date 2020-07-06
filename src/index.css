@@ -13,3 +13,10 @@ code {
     monospace;
 }
 
+.modal-content {
+  display: flex;
+  pointer-events: auto;
+  border-radius: .3rem;
+  outline: 0;
+}
+

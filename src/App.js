@@ -96,8 +96,7 @@ class App extends Component {
           </Route>
           <Route path="/chef" exact>
             <Header/>
-           <IncomingOrders/>
-
+            <IncomingOrders/>
           </Route>
         </Switch>
         </div>

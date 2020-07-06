@@ -8,7 +8,6 @@ const Logo =()=> {
   return (
 <div className={style.father}>    
 <div className={style.logoApp}>
-
 <img className={style.inicio} src={logoinicio} alt="user pic"/>
 </div>
 </div>

@@ -34,6 +34,7 @@ class Menu extends Component {
               </React.Fragment>
             )
         })
+
       } else if (this.props.type === 'lunch-dinner') {
         //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
         currentMenu = (
@@ -43,15 +44,18 @@ class Menu extends Component {
         );
       }
 
+
+      } 
+       /*este es el comentario de carla*/
+
         return (
           <React.Fragment>
-          
             <Table borderless>
                   <thead>
                     <tr>
                       <th>Producto</th>
                       <th>Valor</th>
-                      <th>Cantidad</th>
+                      <th>cantidad</th>
                     </tr>
                   </thead>
                   <tbody>
