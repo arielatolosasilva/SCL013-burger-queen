@@ -19,8 +19,8 @@
     position: absolute;
     width: 145px;
     height: 45px;
-    left: 312px;
-    top: 443px;
+    left: 40%;
+    top: 80%;
     border: none;
     font-family: 'Sedgwick Ave', cursive;
     font-size: 23px;
@@ -50,18 +50,9 @@
 
 @media (min-width: 1040px) {
   .entrar {
-    left: 566px;
-    top: 495px;  
+    left: 44%;
+    top: 80%;
+  }
 }
-  .modal {
-  width: 54vw;
-  height:27vh;
-  left: -5%;
-  top: 24%;
-  height: 10%;
-  background: #C4C4C4;
-  border-radius: 6px;
-  text-align: center;
-  font-family: 'Sedgwick Ave', cursive;
-}
-}
+
+
