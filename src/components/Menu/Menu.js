@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Product from './Product';
+import Product from '../Products/Product';
 
-import DataMenu from '../DataMenu.json';
+import DataMenu from '../../DataMenu.json';
 
 
 import { Table } from 'reactstrap';
@@ -12,12 +12,12 @@ class Menu extends Component {
       let menuBreakfast = null;
       let menuLunchDinner = null;
       let menuArray = null;
-      if (window.location.href === "http://localhost:3000/mesero/menu-desayuno"){
+      if (window.location.href === "http://localhost:3001/mesero/menu-desayuno"){
         menuArray = Object.entries(DataMenu[0])[0][1].products;
         menuBreakfast = menuArray.map(product => {
             return (
               <React.Fragment key={product.id}>
-                  <Product name={product.nombre} price={product.valor} qty="2"/>
+                  <Product name={product.nombre} id={product.id} price={product.valor} qty="2"/>
                    {/*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{product.valor}</span> */}
               </React.Fragment>
             )
@@ -35,8 +35,8 @@ class Menu extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {console.log(menuBreakfast)}
-                    {menuArray}
+
+                    {menuBreakfast}
                   </tbody>
           </Table>
           </React.Fragment>

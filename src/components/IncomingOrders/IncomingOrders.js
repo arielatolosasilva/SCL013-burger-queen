@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './IncomingOrders.module.css'
-import CardsIncomingOrders from '../CardsIncomingOrders'
+import CardsIncomingOrders from '../CardsOrders/CardsIncomingOrders'
 
 function IncomingOrders(props) {
   return (
