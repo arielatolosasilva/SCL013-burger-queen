@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Product from './Product';
-import DataMenu from '../DataMenu.json';
+import Product from '../../components/Products/Product';
+import DataMenu from '../../DataMenu.json';
 import { Table } from 'reactstrap';
 class Menu extends Component {
     state = {
