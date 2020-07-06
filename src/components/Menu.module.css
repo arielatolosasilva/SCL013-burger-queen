@@ -1,0 +1,10 @@
+.menu{
+    background: #8A8081;
+    font-family: 'Sedgwick Ave', cursive;
+    color: white;
+}
+
+.menuDesayuno {
+    text-align: center;
+    display: flex;
+}
