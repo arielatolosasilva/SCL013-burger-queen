@@ -10,11 +10,27 @@ class Menu extends Component {
 
   };
 
-arrayProducts=[
 
-]
+  arrayProducts=[
+
+  ]
+
+sumTotal =(array) =>{
+  let sumaPrecios =0;
+ for (let index = 0; index < array.length; index++) {
+  if(array[index].quantity != 0){
+    sumaPrecios += parseInt(array[index].price);
+
+console.log(sumaPrecios);
+  }
+ }
+
+
+}
 
 resume = (e) =>{
+
+
 
 let quantityProducts=e.target.value
 let quantityFather= e.target.parentElement.parentElement
@@ -28,18 +44,33 @@ let productPrice=quantityFatherChildren[1].outerText
    quantity:quantityProducts,
 
  }
- this.arrayProducts.push(productsResume)
+
+
+ if(quantityProducts > 0){
+  this.arrayProducts.push(productsResume)
+ }else{
+  let index = this.arrayProducts.indexOf(e.target.value);
+
+  if (index !== -1) {
+    this.arrayProducts.splice(index, 1);
+  }
+
+ }
  console.log(this.arrayProducts);
+
+ this.sumTotal(this.arrayProducts)
+
 
  this.setState(
    {
-products:this.arrayProducts
+    products:this.arrayProducts
    }
    )
 }
 
+
 componentDidUpdate(){
-  console.log(this.state)
+  /*console.log(this.state)*/
 }
 
   render() {

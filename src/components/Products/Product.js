@@ -31,9 +31,6 @@ function Product(props) {
              <option value='10'>10 </option>
              </select>
         </td>
-        <td>
-          <div id="react-container"></div>
-        </td>
       </tr>
     );
 }
