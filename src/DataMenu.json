@@ -28,7 +28,8 @@
         "id": "to",
         "nombre": "Tostadas",
         "valor": "2000"
-    },{ 
+
+    },{
         "id": "ya",
         "nombre": "Yakimanju",
         "valor": "800"
