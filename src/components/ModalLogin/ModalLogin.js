@@ -9,14 +9,14 @@ import {
   Input,
 } from "reactstrap";
 import firebase from "firebase";
-import style from "./ModalLogin.module.css";
+import style from '../ModalLogin/ModalLogin.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faKey, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const ModalLogin = (props) => {
-  
+
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
@@ -59,18 +59,18 @@ const ModalLogin = (props) => {
           <Form onSubmit={(event) => submitInput(event)}>
             <FormGroup id={style.form}>
 
-            <span> <FontAwesomeIcon icon={faEnvelopeOpen} /></span>
+            <i id={style.inpOne}> <FontAwesomeIcon icon={faEnvelopeOpen} /></i>
               <Input
-              
+
                 type="email"
                 name="email"
                 id="exampleEmail"
-                placeholder="Correo Electronico"
+
               />
 
             </FormGroup>
             <FormGroup id={style.form}>
-            <span> <FontAwesomeIcon icon={faKey}  /></span>
+            <i id ={style.inpTwo}> <FontAwesomeIcon icon={faKey}  /></i>
               <Input
                 type="password"
                 name="password"
