@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Product from "../Products/Product";
 import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
-import NumericInput from "react-numeric-input";
 import style from "./Menu.module.css";
 
 class Menu extends Component {
@@ -16,22 +15,16 @@ class Menu extends Component {
   ]
 
 sumTotal =(array) =>{
-  let sumaPrecios =0;
- for (let index = 0; index < array.length; index++) {
-  if(array[index].quantity != 0){
-    sumaPrecios += parseInt(array[index].price);
+  let suma = 0
+  array.forEach(element => {
+    let multiplication = element.quantity * element.price
+    suma += multiplication
 
-console.log(sumaPrecios);
-  }
- }
-
-
+  });
+  return suma
 }
 
 resume = (e) =>{
-
-
-
 let quantityProducts=e.target.value
 let quantityFather= e.target.parentElement.parentElement
 let quantityFatherChildren= quantityFather.childNodes
@@ -42,35 +35,37 @@ let productPrice=quantityFatherChildren[1].outerText
    name:productsName,
    price:productPrice,
    quantity:quantityProducts,
-
  }
-
-
+  
  if(quantityProducts > 0){
   this.arrayProducts.push(productsResume)
- }else{
-  let index = this.arrayProducts.indexOf(e.target.value);
-
-  if (index !== -1) {
-    this.arrayProducts.splice(index, 1);
-  }
-
+  console.log(this.arrayProducts)
+ } else {
+  let productIndex = this.arrayProducts.findIndex(product => product.name === productsResume.name)
+  this.arrayProducts.splice(productIndex, 1)
+  console.log(this.arrayProducts)
  }
- console.log(this.arrayProducts);
-
- this.sumTotal(this.arrayProducts)
-
-
+ 
  this.setState(
    {
-    products:this.arrayProducts
+    products:this.arrayProducts, 
+    total:this.sumTotal(this.arrayProducts),
+   
+
    }
    )
 }
 
+table = (e) => {
+  let tableNumber = e.target.value
+  this.setState({
+    table:tableNumber
+  })
+}
+
 
 componentDidUpdate(){
-  /*console.log(this.state)*/
+  console.log(this.state)
 }
 
   render() {
@@ -99,8 +94,9 @@ componentDidUpdate(){
         <section className={style.menu}>
           <h2 className={style.menuDesayuno}> Menu Desayuno</h2>
           <span> N° Mesa </span>
-          <select min={0} max={10} value={1} >
-          <option value='1'>1 </option>
+          <select onChange={(e)=>this.table(e)} min={0} max={10} >
+             <option value='0'>0 </option>
+             <option value='1'>1 </option>
              <option value='2'>2 </option>
              <option value='3'>3 </option>
              <option value='4'>4 </option>

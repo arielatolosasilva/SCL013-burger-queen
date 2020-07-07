@@ -1,8 +1,6 @@
 
 import React from 'react';
-
 import {  Label, Input } from 'reactstrap';
-import NumericInput from 'react-numeric-input';
 import style from './Products.module.css'
 import CounterOne from '../Counters/CounterOne'
 
