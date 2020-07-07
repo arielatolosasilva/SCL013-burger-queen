@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Product from './Product';
 import DataMenu from '../DataMenu.json';
-import Order from './Order/Order';
+import Order from './Order/ModalOrder';
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'reactstrap';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import ModalOrder from './Order/ModalOrder';
 class Menu extends Component {
     state = {
       currency: '$',
@@ -30,6 +31,7 @@ class Menu extends Component {
         console.log(productInfo.name, '---> producto ingresado al pedido');
         this.orderProducts.push(productInfo);
         this.setState({
+          orderId: Math.floor(Math.random() * 10),
           products: this.orderProducts,
           table: 5,//hay que crear input o select de mesa/table
           customerName: 'Pepegrillo Sánchez', //hay que crear input de cliente/customer
@@ -40,6 +42,7 @@ class Menu extends Component {
         let productIndex = this.orderProducts.findIndex(object => object.name === productInfo.name);
         this.orderProducts.splice(productIndex, 1);
         this.setState({
+          orderId: Math.floor(Math.random() * 10),
           products: this.orderProducts,
           table: 5,
           customerName: 'Pepegrillo Sánchez',
@@ -108,10 +111,11 @@ class Menu extends Component {
                     {currentMenu}
                   </tbody>
           </Table>
-            {/* para que el botón solo se muestre si se seleccionó al menos 1 prod. */}
-            {this.state.products && this.state.products.length > 0 ? <Button><Link to="/mesero/menu-desayuno/resumen-pedido" component={Order} onClick={() => orderDetailsHandler()}>Ver resumen del pedido</Link></Button> : null
+            {/* {this.state.products && this.state.products.length > 0 ? <Button onClick={() => orderDetailsHandler()}>Ver resumen del pedido</Button> : null
             
-            } 
+            }  */}
+
+            <ModalOrder order={this.state}/>
                
             
           </React.Fragment>

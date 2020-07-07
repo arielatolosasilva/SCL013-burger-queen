@@ -9,7 +9,6 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import Menu from './components/Menu';
 import Header from './components/Header/Header';
-import Order from './components/Order/Order';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Button,
