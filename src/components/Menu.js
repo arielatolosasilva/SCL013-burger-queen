@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Product from './Product';
 import DataMenu from '../DataMenu.json';
 import { Table } from 'reactstrap';
+import style from '../components/Menu.module.css';
 class Menu extends Component {
     state = {
       products: [{}],
@@ -32,8 +33,10 @@ class Menu extends Component {
       }
         return (
           <React.Fragment>
-            <Table borderless>
+            <Table borderless className={style.menu}>
+            
                   <thead>
+                  <h2 className={style.menuDesayuno}>Menu Desayuno</h2>
                     <tr>
                       <th>Producto</th>
                       <th>Valor</th>
