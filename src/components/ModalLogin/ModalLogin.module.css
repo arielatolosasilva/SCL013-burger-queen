@@ -47,6 +47,16 @@
   /*background-clip: padding-box;*/
   border: 0px;
 }
+ #inpOne {
+  position: absolute;
+  left:6%;
+  top:13%;
+}
+#inpTwo{
+  position: absolute;
+  left:6%;
+  top:44%;
+}
 
 @media (min-width: 1040px) {
   .entrar {

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from "./components/Logo/Logo";
 import ModalLogin from "./components/ModalLogin/ModalLogin";
 import firebase from "firebase";
-import Menu from "./components/Menu/Menu";
+import Menu from "./components/Menu/Menu.jsx";
 import Header from "./components/Header/Header";
 import Order from "./components/Order/Order";
 import "bootstrap/dist/css/bootstrap.min.css";

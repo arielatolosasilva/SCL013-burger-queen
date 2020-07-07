@@ -13,25 +13,28 @@ function Product(props) {
 
 
     return (
-
-        <tr id={props.idd}>
+      <tr >
         <td>{props.name}</td>
         <td>{props.price}</td>
-        <td>{props.qty}</td>
         <td>
-            <Label check>
-              <Input type="checkbox" name="agree" trueValue="User Agreed" required />
-            </Label>
-
-         </td>
-         <td> <NumericInput min={0}
-         max={100} value={1}/></td>
-         <td> <div id="react-container"></div></td>
-         <td> <CounterOne/>     </td>
-
-
+          <select onChange={props.change}  >
+            <option value='0'>0</option>
+             <option value='1'>1 </option>
+             <option value='2'>2 </option>
+             <option value='3'>3 </option>
+             <option value='4'>4 </option>
+             <option value='5'>5 </option>
+             <option value='6'>6 </option>
+             <option value='7'>7 </option>
+             <option value='8'>8 </option>
+             <option value='9'>9 </option>
+             <option value='10'>10 </option>
+             </select>
+        </td>
+        <td>
+          <div id="react-container"></div>
+        </td>
       </tr>
-
     );
 }
 

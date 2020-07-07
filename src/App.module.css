@@ -4,7 +4,6 @@
   align-items: center;
   /* margin-top: 6rem; */
 }
-
 .optionBtn {
   margin: 1rem;
   width: 15rem;
@@ -13,22 +12,25 @@
   cursive;
   padding: 0.5rem;
 }
-
 .optionBtn:hover {
   background-color: #ED1522;
 }
-
 .mainContainer {
   background-color: #8A8081;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 56vh;
 }
-
 .meseroH1 {
   color: white;
   font-family: 'Sedgwick Ave',
   cursive;
   margin-top: 2rem;
-  margin-bottom: 2rem;  
+  margin-bottom: 2rem;
 }
-
+@media (min-width: 1040px){
+.mainContainer{
+  background-color: #8A8081;
+  width: 100vw;
+  min-height: 64vh;
+}
+}
