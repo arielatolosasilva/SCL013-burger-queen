@@ -33,10 +33,6 @@ let quantityFatherChildren= quantityFather.childNodes
 let productsName=quantityFatherChildren[0].innerText
 let productPrice=quantityFatherChildren[1].outerText
 
-/* let blabla = productPrice.split('');
-let blabla2 = blabla.shift */
-let productPriceWithoutCurrency = productPrice.shift();
-console.log(productPriceWithoutCurrency);
 
  let productsResume={
    name:productsName,
