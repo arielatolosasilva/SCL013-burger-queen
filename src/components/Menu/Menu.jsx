@@ -100,7 +100,6 @@ componentDidUpdate(){
     return (
       <React.Fragment>
         <section className={style.menu}>
-<<<<<<< HEAD
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
             <Table borderless className={style.menu}>
@@ -119,26 +118,6 @@ componentDidUpdate(){
              <option value='10'>10 </option>
              </select>
               <tbody className={style.container}>{currentMenu}</tbody>
-=======
-          <h2 className={style.menuDesayuno}> Menu Desayuno</h2>
-          <span> N° Mesa </span>
-          <select onChange={(e) => this.table(e)} min={0} max={10}>
-            <option value="0">0 </option>
-            <option value="1">1 </option>
-            <option value="2">2 </option>
-            <option value="3">3 </option>
-            <option value="4">4 </option>
-            <option value="5">5 </option>
-            <option value="6">6 </option>
-            <option value="7">7 </option>
-            <option value="8">8 </option>
-            <option value="9">9 </option>
-            <option value="10">10 </option>
-          </select>
-          <div>
-            <Table borderless className={style.menu}>
-              <tbody>{currentMenu}</tbody>
->>>>>>> d9ab7146070181a488f2674305d5f50fd6a7b01c
             </Table>
           </div>
         </section>
