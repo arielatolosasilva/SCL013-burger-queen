@@ -13,19 +13,24 @@ import style from '../ModalLogin/ModalLogin.module.css';
 function ModalOrder(props) {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-
+  
   let orderInfo = null;
   if (props.order.products && props.order.products.length > 0) {
     orderInfo = props.order.products.map(product => {
+      console.log(product.id + ' -order');
       return (
-        <React.Fragment key={product.orderId}>
-        <p>{product.name}, </p>
-        <p>{product.price}, </p>
-        <p>{product.qty}, </p>
-      </React.Fragment>
+        
+        <FormGroup key={product.id + ' -order'} id={style.form}>
+          <p>{product.name}, </p>
+          <p>{product.price}, </p>
+          <p>{product.qty}, </p>
+          <p>Nro. pedido: {props.order.orderId}</p>
+        </FormGroup>
       )
     })
   }
+
+  
   
     return (
         <div className={style.boton}>
@@ -35,13 +40,8 @@ function ModalOrder(props) {
       <Modal  className={style.modal} isOpen={modal} toggle={toggle}>
         <ModalBody className={style.modal} >
           <Form>
-            <FormGroup id={style.form}>
-              {orderInfo}
+            {orderInfo}
 
-            </FormGroup>
-            <FormGroup id={style.form}>
-              
-            </FormGroup>
             <Button color="danger">Entrar</Button>{" "}
           </Form>
         </ModalBody>

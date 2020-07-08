@@ -17,6 +17,7 @@ class Menu extends Component {
 
     newOrder = (event) => {
       let product = event.target.parentElement.parentElement; //tr
+      let productId = product.id;
       let productName = product.childNodes[0].innerHTML; // <td name>
       let productPrice = product.childNodes[1].innerHTML; // <td price>
       let productQty = product.childNodes[2].innerHTML;// <td qty>
@@ -24,14 +25,15 @@ class Menu extends Component {
       let productInfo = {
         name: productName,
         price: productPrice,
-        qty: productQty
+        qty: productQty,
+        id: productId
       }
 
       if (event.target.checked === true) {
         console.log(productInfo.name, '---> producto ingresado al pedido');
         this.orderProducts.push(productInfo);
         this.setState({
-          orderId: Math.floor(Math.random() * 10),
+          orderId: productId + Math.floor(Math.random() * 100),
           products: this.orderProducts,
           table: 5,//hay que crear input o select de mesa/table
           customerName: 'Pepegrillo Sánchez', //hay que crear input de cliente/customer
@@ -42,7 +44,7 @@ class Menu extends Component {
         let productIndex = this.orderProducts.findIndex(object => object.name === productInfo.name);
         this.orderProducts.splice(productIndex, 1);
         this.setState({
-          orderId: Math.floor(Math.random() * 10),
+          orderId: productInfo.name + 1234 + 'abcd',
           products: this.orderProducts,
           table: 5,
           customerName: 'Pepegrillo Sánchez',
@@ -52,9 +54,11 @@ class Menu extends Component {
     }
 
     // solo para comprobar que se vaya actualizando el estado correctamente
-    componentDidUpdate() {
-      console.log(this.state);
+    componentDidMount() {
+      console.log(this.th, this.th1, this.th2)
     }
+
+   
 
     // no se está utilizando aún, tiene que estar conectada con botón Enviar a cocina
     sendOrder = () => {
@@ -102,9 +106,9 @@ class Menu extends Component {
             <Table borderless>
                   <thead>
                     <tr>
-                      <th>Producto</th>
-                      <th>Valor</th>
-                      <th>Cantidad</th>
+                      <th ref={(th) => this.th = th}>Producto</th>
+                      <th ref={(th) => this.th1 = th}>Valor</th>
+                      <th ref={(th) => this.th2 = th}>Cantidad</th>
                     </tr>
                   </thead>
                   <tbody>
