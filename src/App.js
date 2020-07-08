@@ -7,7 +7,7 @@ import ModalLogin from "./components/ModalLogin/ModalLogin";
 import firebase from "firebase";
 import Menu from "./components/Menu/Menu.jsx";
 import Header from "./components/Header/Header";
-import Order from "./components/Order/Order";
+import Order from "./components/Order/OrderModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
