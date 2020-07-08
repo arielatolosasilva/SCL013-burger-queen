@@ -14,7 +14,7 @@ function Product(props) {
     return (
       <tr >
         <td>{props.name}</td>
-        <td>{props.price}</td>
+        <td>${props.price}</td>
         <td>
           <select onChange={props.change}  >
             <option value='0'>0</option>
@@ -28,7 +28,7 @@ function Product(props) {
              <option value='8'>8 </option>
              <option value='9'>9 </option>
              <option value='10'>10 </option>
-             </select>
+          </select>
         </td>
       </tr>
     );

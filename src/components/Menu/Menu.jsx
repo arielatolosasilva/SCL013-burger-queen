@@ -3,6 +3,7 @@ import Product from "../Products/Product";
 import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
+import OrderModal from "../Order/OrderModal";
 
 
 class Menu extends Component {
@@ -32,6 +33,11 @@ let quantityFatherChildren= quantityFather.childNodes
 let productsName=quantityFatherChildren[0].innerText
 let productPrice=quantityFatherChildren[1].outerText
 
+/* let blabla = productPrice.split('');
+let blabla2 = blabla.shift */
+let productPriceWithoutCurrency = productPrice.shift();
+console.log(productPriceWithoutCurrency);
+
  let productsResume={
    name:productsName,
    price:productPrice,
@@ -49,6 +55,7 @@ let productPrice=quantityFatherChildren[1].outerText
  
  this.setState(
    {
+    orderId: Math.floor(Math.random() * 8000),
     products:this.arrayProducts, 
     total:this.sumTotal(this.arrayProducts),
    
@@ -78,7 +85,7 @@ componentDidUpdate(){
       currentMenu = menuArray.map((product) => {
         return (
           <React.Fragment key={product.id}>
-            <Product name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
+            <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
           </React.Fragment>
         );
       });
@@ -93,6 +100,7 @@ componentDidUpdate(){
     return (
       <React.Fragment>
         <section className={style.menu}>
+<<<<<<< HEAD
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
             <Table borderless className={style.menu}>
@@ -111,9 +119,30 @@ componentDidUpdate(){
              <option value='10'>10 </option>
              </select>
               <tbody className={style.container}>{currentMenu}</tbody>
+=======
+          <h2 className={style.menuDesayuno}> Menu Desayuno</h2>
+          <span> N° Mesa </span>
+          <select onChange={(e) => this.table(e)} min={0} max={10}>
+            <option value="0">0 </option>
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+            <option value="3">3 </option>
+            <option value="4">4 </option>
+            <option value="5">5 </option>
+            <option value="6">6 </option>
+            <option value="7">7 </option>
+            <option value="8">8 </option>
+            <option value="9">9 </option>
+            <option value="10">10 </option>
+          </select>
+          <div>
+            <Table borderless className={style.menu}>
+              <tbody>{currentMenu}</tbody>
+>>>>>>> d9ab7146070181a488f2674305d5f50fd6a7b01c
             </Table>
           </div>
         </section>
+        <OrderModal order={this.state} />
       </React.Fragment>
     );
   }
