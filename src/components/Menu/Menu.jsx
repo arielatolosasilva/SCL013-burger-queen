@@ -4,6 +4,7 @@ import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
 
+
 class Menu extends Component {
   state = {
 
@@ -92,8 +93,10 @@ componentDidUpdate(){
     return (
       <React.Fragment>
         <section className={style.menu}>
-          <h2 className={style.menuDesayuno}> Menu Desayuno</h2>
-          <span> N° Mesa </span>
+          <div className={style.text}>
+          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+            <Table borderless className={style.menu}>
+            <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
              <option value='1'>1 </option>
@@ -107,9 +110,7 @@ componentDidUpdate(){
              <option value='9'>9 </option>
              <option value='10'>10 </option>
              </select>
-          <div>
-            <Table borderless className={style.menu}>
-              <tbody>{currentMenu}</tbody>
+              <tbody className={style.container}>{currentMenu}</tbody>
             </Table>
           </div>
         </section>

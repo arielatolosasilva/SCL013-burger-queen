@@ -20,7 +20,7 @@
     width: 145px;
     height: 45px;
     left: 40%;
-    top: 80%;
+    top: 88%;
     border: none;
     font-family: 'Sedgwick Ave', cursive;
     font-size: 23px;
@@ -38,13 +38,16 @@
   outline: none;
 }
 
+.entrar:not(:disabled):not(.disabled){
+  background-color: #ED1522;
+}
+
 .modalContent {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  /*background-clip: padding-box;*/
   border: 0px;
 }
  #inpOne {
@@ -62,6 +65,22 @@
   .entrar {
     left: 44%;
     top: 80%;
+  }
+
+  .modal {
+    width: 43vw;
+    left: -9px;
+  }
+  .entrar:hover {
+    background-color: #ED1522;
+  }
+  .entrar:focus {
+    background-color: #ED1522;
+    outline: none;
+  }
+  
+  .entrar:not(:disabled):not(.disabled){
+    background-color: #ED1522;
   }
 }
 
