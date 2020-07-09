@@ -59,22 +59,24 @@ const ModalLogin = (props) => {
           <Form onSubmit={(event) => submitInput(event)}>
             <FormGroup id={style.form}>
 
-            <i id={style.inpOne}> <FontAwesomeIcon icon={faEnvelopeOpen} /></i>
+            {/*<i id={style.inpOne}> <FontAwesomeIcon icon={faEnvelopeOpen} /></i>*/}
               <Input
 
                 type="email"
                 name="email"
                 id="exampleEmail"
+                placeholder="Email"
 
               />
 
             </FormGroup>
             <FormGroup id={style.form}>
-            <i id ={style.inpTwo}> <FontAwesomeIcon icon={faKey}  /></i>
+            {/*<i id ={style.inpTwo}> <FontAwesomeIcon icon={faKey}  /></i>*/}
               <Input
                 type="password"
                 name="password"
                 id="examplePassword"
+                placeholder="Contraseña"
 
 
 

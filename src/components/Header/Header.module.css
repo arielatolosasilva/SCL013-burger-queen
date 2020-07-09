@@ -1,18 +1,17 @@
 .header {
   width: 100vw;
-  height: 225px;
-  left: 0px;
-  top: 225px;
-
-  background: #101113;
+    height: 90px;
+    left: 0px;
+    top: 225px;
+    background: #101113;
 }
 .fatherLogo {
   display: flex;
   justify-content: center;
 }
 .logoHeader {
-  width: 25vw;
-  height: 25vw;
+  width: 21vw;
+  height: 20vw;
   left: 426px;
   margin-top: 1.2rem;
 }

@@ -86,6 +86,14 @@ componentDidUpdate(){
         );
       });
     } else if (this.props.type === "lunch-dinner") {
+      let menuArrayAcompañamiento = Object.entries(DataMenu[0])[1][1].Acompañamiento;
+      console.log(menuArrayAcompañamiento)
+      let menuArrayMainCourse = Object.entries(DataMenu[0])[1][1].PlatoFondo;
+      console.log(menuArrayMainCourse)
+      let menuArrayDrinks = Object.entries(DataMenu[0])[1][1].bebestibles;
+      console.log(menuArrayDrinks)
+      let menuArrayExtras = Object.entries(DataMenu[0])[1][1].extras;
+      console.log(menuArrayExtras)
       //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
       currentMenu = (
         <React.Fragment key="alm5">
@@ -98,6 +106,7 @@ componentDidUpdate(){
         <section className={style.menu}>
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+          
             <Table borderless className={style.menu}>
             <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
@@ -113,7 +122,9 @@ componentDidUpdate(){
              <option value='9'>9 </option>
              <option value='10'>10 </option>
              </select>
-              <tbody className={style.container}>{currentMenu}</tbody>
+              <tbody className={style.container}>
+                {currentMenu}
+              </tbody>
             </Table>
           </div>
         </section>

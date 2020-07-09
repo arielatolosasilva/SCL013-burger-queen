@@ -14,7 +14,6 @@ function Product(props) {
     return (
       <tr >
         <td>{props.name}</td>
-        <td>$</td>
         <td>{props.price}</td>
         <td>
           <select onChange={props.change}  >

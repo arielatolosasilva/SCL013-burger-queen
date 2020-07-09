@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
+import OrderModal from "./components/Order/OrderModal";
 
 class App extends Component {
   state = {
@@ -105,7 +106,8 @@ class App extends Component {
           </Route>
           <Route path="/chef" exact>
             <Header/>
-            <IncomingOrders/>
+            
+           
           </Route>
         </Switch>
         </div>

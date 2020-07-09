@@ -12,7 +12,7 @@
 
 .container {
     background-color:rgba(107, 135, 3, 0.45);
-    width: 94%;
+    width: 35%;
     margin-left: 3%;
     display: table;
     margin-bottom: 5%;
@@ -37,3 +37,4 @@
 .table td, .table th {
     padding: 2.5rem;
 }
+

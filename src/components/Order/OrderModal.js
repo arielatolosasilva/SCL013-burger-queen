@@ -4,11 +4,11 @@ import {
   Button,
   ModalBody,
   Modal,
-  Form,
-  FormGroup,
   Table
 } from "reactstrap";
 import style from '../ModalLogin/ModalLogin.module.css';
+import firebase from 'firebase'
+
 
 function OrderModal(props) {
   const [modal, setModal] = useState(false);
@@ -22,12 +22,20 @@ function OrderModal(props) {
       return (
           <tr key={Math.floor(Math.random() * 1000)} id={style.form}>
             <td>{product.name}</td>
-            <td>${product.price}</td>
+            <td>{product.price}</td>
             <td>{product.quantity}</td>
           </tr>
       )
     });
   }
+
+  const sendKitchen = () => {
+  firebase.firestore().collection('resumen orden').add({
+    information:props.order.products,
+    id: props.order.orderId
+  }).then(()=>{console.log('enviado')})
+    }
+  
   
 
     return (
@@ -41,7 +49,7 @@ function OrderModal(props) {
                 <tbody>{ order }</tbody>
               </Table>
               <p>${props.order.total}</p>
-              <Button color="danger">Enviar a cocina</Button>{" "}
+              <Button onClick={sendKitchen} color="danger">Enviar a cocina</Button>{" "}
           </ModalBody>
 
         </Modal>
