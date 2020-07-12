@@ -33,10 +33,6 @@ let quantityFatherChildren= quantityFather.childNodes
 let productsName=quantityFatherChildren[0].innerText
 let productPrice=quantityFatherChildren[1].outerText
 
-/* let blabla = productPrice.split('');
-let blabla2 = blabla.shift */
-let productPriceWithoutCurrency = productPrice.shift();
-console.log(productPriceWithoutCurrency);
 
  let productsResume={
    name:productsName,
@@ -90,6 +86,14 @@ componentDidUpdate(){
         );
       });
     } else if (this.props.type === "lunch-dinner") {
+      let menuArrayAcompañamiento = Object.entries(DataMenu[0])[1][1].Acompañamiento;
+      console.log(menuArrayAcompañamiento)
+      let menuArrayMainCourse = Object.entries(DataMenu[0])[1][1].PlatoFondo;
+      console.log(menuArrayMainCourse)
+      let menuArrayDrinks = Object.entries(DataMenu[0])[1][1].bebestibles;
+      console.log(menuArrayDrinks)
+      let menuArrayExtras = Object.entries(DataMenu[0])[1][1].extras;
+      console.log(menuArrayExtras)
       //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
       currentMenu = (
         <React.Fragment key="alm5">
@@ -100,24 +104,27 @@ componentDidUpdate(){
     return (
       <React.Fragment>
         <section className={style.menu}>
-          <h2 className={style.menuDesayuno}> Menu Desayuno</h2>
-          <span> N° Mesa </span>
-          <select onChange={(e) => this.table(e)} min={0} max={10}>
-            <option value="0">0 </option>
-            <option value="1">1 </option>
-            <option value="2">2 </option>
-            <option value="3">3 </option>
-            <option value="4">4 </option>
-            <option value="5">5 </option>
-            <option value="6">6 </option>
-            <option value="7">7 </option>
-            <option value="8">8 </option>
-            <option value="9">9 </option>
-            <option value="10">10 </option>
-          </select>
-          <div>
+          <div className={style.text}>
+          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+          
             <Table borderless className={style.menu}>
-              <tbody>{currentMenu}</tbody>
+            <span className={style.table}> N° Mesa </span>
+          <select onChange={(e)=>this.table(e)} min={0} max={10} >
+             <option value='0'>0 </option>
+             <option value='1'>1 </option>
+             <option value='2'>2 </option>
+             <option value='3'>3 </option>
+             <option value='4'>4 </option>
+             <option value='5'>5 </option>
+             <option value='6'>6 </option>
+             <option value='7'>7 </option>
+             <option value='8'>8 </option>
+             <option value='9'>9 </option>
+             <option value='10'>10 </option>
+             </select>
+              <tbody className={style.container}>
+                {currentMenu}
+              </tbody>
             </Table>
           </div>
         </section>
