@@ -8,17 +8,14 @@ import {
   FormGroup,
   Input,
 } from "reactstrap";
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-import style from "./ModalLogin.module.css";
+import firebase from "firebase";
+import style from '../ModalLogin/ModalLogin.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faKey, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const ModalLogin = (props) => {
-  //const {} = props;
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
@@ -52,30 +49,33 @@ const ModalLogin = (props) => {
 
   return (
 
-      <div className={style.boton}>
+      <React.Fragment>
       <Button className={style.entrar} onClick={toggle}>
         Entrar
       </Button>
-      <Modal  className={style.modal} isOpen={modal} toggle={toggle}>
+      <Modal  className={style.modal} contentClassName={style.modalContent} isOpen={modal} toggle={toggle}>
         <ModalBody className={style.modal} >
           <Form onSubmit={(event) => submitInput(event)}>
             <FormGroup id={style.form}>
 
-            <span> <FontAwesomeIcon icon={faKey} /></span>
+            {/*<i id={style.inpOne}> <FontAwesomeIcon icon={faEnvelopeOpen} /></i>*/}
               <Input
+
                 type="email"
                 name="email"
                 id="exampleEmail"
-                placeholder="Correo Electronico"
+                placeholder="Email"
+
               />
 
             </FormGroup>
             <FormGroup id={style.form}>
-            <span> <FontAwesomeIcon icon={faEnvelopeOpen} /></span>
+            {/*<i id ={style.inpTwo}> <FontAwesomeIcon icon={faKey}  /></i>*/}
               <Input
                 type="password"
                 name="password"
                 id="examplePassword"
+                placeholder="Contraseña"
 
 
 
@@ -89,7 +89,7 @@ const ModalLogin = (props) => {
         </ModalBody>
 
       </Modal>
-    </div>
+    </React.Fragment>
   );
 };
 export default ModalLogin;

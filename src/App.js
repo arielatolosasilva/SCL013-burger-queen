@@ -1,72 +1,73 @@
 import React, { useState, Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
-import Logo from './components/Logo'
-import ModalLogin from './components/ModalLogin/ModalLogin';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-import Menu from './components/Menu';
-import Header from './components/Header/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  Button,
-} from 'reactstrap';
-import style from './App.module.css';
-import IncomingOrders from './components/IncomingOrders/IncomingOrders';
-
-
-
+import Logo from "./components/Logo/Logo";
+import ModalLogin from "./components/ModalLogin/ModalLogin";
+import firebase from "firebase";
+import Menu from "./components/Menu/Menu.jsx";
+import Header from "./components/Header/Header";
+import Order from "./components/Order/OrderModal";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "reactstrap";
+import style from "./App.module.css";
+import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
+import OrderModal from "./components/Order/OrderModal";
 
 class App extends Component {
   state = {
-    auth: false
-  }
+    auth: false,
+  };
 
   firebaseAuth = firebase.auth().onAuthStateChanged(() => {
     if (firebase.auth().currentUser !== null) {
-      let splittedEmail = firebase.auth().currentUser.email.split('');
+      let splittedEmail = firebase.auth().currentUser.email.split("");
       let emailFirstLetter = splittedEmail[0];
       let loginRole;
-      emailFirstLetter === 'm' ? loginRole = 'mesero' : loginRole = 'chef';
+      emailFirstLetter === "m" ? (loginRole = "mesero") : (loginRole = "chef");
       this.setState({
         auth: true,
-        role: loginRole
+        role: loginRole,
       });
     }
 
     //Función para probar flujo con logout automático al cerrar app (solo prueba)
     if (firebase.auth().currentUser !== null) {
       setTimeout(() => {
-        firebase.auth().signOut().then(() => {
-          this.setState({
-            auth: false,
-            role: null
-          })
-          console.log('Sesión cerrada correctamente', this.state.auth, this.state.role);
-          alert('Sesión cerrada automáticamente (prueba) - Después de esto se debería redireccionar a la pantalla de inicio.');
-
-        })
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            this.setState({
+              auth: false,
+              role: null,
+            });
+            console.log(
+              "Sesión cerrada correctamente",
+              this.state.auth,
+              this.state.role
+            );
+            alert(
+              "Sesión cerrada automáticamente (prueba) - Después de esto se debería redireccionar a la pantalla de inicio."
+            );
+          });
       }, 8000);
     }
-    
-    
-  })
-  
+  });
+
   render() {
     let path = null;
     let pathRole = null;
     if (this.state.auth) {
-      if (this.state.role === 'chef') {
+      if (this.state.role === "chef") {
         path = <Redirect to="/chef" />;
-        pathRole = 'chef';
-      } else if (this.state.role === 'mesero') {
+        pathRole = "chef";
+      } else if (this.state.role === "mesero") {
         path = <Redirect to="/mesero" />;
-        pathRole = 'mesero';
+        pathRole = "mesero";
       }
     }
-  
+
     return (
       <BrowserRouter>
         <div>
@@ -81,8 +82,16 @@ class App extends Component {
              <section className={style.mainContainer}>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
-                <Button className={style.optionBtn}>Menú desayuno</Button>
-                <Button className={style.optionBtn}>Menú almuerzo y cena</Button>
+                <Link to="/mesero/menu-desayuno">
+                    <Button  className={style.optionBtn}>
+                      Menú desayuno
+                    </Button>
+                  </Link>
+                  <Link to="/mesero/menu-almuerzo-cena">
+                    <Button className={style.optionBtn}>
+                      Menú almuerzo y cena
+                    </Button>
+                  </Link>
               </div>
              </section>
           </Route>
@@ -101,16 +110,14 @@ class App extends Component {
           </Route>
           <Route path="/chef" exact>
             <Header/>
-           <IncomingOrders/>
-
+            
+           
           </Route>
         </Switch>
         </div>
       </BrowserRouter>
-     
     );
   }
-  
 }
-    
+
 export default App;

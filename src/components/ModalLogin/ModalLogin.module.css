@@ -1,13 +1,13 @@
 .modal {
-
   width: 54vw;
   height:27vh;
   left: 0px;
-  top: 0px;
-
+  top: 24%;
+  height: 10%;
   background: #C4C4C4;
   border-radius: 6px;
   text-align: center;
+  font-family: 'Sedgwick Ave', cursive;
 }
 
 #form{
@@ -20,7 +20,7 @@
     width: 145px;
     height: 45px;
     left: 40%;
-    top: 80%;
+    top: 88%;
     border: none;
     font-family: 'Sedgwick Ave', cursive;
     font-size: 23px;
@@ -28,17 +28,51 @@
     background-color: #ED1522;
     display: flex;
     justify-content: center;
+  
 }
 
+.entrar:hover {
+  background-color: #ED1522;
+}
+.entrar:focus {
+  background-color: #ED1522;
+  outline: none;
+}
+
+.entrar:not(:disabled):not(.disabled){
+  background-color: #ED1522;
+  margin-top: -5%;
+    width: 13%;
+    margin-left: 4%;
+}
 
 .modalContent {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-clip: padding-box;
-    border: 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  border: 0px;
+}
+ #inpOne {
+  position: absolute;
+  left:6%;
+  top:13%;
+}
+#inpTwo{
+  position: absolute;
+  left:6%;
+  top:44%;
+}
+
+.entrarCocina {
+  background-color: #ED1522;
+  top: 141%;
+  left: 72%;
+  width: 20%;
+  height: 7%;
+  text-align: center;
+  font-size: 1em;
 }
 
 @media (min-width: 1040px) {
@@ -46,4 +80,22 @@
     left: 44%;
     top: 80%;
   }
+
+  .modal {
+    width: 43vw;
+    left: -9px;
+  }
+  .entrar:hover {
+    background-color: #ED1522;
+  }
+  .entrar:focus {
+    background-color: #ED1522;
+    outline: none;
+  }
+  
+  .entrar:not(:disabled):not(.disabled){
+    background-color: #ED1522;
+  }
 }
+
+

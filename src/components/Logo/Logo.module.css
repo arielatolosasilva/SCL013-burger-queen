@@ -10,14 +10,13 @@
 }
 
 .inicio {
-  margin-top: 6%;
+  margin-top: 9%;
+  width: 40%;
 }
 
 .entrar {
   width: 67px;
   height: 30px;
-  left: 478px;
-  top: 559px;
   font-family: 'Sedgwick Ave', cursive;
   font-style: normal;
   font-weight: normal;
@@ -26,7 +25,8 @@
   color: #FFFFFF;
 }
 
-.boton {
+.btnEnter {
   display: flex;
   justify-content: center;
 }
+
