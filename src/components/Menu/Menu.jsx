@@ -4,6 +4,8 @@ import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
 import OrderModal from "../Order/OrderModal";
+import tea from '../../assets/images/tea.png';
+import rice from '../../assets/images/rice.png';
 
 
 class Menu extends Component {
@@ -106,9 +108,8 @@ componentDidUpdate(){
         <section className={style.menu}>
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
-          
-            <Table borderless className={style.menu}>
-            <span className={style.table}> N° Mesa </span>
+          <div className={style.contenedorTabla}>
+          <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
              <option value='1'>1 </option>
@@ -122,14 +123,19 @@ componentDidUpdate(){
              <option value='9'>9 </option>
              <option value='10'>10 </option>
              </select>
-
+            <Table borderless className={style.menu}>
+           
               <tbody className={style.container}>
                 {currentMenu}
               </tbody>
              
             </Table>
           </div>
+          </div>
+          <img src={tea} className={style.tea}></img>
+          <img src={rice} className={style.rice}></img>
         </section>
+
         <OrderModal order={this.state} />
       </React.Fragment>
     );
