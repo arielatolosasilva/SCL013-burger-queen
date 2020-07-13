@@ -12,7 +12,7 @@ function Product(props) {
 
 
     return (
-      <tr >
+      <tr className={style.space}>
         <td>{props.name}</td>
         <td>{props.price}</td>
         <td>

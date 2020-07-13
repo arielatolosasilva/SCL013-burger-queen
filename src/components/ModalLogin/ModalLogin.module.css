@@ -40,12 +40,12 @@
 }
 
 .entrar:not(:disabled):not(.disabled){
-  background-color: #CF152D;
-  margin-top: -9%;
-  width: 13%;
-  height: 8%;
-  margin-left: 3%;
-  font-size: 1.3em;
+  background-color: #DE863E;
+    margin-top: 17.2%;
+    width: 19%;
+    height: 7%;
+    margin-left: -21%;
+    font-size: 1.3em;
 }
 
 .modalContent {
@@ -96,11 +96,11 @@
   }
   
   .entrar:not(:disabled):not(.disabled){
-    background-color: #CF152D;
-    margin-top: 3%;
-    width: 11%;
+    background-color: #DE863E;
+    margin-top: 11.2%;
+    width: 19%;
     height: 7%;
-    margin-left: 1%;
+    margin-left: -26%;
     font-size: 1.3em;
   }
 }
