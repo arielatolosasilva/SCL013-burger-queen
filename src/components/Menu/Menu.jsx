@@ -122,9 +122,11 @@ componentDidUpdate(){
              <option value='9'>9 </option>
              <option value='10'>10 </option>
              </select>
+
               <tbody className={style.container}>
                 {currentMenu}
               </tbody>
+             
             </Table>
           </div>
         </section>
