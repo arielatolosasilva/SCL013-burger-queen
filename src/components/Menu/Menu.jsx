@@ -106,9 +106,8 @@ componentDidUpdate(){
         <section className={style.menu}>
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
-
-            <Table borderless className={style.menu}>
-            <span className={style.table}> N° Mesa </span>
+          <div>
+          <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
              <option value='1'>1 </option>
@@ -122,11 +121,14 @@ componentDidUpdate(){
              <option value='9'>9 </option>
              <option value='10'>10 </option>
              </select>
+             </div>
+            <Table borderless className={style.menu}>
+
 
               <tbody className={style.container}>
                 {currentMenu}
               </tbody>
-             
+
             </Table>
           </div>
         </section>
