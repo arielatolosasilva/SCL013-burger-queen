@@ -25,25 +25,27 @@
     font-family: 'Sedgwick Ave', cursive;
     font-size: 23px;
     color: #FFFFFF;
-    background-color: #ED1522;
+    background-color: #CF152D;
     display: flex;
     justify-content: center;
   
 }
 
 .entrar:hover {
-  background-color: #ED1522;
+  background-color: #CF152D;
 }
 .entrar:focus {
-  background-color: #ED1522;
+  background-color: #CF152D;
   outline: none;
 }
 
 .entrar:not(:disabled):not(.disabled){
-  background-color: #ED1522;
-  margin-top: -5%;
-    width: 13%;
-    margin-left: 4%;
+  background-color: #CF152D;
+  margin-top: -9%;
+  width: 13%;
+  height: 8%;
+  margin-left: 3%;
+  font-size: 1.3em;
 }
 
 .modalContent {
@@ -66,7 +68,7 @@
 }
 
 .entrarCocina {
-  background-color: #ED1522;
+  background-color: #CF152D;
   top: 141%;
   left: 72%;
   width: 20%;
@@ -86,15 +88,20 @@
     left: -9px;
   }
   .entrar:hover {
-    background-color: #ED1522;
+    background-color: #CF152D;
   }
   .entrar:focus {
-    background-color: #ED1522;
+    background-color: #CF152D;
     outline: none;
   }
   
   .entrar:not(:disabled):not(.disabled){
-    background-color: #ED1522;
+    background-color: #CF152D;
+    margin-top: 3%;
+    width: 11%;
+    height: 7%;
+    margin-left: 1%;
+    font-size: 1.3em;
   }
 }
 

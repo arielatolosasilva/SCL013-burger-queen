@@ -1,5 +1,5 @@
 .menu{
-    background: #8A8081;
+    background: #CF152D;;
     font-family: 'Sedgwick Ave', cursive;
     color: white;
 }
@@ -11,12 +11,15 @@
 }
 
 .container {
-    background-color:rgba(107, 135, 3, 0.45);
-    width: 35%;
+    background-color:#CF152D;;
+    width: 41%;
     margin-left: 3%;
     display: table;
     margin-bottom: 5%;
     border: 2px solid white;
+}
+.menuContainer{
+border: 2px solid white;
 }
 .table{
     border: 2px solid white;

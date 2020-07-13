@@ -11,6 +11,7 @@ import Order from "./components/Order/OrderModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
+import diabolo from './assets/images/diabolo.png';
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
 import OrderModal from "./components/Order/OrderModal";
 
@@ -80,6 +81,7 @@ class App extends Component {
           <Route path="/mesero" exact>
              <Header />
              <section className={style.mainContainer}>
+               <img src={diabolo} className={style.diabolo}></img>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
                 <Link to="/mesero/menu-desayuno">
