@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Product from "../Products/Product";
+import Product from "../Products/Product.jsx";
 import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
-import OrderModal from "../Order/OrderModal";
+import OrderModal from "../Order/OrderModal.jsx";
 
 
 class Menu extends Component {
@@ -39,7 +39,7 @@ let productPrice=quantityFatherChildren[1].outerText
    price:productPrice,
    quantity:quantityProducts,
  }
-  
+
  if(quantityProducts > 0){
   this.arrayProducts.push(productsResume)
   console.log(this.arrayProducts)
@@ -48,13 +48,13 @@ let productPrice=quantityFatherChildren[1].outerText
   this.arrayProducts.splice(productIndex, 1)
   console.log(this.arrayProducts)
  }
- 
+
  this.setState(
    {
     orderId: Math.floor(Math.random() * 8000),
-    products:this.arrayProducts, 
+    products:this.arrayProducts,
     total:this.sumTotal(this.arrayProducts),
-   
+
 
    }
    )
@@ -106,7 +106,7 @@ componentDidUpdate(){
         <section className={style.menu}>
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
-          
+
             <Table borderless className={style.menu}>
             <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
