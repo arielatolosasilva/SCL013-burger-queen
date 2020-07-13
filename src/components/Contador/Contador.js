@@ -9,26 +9,25 @@ class Contador extends Component {
     this.countDown = this.countDown.bind(this);
   }
 
-  secondsToTime(secs){
-    let hours = Math.floor(secs / (60 * 60));
+  componentDidMount() {
+    const timeLeftVar = this.secondsToTime(this.state.seconds);
+    this.setState({ time: timeLeftVar });
+  }
+  secondsToTime(secs) {
+    const hours = Math.floor(secs / (60 * 60));
 
-    let divisor_for_minutes = secs % (60 * 60);
-    let minutes = Math.floor(divisor_for_minutes / 60);
+    const divisorForMinutes = secs % (60 * 60);
+    const minutes = Math.floor(divisorForMinutes / 60);
 
-    let divisor_for_seconds = divisor_for_minutes % 60;
-    let seconds = Math.ceil(divisor_for_seconds);
+    const divisorForSeconds = divisorForMinutes % 60;
+    const seconds = Math.ceil(divisorForSeconds);
 
-    let obj = {
-      "h": hours,
-      "m": minutes,
-      "s": seconds
+    const obj = {
+      h: hours,
+      m: minutes,
+      s: seconds,
     };
     return obj;
-  }
-
-  componentDidMount() {
-    let timeLeftVar = this.secondsToTime(this.state.seconds);
-    this.setState({ time: timeLeftVar });
   }
 
   startTimer() {
@@ -39,10 +38,10 @@ class Contador extends Component {
 
   countDown() {
     // Remove one second, set state so a re-render happens.
-    let seconds = this.state.seconds + 1;
+    const seconds = this.state.seconds + 1;
     this.setState({
       time: this.secondsToTime(seconds),
-      seconds: seconds,
+      seconds,
     });
 
     // Check if we're at zero.
@@ -52,10 +51,11 @@ class Contador extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <button onClick={this.startTimer}>Start</button>
-        m: {this.state.time.m} s: {this.state.time.s}
+        m:
+        {this.state.time.m} s: {this.state.time.s}
       </div>
     );
   }

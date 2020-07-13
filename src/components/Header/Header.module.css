@@ -1,19 +1,20 @@
 .header {
-  width: 100vw;
-    height: 90px;
+    width: 100vw;
+    height: 28vh;
     left: 0px;
     top: 225px;
     background: #101113;
+    background-image: url('../../assets/images/olitas.png');
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-position: right;
+    background-size: 49vw;
+    margin-bottom: -18px;
 }
 .fatherLogo {
+  
   display: flex;
   justify-content: center;
-}
-.logoHeader {
-  width: 21vw;
-  height: 20vw;
-  left: 426px;
-  margin-top: 1.2rem;
 }
 
 @media (min-width: 1040px) {
