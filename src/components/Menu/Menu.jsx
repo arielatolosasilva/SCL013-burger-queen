@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import Product from "../Products/Product";
+import Product from "../Products/Product.jsx";
 import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
 import OrderModal from "../Order/OrderModal";
+import tea from '../../assets/images/tea.png';
+import rice from '../../assets/images/rice.png';
 
 
 class Menu extends Component {
@@ -39,22 +41,22 @@ let productPrice=quantityFatherChildren[1].outerText
    price:productPrice,
    quantity:quantityProducts,
  }
-  
+
  if(quantityProducts > 0){
   this.arrayProducts.push(productsResume)
-  console.log(this.arrayProducts)
+  /*console.log(this.arrayProducts)*/
  } else {
   let productIndex = this.arrayProducts.findIndex(product => product.name === productsResume.name)
   this.arrayProducts.splice(productIndex, 1)
-  console.log(this.arrayProducts)
+  /*console.log(this.arrayProducts)*/
  }
- 
+
  this.setState(
    {
     orderId: Math.floor(Math.random() * 8000),
-    products:this.arrayProducts, 
+    products:this.arrayProducts,
     total:this.sumTotal(this.arrayProducts),
-   
+
 
    }
    )
@@ -69,12 +71,16 @@ table = (e) => {
 
 
 componentDidUpdate(){
-  console.log(this.state)
+  /*console.log(this.state)*/
 }
 
   render() {
     // Uno u otro menú se guarda aquí dependiendo del resultado del if/else if
     let currentMenu = null;
+    let mainCourse = null;
+    let sideDish = null;
+    let drinks= null;
+    let extras=null;
     // Condicional según la propiedad type pasada en App.js al comp. Menu
     if (this.props.type === "breakfast") {
       let menuArray = Object.entries(DataMenu[0])[0][1].products;
@@ -86,29 +92,54 @@ componentDidUpdate(){
         );
       });
     } else if (this.props.type === "lunch-dinner") {
-      let menuArrayAcompañamiento = Object.entries(DataMenu[0])[1][1].Acompañamiento;
-      console.log(menuArrayAcompañamiento)
+      let menuArraySideDish = Object.entries(DataMenu[0])[1][1].Acompañamiento;
+      /*console.log(menuArraySideDish)*/
       let menuArrayMainCourse = Object.entries(DataMenu[0])[1][1].PlatoFondo;
-      console.log(menuArrayMainCourse)
+      /*console.log(menuArrayMainCourse)*/
       let menuArrayDrinks = Object.entries(DataMenu[0])[1][1].bebestibles;
-      console.log(menuArrayDrinks)
+      /*console.log(menuArrayDrinks)*/
       let menuArrayExtras = Object.entries(DataMenu[0])[1][1].extras;
-      console.log(menuArrayExtras)
+      /*console.log(menuArrayExtras)*/
+
+
       //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
-      currentMenu = (
-        <React.Fragment key="alm5">
-          <Product name="almuercito 1" price="$1000" qty="2" />
+      mainCourse =menuArrayMainCourse.map((product) => {
+        return (
+          <React.Fragment key={product.id}>
+            <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
+          </React.Fragment>
+        );
+      })
+
+    sideDish =menuArraySideDish.map((product) => {
+      return (
+        <React.Fragment key={product.id}>
+          <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
         </React.Fragment>
       );
-    }
+    })
+    drinks=menuArrayDrinks.map((product) => {
+      return (
+        <React.Fragment key={product.id}>
+          <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
+        </React.Fragment>
+      );
+    })
+    extras=menuArrayExtras.map((product) => {
+      return (
+        <React.Fragment key={product.id}>
+          <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
+        </React.Fragment>
+      );
+    })
+   }
     return (
       <React.Fragment>
         <section className={style.menu}>
           <div className={style.text}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
-          
-            <Table borderless className={style.menu}>
-            <span className={style.table}> N° Mesa </span>
+          <div className={style.contenedorTabla}>
+          <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
              <option value='1'>1 </option>
@@ -122,14 +153,27 @@ componentDidUpdate(){
              <option value='9'>9 </option>
              <option value='10'>10 </option>
              </select>
+            <Table borderless className={style.menu} >
 
               <tbody className={style.container}>
-                {currentMenu}
+              <td>Plato de Fondo</td>
+                {mainCourse}
+                <td>Acompañamiento</td>
+                {sideDish}
+                <td>Bebestible </td>
+                {drinks}
+                <td>Extras</td>
+                {extras}
+
               </tbody>
-             
+
             </Table>
           </div>
+          </div>
+          <img src={tea} className={style.tea}></img>
+          <img src={rice} className={style.rice}></img>
         </section>
+
         <OrderModal order={this.state} />
       </React.Fragment>
     );
