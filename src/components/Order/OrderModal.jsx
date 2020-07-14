@@ -32,11 +32,14 @@ function OrderModal(props) {
   const sendKitchen = () => {
   firebase.firestore().collection('resumen orden').add({
     information:props.order.products,
-    id: props.order.orderId
+    id: props.order.orderId,
+    state:'pending',
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+
   }).then(()=>{console.log('enviado')})
     }
-  
-  
+
+
 
     return (
         <React.Fragment>

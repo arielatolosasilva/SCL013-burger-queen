@@ -12,6 +12,8 @@ function Product(props) {
 
 
     return (
+      <React.Fragment>
+
       <tr className={style.space}>
         <td>{props.name}</td>
         <td>{props.price}</td>
@@ -31,6 +33,7 @@ function Product(props) {
           </select>
         </td>
       </tr>
+      </React.Fragment>
     );
 }
 
