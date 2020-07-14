@@ -6,6 +6,31 @@ import React, { Component } from 'react'
 
 
 
+const IncomingOrders = () => {
+  React.useEffect(()=>{
+    const obtenerPedido = async () => {
+      const db = firebase.firestore()
+      try {
+        
+      const data = await db.collection('resumen orden').get()
+      console.log(data.docs)
+      } catch(error){
+        console.log(error)
+      }
+    }
+    obtenerPedido()
+  }, [])
+  
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default IncomingOrders
+
+
 /*class IncomingOrders extends Component {
   constructor() {
     super();

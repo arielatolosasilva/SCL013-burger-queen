@@ -40,7 +40,7 @@ function OrderModal(props) {
 
     return (
         <React.Fragment>
-        <Button className={style.entrar} onClick={toggle}>
+        <Button className={style.entrarCocina} onClick={toggle}>
           Ver resumen
         </Button>
         <Modal  className={style.modal} contentClassName={style.modalContent} isOpen={modal} toggle={toggle}>
