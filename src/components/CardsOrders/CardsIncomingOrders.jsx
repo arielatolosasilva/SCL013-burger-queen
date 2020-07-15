@@ -4,27 +4,33 @@ import {
   CardTitle, CardSubtitle, CardLink,
 } from 'reactstrap';
 
-class CardsIncomingOrders extends Component {
-  render() {
+ const CardsIncomingOrders = (props) => {
+   console.log(props.data.orders[0].products)
+
+   const orders = props.data.orders.map(order => {
+     let products = order.products;
+     return (
+       <React.Fragment>
+         <Card style={{ width: '25rem' }}>
+           <CardBody>
+             <CardTitle>Mesa nro. {order.table}</CardTitle>
+             <CardText>
+               <p>{order.state}</p>
+             </CardText>
+           </CardBody>
+         </Card>
+       </React.Fragment>
+     )
+   })
     return (
       <div>
         <h1>Chef</h1>
         <h2> Pedidos entrantes</h2>
-
-        <Card style={{ width: '25rem' }}>
-          <CardBody>
-            <CardTitle>Card Title</CardTitle>
-            <CardSubtitle className="mb-2 text-muted">Card Subtitle</CardSubtitle>
-            <CardText>
-              hola
-            </CardText>
-            <CardLink href="#">Card Link</CardLink>
-            <CardLink href="#">Another Link</CardLink>
-          </CardBody>
-        </Card>
+          {orders}
+        
       </div>
     );
-  }
+
 }
 
 export default CardsIncomingOrders;

@@ -55,6 +55,40 @@
 .mainContainer{
   background-color: #CF152D;
   width: 100vw;
-  min-height: 64vh;
+  min-height: 80vhvh;
+}
+.diabolo{
+  position: absolute;
+    width: 26%;
+    height: 37%;
+    left: 37%;
+    top: 24%;
+}
+
+.optionBtn {
+    margin: 2rem;
+    width: 16rem;
+    height: -32%;
+    cursor: pointer;
+    background: rgba(230, 185, 69, 0.49);
+    border: none;
+    font-family: 'Sedgwick Ave', cursive;
+    padding: -0.5rem;
+    margin-top: 0%;
+}
+
+.btnContainer {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 68%;
+    width: 41%;
+    margin-top: 17%;
+    padding-top: -55%;
+    padding: -4%;
+    border-radius: 4px;
+    background: rgba(16, 17, 19, 0.35);
 }
 }
+
+

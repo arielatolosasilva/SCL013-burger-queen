@@ -71,7 +71,7 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <div>
+
         <Switch>
           <Route path="/" exact>
             {this.state.role ===  pathRole ? path : null}
@@ -107,12 +107,13 @@ class App extends Component {
             <Menu type="lunch-dinner" />
           </Route>
           <Route path="/chef" exact>
+            <Header/>
+            <IncomingOrders />
 
-       <IncomingOrders/>
 
           </Route>
         </Switch>
-        </div>
+
       </BrowserRouter>
     );
   }
