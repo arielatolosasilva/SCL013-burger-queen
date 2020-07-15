@@ -1,25 +1,10 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import React, {
-  useState,
-} from 'react';
-
+import React, { useState, } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  Button,
-  ModalBody,
-  Modal,
-  Form,
-  FormGroup,
-  Input,
-} from 'reactstrap';
-import firebase from 'firebase';
-import {
-  FontAwesomeIcon,
-} from '@fortawesome/react-fontawesome';
-import {
-  faKey,
-  faEnvelopeOpen,
-} from '@fortawesome/free-solid-svg-icons';
+import { Button, ModalBody, Modal, Form, FormGroup, Input } from 'reactstrap';
+import firebase from 'firebase/app';
+/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKey, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'; */
 import style from './ModalLogin.module.css';
 
 const ModalLogin = (props) => {

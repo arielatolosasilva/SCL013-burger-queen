@@ -14,11 +14,11 @@ class Menu extends Component {
   };
 
 
-  arrayProducts=[
+  arrayProducts = [
 
   ]
 
-sumTotal =(array) =>{
+sumTotal = (array) => {
   let suma = 0
   array.forEach(element => {
     let multiplication = element.quantity * element.price
@@ -28,18 +28,18 @@ sumTotal =(array) =>{
   return suma
 }
 
-resume = (e) =>{
-let quantityProducts=e.target.value
-let quantityFather= e.target.parentElement.parentElement
-let quantityFatherChildren= quantityFather.childNodes
-let productsName=quantityFatherChildren[0].innerText
-let productPrice=quantityFatherChildren[1].outerText
+resume = (e) => {
+  let quantityProducts = e.target.value
+  let quantityFather = e.target.parentElement.parentElement
+  let quantityFatherChildren = quantityFather.childNodes
+  let productsName = quantityFatherChildren[0].innerText
+  let productPrice = quantityFatherChildren[1].outerText
 
 
  let productsResume = {
-   name:productsName,
-   price:productPrice,
-   quantity:quantityProducts,
+   name: productsName,
+   price: productPrice,
+   quantity: quantityProducts,
  }
 
  if(quantityProducts > 0){
@@ -54,8 +54,8 @@ let productPrice=quantityFatherChildren[1].outerText
  this.setState(
    {
     orderId: Math.floor(Math.random() * 8000),
-    products:this.arrayProducts,
-    total:this.sumTotal(this.arrayProducts),
+    products: this.arrayProducts,
+    total: this.sumTotal(this.arrayProducts),
 
 
    }
@@ -79,8 +79,8 @@ componentDidUpdate(){
     let currentMenu = null;
     let mainCourse = null;
     let sideDish = null;
-    let drinks= null;
-    let extras=null;
+    let drinks = null;
+    let extras = null;
     let mainCourseTitle = null;
     let sideDishTitle = null;
     let drinksTitle = null;
@@ -152,6 +152,7 @@ componentDidUpdate(){
       );
     })
    }
+   // RETURN PRINCIPAL DEL COMPONENTE MENÚ
     return (
       <React.Fragment>
         <section className={style.menu}>
@@ -192,8 +193,8 @@ componentDidUpdate(){
             </Table>
           </div>
           </div>
-          <img src={tea} className={style.tea}></img>
-          <img src={rice} className={style.rice}></img>
+          <img src={tea} className={style.tea} alt="taza de té matcha"></img>
+          <img src={rice} className={style.rice} alt="onigiri (bolas de arroz)"></img>
         </section>
 
         <OrderModal order={this.state} />

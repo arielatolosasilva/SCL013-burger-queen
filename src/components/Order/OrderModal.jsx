@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Button,
-  ModalBody,
-  Modal,
-  Table
-} from "reactstrap";
+import { Button, ModalBody, Modal, Table } from "reactstrap";
 import style from '../ModalLogin/ModalLogin.module.css';
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 
 
 function OrderModal(props) {
