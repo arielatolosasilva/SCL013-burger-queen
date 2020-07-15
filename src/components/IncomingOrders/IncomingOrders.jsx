@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import style from './IncomingOrders.module.css'
 import CardsIncomingOrders from '../CardsOrders/CardsIncomingOrders.jsx';
 import firebase from 'firebase'
 
@@ -14,7 +13,6 @@ class IncomingOrders extends Component {
     const db = firebase.firestore()
     db.collection('resumen orden').onSnapshot((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        firebase.firestore.FieldValue.serverTimestamp()
         this.arr.push({
           products: doc.data().information,
           id: doc.id,
@@ -29,6 +27,7 @@ class IncomingOrders extends Component {
       })
    })
   }
+
 
   componentDidUpdate() {
     /* console.log(this.state.orders[0]);

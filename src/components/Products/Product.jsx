@@ -1,6 +1,5 @@
 
 import React from 'react';
-import {  Label, Input } from 'reactstrap';
 import style from './Products.module.css'
 
 
