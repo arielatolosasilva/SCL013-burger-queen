@@ -1,11 +1,11 @@
 
 import style from './IncomingOrders.module.css'
 import CardsIncomingOrders from '../CardsOrders/CardsIncomingOrders'
-import firebase from 'firebase'
+import firebase from'firebase'
 import React from 'react';
 
-function IncomingOrders(props) {
-  const [resumenOrden,setresumenOrden]= React.useState('')
+function IncomingOrders (props) {
+  const [resumenOrden,setresumenOrden]= React.useState([])
 
   React.useEffect(() => {
 
@@ -14,14 +14,14 @@ function IncomingOrders(props) {
             const data = db.collection('resumen orden').onSnapshot((querySnapshot) =>{
               const arr =[]
               querySnapshot.forEach((doc) => {
+
               firebase.firestore.FieldValue.serverTimestamp()
-                arr.push({ data: doc.data().information, id: doc.id, state:doc.data().state, date:doc.data().timestamp });
 
-
-
-
+                arr.push({ id: doc.id,...doc.data()});
+               console.log(arr)
               });
-              setresumenOrden([...resumenOrden,arr])
+
+              setresumenOrden([arr])
 
             })
 
@@ -33,37 +33,33 @@ function IncomingOrders(props) {
 
 }, [])
 
-React.useEffect(()=>{
+/*React.useEffect(()=>{
 /*resumenOrden.state*/
-console.log(resumenOrden);
+/*console.log(resumenOrden);
 //console.log(Object.entries(resumenOrden[0]))
 console.log(Array.isArray(resumenOrden[0]))
-console.log(resumenOrden[0][3])
 
 
-})
+
+/*})*/
 
   return (
     <div>
-      <p>Hola</p>
+      holaaaaa
 
 
 
 
-{/*<ul>
+<ul>
+<li>
 
-  { resumenOrden.map(item=> (
-    <li key={item.id}>
-{item.name}
-{console.log(item.name)}
-{item.quantity}
     </li>
 
 
-  )
 
-    )}
-  </ul>*/}
+
+
+  </ul>
     </div>
   );
 }

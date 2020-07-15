@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
 import diabolo from './assets/images/diabolo.png';
-import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
+import IncomingOrders from "./components/IncomingOrders/IncomingOrders.jsx";
 import OrderModal from "./components/Order/OrderModal.jsx";
 
 class App extends Component {
@@ -107,8 +107,8 @@ class App extends Component {
             <Menu type="lunch-dinner" />
           </Route>
           <Route path="/chef" exact>
-            <Header/>
-<IncomingOrders/>
+
+       <IncomingOrders/>
 
           </Route>
         </Switch>
