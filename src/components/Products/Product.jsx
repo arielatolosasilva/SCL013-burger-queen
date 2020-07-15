@@ -2,7 +2,6 @@
 import React from 'react';
 import {  Label, Input } from 'reactstrap';
 import style from './Products.module.css'
-import CounterOne from '../Counters/CounterOne'
 
 
 
@@ -13,12 +12,12 @@ function Product(props) {
 
     return (
       <React.Fragment>
-
+      
       <tr className={style.space}>
         <td>{props.name}</td>
         <td>{props.price}</td>
         <td>
-          <select onChange={props.change}  >
+          <select onChange={props.change}>
             <option value='0'>0</option>
              <option value='1'>1 </option>
              <option value='2'>2 </option>

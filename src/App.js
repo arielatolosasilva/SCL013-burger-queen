@@ -71,7 +71,7 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <div>
+    
         <Switch>
           <Route path="/" exact>
             {this.state.role ===  pathRole ? path : null}
@@ -112,7 +112,7 @@ class App extends Component {
 
           </Route>
         </Switch>
-        </div>
+      
       </BrowserRouter>
     );
   }
