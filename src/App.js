@@ -1,19 +1,17 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from "./components/Logo/Logo.jsx";
 import ModalLogin from "./components/ModalLogin/ModalLogin";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import Menu from "./components/Menu/Menu.jsx";
 import Header from "./components/Header/Header.jsx";
-import Order from "./components/Order/OrderModal.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
 import diabolo from './assets/images/diabolo.png';
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
-import OrderModal from "./components/Order/OrderModal.jsx";
 
 class App extends Component {
   state = {
@@ -81,7 +79,7 @@ class App extends Component {
           <Route path="/mesero" exact>
              <Header />
              <section className={style.mainContainer}>
-               <img src={diabolo} className={style.diabolo}></img>
+               <img src={diabolo} className={style.diabolo} alt="Máscara de demonio japonés"></img>
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
                 <Link to="/mesero/menu-desayuno">
