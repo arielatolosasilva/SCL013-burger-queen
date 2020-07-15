@@ -1,10 +1,10 @@
 import style from './IncomingOrders.module.css'
 import CardsIncomingOrders from '../CardsOrders/CardsIncomingOrders'
 import firebase from 'firebase'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function IncomingOrders(props) {
-  const [resumenOrden,setresumenOrden]= React.useState('')
+  const [resumenOrden,setResumenOrden]= React.useState('')
 
   React.useEffect(() => {
 
@@ -20,7 +20,9 @@ function IncomingOrders(props) {
 
 
               });
-              setresumenOrden([...resumenOrden,arr])
+              setResumenOrden({
+                ordenes: [...resumenOrden, ...arr]
+              })
 
             })
 
@@ -32,69 +34,13 @@ function IncomingOrders(props) {
 
 }, [])
 
-React.useEffect(()=>{
-/*resumenOrden.state*/
-console.log(resumenOrden);
-//console.log(Object.entries(resumenOrden[0]))
-console.log(Array.isArray(resumenOrden[0]))
-console.log(resumenOrden[0][3])
-
-
-})
+  
 
   return (
     <div>
-      <p>Hola</p>
-
-
-
-
-{/*<ul>
-
-  { resumenOrden.map(item=> (
-    <li key={item.id}>
-{item.name}
-{console.log(item.name)}
-{item.quantity}
-    </li>
-
-
-  )
-
-    )}
-  </ul>*/}
+      <CardsIncomingOrders />
     </div>
   );
 }
 
 export default IncomingOrders;
-
-/*class IncomingOrders extends Component {
-  constructor() {
-    super();
-    this.state = {
-    menuToChef:[]
-   }
-  /*const showOrderChef = () => {
-    firebase.firestore.Collection('orden resumen').onSnapShot().then((querySnapshot) => {
-      const chef = querySnapshot.docs.map(doc => doc.data());
-      this.setState({
-        menuToChef: chef
-      })
-    })
-  }
-  render()
-    return (
-      <div>
-        <div className={style.fatherCards}>
-          {showOrderChef}
-
-    <CardsIncomingOrders/>
-
-        </div>
-      </div>
-    )
-  }
-}
-
-export default IncomingOrders*/

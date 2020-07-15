@@ -81,6 +81,13 @@ componentDidUpdate(){
     let sideDish = null;
     let drinks= null;
     let extras=null;
+    let mainCourseTitle = null;
+    let sideDishTitle = null;
+    let drinksTitle = null;
+    let extrasTitle = null;
+
+
+
     // Condicional según la propiedad type pasada en App.js al comp. Menu
     if (this.props.type === "breakfast") {
       let menuArray = Object.entries(DataMenu[0])[0][1].products;
@@ -103,7 +110,10 @@ componentDidUpdate(){
 
 
       //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
-      mainCourse =menuArrayMainCourse.map((product) => {
+      mainCourse = menuArrayMainCourse.map((product) => {
+        if (menuArrayMainCourse.length > 0) {
+          mainCourseTitle = 'PLATO DE FONDO'
+        }
         return (
           <React.Fragment key={product.id}>
             <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
@@ -112,13 +122,19 @@ componentDidUpdate(){
       })
 
     sideDish =menuArraySideDish.map((product) => {
+      if (menuArraySideDish.length > 0) {
+        sideDishTitle = 'ACOMPAÑAMIENTOS'
+      }
       return (
         <React.Fragment key={product.id}>
           <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
         </React.Fragment>
       );
     })
-    drinks=menuArrayDrinks.map((product) => {
+    drinks = menuArrayDrinks.map((product) => {
+      if (menuArrayDrinks.length > 0) {
+        drinksTitle = 'BEBESTIBLES'
+      }
       return (
         <React.Fragment key={product.id}>
           <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
@@ -126,6 +142,9 @@ componentDidUpdate(){
       );
     })
     extras=menuArrayExtras.map((product) => {
+      if (menuArrayExtras.length > 0) {
+        extrasTitle = 'EXTRAS'
+      }
       return (
         <React.Fragment key={product.id}>
           <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
@@ -156,14 +175,17 @@ componentDidUpdate(){
             <Table borderless className={style.menu} >
 
               <tbody className={style.container}>
-              <td>Plato de Fondo</td>
-                {mainCourse}
-                <td>Acompañamiento</td>
-                {sideDish}
-                <td>Bebestible </td>
-                {drinks}
-                <td>Extras</td>
-                {extras}
+                {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
+                {this.props.type === 'breakfast' ? currentMenu : null}
+    
+                  <tr><td>{mainCourseTitle}</td></tr>
+                    {mainCourse}
+                  <tr><td>{sideDishTitle}</td></tr>
+                    {sideDish}
+                  <tr><td>{drinksTitle}</td></tr>
+                    {drinks}
+                  <tr><td>{extrasTitle}</td></tr>
+                    {extras}
 
               </tbody>
 

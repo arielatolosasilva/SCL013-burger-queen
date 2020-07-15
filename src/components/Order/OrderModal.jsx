@@ -13,8 +13,8 @@ import firebase from 'firebase'
 function OrderModal(props) {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-
-  console.log(props.order.products);
+  //props.order === this.state
+  //console.log(props.order.products);
   // props.order.products.map(product => console.log(product));
   let order = null;
   if (props.order.products !== undefined) {
@@ -31,8 +31,8 @@ function OrderModal(props) {
 
   const sendKitchen = () => {
   firebase.firestore().collection('resumen orden').add({
-    information:props.order.products,
-    id: props.order.orderId,
+    information: props.order.products,
+    /* id: props.order.orderId, */
     state:'pending',
     timestamp: firebase.firestore.FieldValue.serverTimestamp()
 
