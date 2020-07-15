@@ -58,11 +58,11 @@
   min-height: 80vhvh;
 }
 .diabolo{
-  position: absolute;
-    width: 26%;
-    height: 37%;
-    left: 37%;
-    top: 24%;
+    position: absolute;
+    width: 23%;
+    height: 34%;
+    left: 38%;
+    top: 26%;
 }
 
 .optionBtn {
@@ -82,8 +82,8 @@
     flex-direction: column;
     align-items: center;
     height: 68%;
-    width: 41%;
-    margin-top: 17%;
+    width: 28%;
+    margin-top: 14%;
     padding-top: -55%;
     padding: -4%;
     border-radius: 4px;

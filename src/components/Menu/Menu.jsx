@@ -3,7 +3,7 @@ import Product from "../Products/Product.jsx";
 import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
-import OrderModal from "../Order/OrderModal";
+import OrderModal from "../Order/OrderModal.jsx";
 import tea from '../../assets/images/tea.png';
 import rice from '../../assets/images/rice.png';
 
@@ -156,14 +156,15 @@ componentDidUpdate(){
             <Table borderless className={style.menu} >
 
               <tbody className={style.container}>
-              <td>Plato de Fondo</td>
+                {currentMenu}
+              {/*<td>Plato de Fondo</td>
                 {mainCourse}
                 <td>Acompañamiento</td>
                 {sideDish}
                 <td>Bebestible </td>
                 {drinks}
                 <td>Extras</td>
-                {extras}
+              {extras}*/}
 
               </tbody>
 

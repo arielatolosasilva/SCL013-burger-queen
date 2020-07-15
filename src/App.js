@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //importando los componentes
 import Logo from "./components/Logo/Logo.jsx";
-import ModalLogin from "./components/ModalLogin/ModalLogin";
+import ModalLogin from "./components/ModalLogin/ModalLogin.jsx";
 import firebase from "firebase";
 import Menu from "./components/Menu/Menu.jsx";
 import Header from "./components/Header/Header.jsx";
@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
 import diabolo from './assets/images/diabolo.png';
-import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
+import IncomingOrders from "./components/IncomingOrders/IncomingOrders.jsx";
 import OrderModal from "./components/Order/OrderModal.jsx";
 
 class App extends Component {
@@ -108,7 +108,7 @@ class App extends Component {
           </Route>
           <Route path="/chef" exact>
             <Header/>
-
+            <IncomingOrders />
 
           </Route>
         </Switch>

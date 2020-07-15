@@ -17,8 +17,6 @@
 
 .entrar {
     position: absolute;
-    width: 145px;
-    height: 45px;
     left: 40%;
     top: 88%;
     border: none;
@@ -42,9 +40,9 @@
 .entrar:not(:disabled):not(.disabled){
   background-color: #CF152D;
     margin-top: -9.8%;
-    width: 19%;
+    width: 12%;
     height: 7%;
-    margin-left: 1%;
+    margin-left: 4%;
     font-size: 1.3em;
 }
 
@@ -81,8 +79,8 @@
 
 @media (min-width: 1040px) {
   .entrar {
-    left: 44%;
-    top: 80%;
+    left: 40%;
+    top: 105%;
   }
 
   .modal {
@@ -98,12 +96,12 @@
   }
   
   .entrarCocina:not(:disabled):not(.disabled){
-    background-color:#DE863E;
+    background-color: #DE863E;
     font-family: 'Sedgwick Ave', cursive;
-    margin-top: 2.2%;
-    width: 10%;
+    margin-top: -7.8%;
+    width: 11%;
     height: 7%;
-    margin-left: 1%;
+    margin-left: 22%;
     font-size: 1.3em;
   }
   
