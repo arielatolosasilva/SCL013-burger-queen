@@ -36,7 +36,7 @@ let productsName=quantityFatherChildren[0].innerText
 let productPrice=quantityFatherChildren[1].outerText
 
 
- let productsResume={
+ let productsResume = {
    name:productsName,
    price:productPrice,
    quantity:quantityProducts,
@@ -65,13 +65,13 @@ let productPrice=quantityFatherChildren[1].outerText
 table = (e) => {
   let tableNumber = e.target.value
   this.setState({
-    table:tableNumber
+    table: tableNumber
   })
 }
 
 
 componentDidUpdate(){
-  /*console.log(this.state)*/
+  console.log(this.state)
 }
 
   render() {
