@@ -2,3 +2,9 @@
 background-color: #8A8081;
 height: 100vh;
 }
+.container {
+  background-color: #CF152D;
+  min-height: 100vh;
+  height: auto;
+
+}

@@ -1,8 +1,12 @@
 import React from 'react';
 import {
   Card, CardBody,
-  CardTitle
+  CardTitle,
+  Button
 } from 'reactstrap';
+import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
+import olasCard from '../../assets/images/olitascard.png'
+import Contador from '../Contador/Contador';
 
  const CardsIncomingOrders = (props) => {
     let orders = null;
@@ -19,27 +23,46 @@ import {
 
         return (
           <React.Fragment key={Math.floor(Math.random() * 1000)}>
-            <Card style={{ width: '25rem' }}>
-              <CardBody>
-                <CardTitle><b>Mesa nro. {order.table}</b></CardTitle>
+
+            <Card style={{ width: '15rem'}, { marginBottom: '4rem' }}   className={style.motherCards}>
+              <CardBody className={style.cardBody}>
+                <CardTitle><p className={style.nTable}>Mesa nro. {order.table}</p></CardTitle>
                   <u>{order.state}</u>
                   <ul>
                     {names}
                   </ul>
+
               </CardBody>
+
+
+              <div className={style.fatherButton}>
+              <Button  className={style.optionBtn}>
+                      Preparando
+                    </Button>
+                    <Button  className={style.optionBtn}>
+                    Terminado
+                    </Button>
+                    </div>
+                    <Contador/>
+                    <img src={olasCard} className={style.olasCards} alt='olas'/>
             </Card>
+
           </React.Fragment>
         )
       })
     }
-   
+
     return (
-      <div>
-        <h1>Chef</h1>
-        <h2> Pedidos entrantes</h2>
+      <React.Fragment>
+        <h1 className={style.chef}>Chef</h1>
+        <h2 className={style.incomingOrders}> Pedidos entrantes</h2>
+
+      <div className={style.fatherCards}>
+
           {orders}
-        
+
       </div>
+      </React.Fragment>
     );
 
 }

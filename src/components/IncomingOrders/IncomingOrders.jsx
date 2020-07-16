@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardsIncomingOrders from '../CardsOrders/CardsIncomingOrders.jsx';
 import firebase from 'firebase'
-
+import style from '../../components/IncomingOrders/IncomingOrders.module.css'
 class IncomingOrders extends Component {
   state = {
     orders: [{}]
@@ -38,7 +38,7 @@ class IncomingOrders extends Component {
 
   render() {
     return (
-      <div>
+      <div className={style.container}>
         <CardsIncomingOrders data={this.state} />
         {/* {console.log(this.state.orders[0].id)} */}
       </div>
