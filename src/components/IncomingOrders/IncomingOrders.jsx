@@ -63,7 +63,6 @@ export default IncomingOrders;
 
 
 
-              firebase.firestore.FieldValue.serverTimestamp()
 
 
 
