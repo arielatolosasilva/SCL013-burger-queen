@@ -6,6 +6,10 @@ import style from "./Menu.module.css";
 import OrderModal from "../Order/OrderModal.jsx";
 import tea from '../../assets/images/tea.png';
 import rice from '../../assets/images/rice.png';
+import sake from '../../assets/images/sake.png';
+import ramenuno from '../../assets/images/ramenuno.png';
+import ramendos from '../../assets/images/ramendos.png';
+import ramentres from '../../assets/images/ramentres.png';
 
 
 class Menu extends Component {
@@ -190,8 +194,10 @@ componentDidUpdate(){
 
             </Table>
         
-          <img src={this.props.type === 'breakfast' ? tea : null} className={style.tea} alt="taza de té matcha"></img>
-          <img src={this.props.type === 'breakfast' ? rice : null} className={style.rice} alt="onigiri (bolas de arroz)"></img>
+          <img src={this.props.type === 'breakfast' ? tea : sake} className={style.tea} alt="taza de té matcha"></img>
+          <img src={this.props.type === 'breakfast' ? rice : ramenuno} className={style.rice} alt="onigiri (bolas de arroz)"></img>
+          <img src={this.props.type === 'breakfast' ? rice : ramendos} className={style.rice} alt="onigiri (bolas de arroz)"></img>
+          <img src={this.props.type === 'breakfast' ? rice : ramentres} className={style.rice} alt="onigiri (bolas de arroz)"></img>
         </section>
 
         <OrderModal order={this.state} />
