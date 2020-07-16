@@ -32,7 +32,7 @@ function OrderModal(props) {
     state:'Pendiente',
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 
-  }).then(()=>{console.log('enviado')})
+  }).then(()=>{alert('Pedido enviado a cocina')})
     }
 
 

@@ -11,7 +11,7 @@
 }
 
 #form{
-  display: flex;
+
 
 }
 
@@ -28,7 +28,7 @@
     background-color: #CF152D;
     display: flex;
     justify-content: center;
-  
+
 }
 
 .entrar:hover {
@@ -96,7 +96,7 @@
     background-color: #CF152D;
     outline: none;
   }
-  
+
   .entrarCocina:not(:disabled):not(.disabled){
     background-color:#DE863E;
     font-family: 'Sedgwick Ave', cursive;
@@ -106,7 +106,7 @@
     margin-left: 1%;
     font-size: 1.3em;
   }
-  
+
 }
 
 

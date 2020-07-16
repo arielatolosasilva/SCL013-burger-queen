@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
 import {
-  Card, CardBody,
-  CardTitle,
   Button
 } from 'reactstrap';
 
@@ -64,8 +62,8 @@ class Contador extends Component {
     return (
       <div >
         <div className={style.fatherButton}>
-        <button  className={style.optionBtn} onClick={this.startTimer}>Preparando</button>
-        <button  className={style.optionBtn} onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Terminado</button>
+        <Button  className={style.optionBtn} onClick={this.startTimer}>Preparando</Button>
+        <Button  className={style.optionBtn} onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Terminado</Button>
         </div>
         <div className={style.time}>
          m: {this.state.time.m} s: {this.state.time.s}

@@ -64,9 +64,13 @@ resume = (e) => {
 
 table = (e) => {
   let tableNumber = e.target.value
+  if(tableNumber ===0 ){
+    alert('cero?')
+  }else {
   this.setState({
     table: tableNumber
   })
+}
 }
 
 
@@ -157,7 +161,7 @@ componentDidUpdate(){
       <React.Fragment>
         <section className={style.menu}>
           <div className={style.text}>
-          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+
           <div className={style.contenedorTabla}>
           <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
@@ -178,7 +182,7 @@ componentDidUpdate(){
               <tbody className={style.container}>
                 {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
                 {this.props.type === 'breakfast' ? currentMenu : null}
-    
+
                   <tr><td>{mainCourseTitle}</td></tr>
                     {mainCourse}
                   <tr><td>{sideDishTitle}</td></tr>
