@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Card, CardBody,
   CardTitle,
+  Button
 } from 'reactstrap';
 import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
 import olasCard from '../../assets/images/olitascard.png'
@@ -47,6 +48,7 @@ import Contador from '../Contador/Contador';
 
                     <Contador/>
                     <img src={olasCard} className={style.olasCards} alt='olas'/>
+                    </div>
              </Card>
 
           </React.Fragment>

@@ -1,12 +1,11 @@
 .mainContainer {
-  font-family: 'Sedgwick Ave',
-  cursive;
-  color: white;
-  background-color: #CF152D;
-  width: 100vw;
-  margin-top: 0.5rem;
-  margin-bottom: -10rem;
-  height: 85vh;
+    font-family: 'Sedgwick Ave', cursive;
+    color: white;
+    background-color: #CF152D;
+    width: 100vw;
+    margin-top: -0.5rem;
+    margin-bottom: -10rem;
+    height: 112vh;
 }
 
 .menu {
@@ -74,6 +73,12 @@ table{
     }
     .tea{
     margin-top: -32%;
+    }
+
+    .table{
+        margin-left: 4%;
+        background-color: #DE863E;
+        border-radius: 4px;
     }
 }
 
