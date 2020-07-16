@@ -64,13 +64,9 @@ resume = (e) => {
 
 table = (e) => {
   let tableNumber = e.target.value
-  if(tableNumber ===0 ){
-    alert('cero?')
-  }else {
   this.setState({
     table: tableNumber
   })
-}
 }
 
 

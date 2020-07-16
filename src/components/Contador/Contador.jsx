@@ -60,7 +60,8 @@ class Contador extends Component {
 
   render() {
     return (
-      <div >
+
+      <div>
         <div className={style.fatherButton}>
         <Button  className={style.optionBtn} onClick={this.startTimer}>Preparando</Button>
         <Button  className={style.optionBtn} onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Terminado</Button>
@@ -68,6 +69,9 @@ class Contador extends Component {
         <div className={style.time}>
          m: {this.state.time.m} s: {this.state.time.s}
          </div>
+      
+        
+
       </div>
     );
   }

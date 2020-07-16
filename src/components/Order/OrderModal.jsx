@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, ModalBody, Modal, Table } from "reactstrap";
 import style from '../ModalLogin/ModalLogin.module.css';
 import firebase from 'firebase/app'
+import styledos from './OrderModal.module.css';
 
 
 function OrderModal(props) {
@@ -38,7 +39,7 @@ function OrderModal(props) {
 
 
     return (
-        <React.Fragment>
+        <div className={styledos.buttomContainer}>
         <Button className={style.entrarCocina} onClick={toggle}>
           Ver resumen
         </Button>
@@ -52,7 +53,7 @@ function OrderModal(props) {
           </ModalBody>
 
         </Modal>
-    </React.Fragment>
+    </div>
   );
 }
 

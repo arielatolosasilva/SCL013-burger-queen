@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Card, CardBody,
   CardTitle,
+  Button
 } from 'reactstrap';
 import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
 import olasCard from '../../assets/images/olitascard.png'
@@ -25,7 +26,7 @@ import Contador from '../Contador/Contador';
 
             <Card style={{ width: '15rem'}, { marginBottom: '4rem' }}   className={style.motherCards}>
               <CardBody className={style.cardBody}>
-                <CardTitle><p className={style.nTable}>Mesa nro. {order.table}</p></CardTitle>
+                <CardTitle><p className={style.nTable}>Mesa nro. {order.table} {order.date[0]}</p></CardTitle>
                   <u>{order.state}</u>
                   <ul>
                     {names}
@@ -35,9 +36,20 @@ import Contador from '../Contador/Contador';
 
 
 
+
+
+              <div className={style.fatherButton}>
+                    <Button  className={style.optionBtn}>
+                      Preparando
+                    </Button>
+                    <Button  className={style.optionBtn}>
+                    Terminado
+                    </Button>
+
                     <Contador/>
                     <img src={olasCard} className={style.olasCards} alt='olas'/>
-            </Card>
+                    </div>
+             </Card>
 
           </React.Fragment>
         )

@@ -1,15 +1,13 @@
 .header {
-    width: 100vw;
-    height: 28vh;
-    left: 0px;
-    top: 225px;
-    background: #101113;
-    background-image: url('../../assets/images/olitas.png');
-    background-repeat: no-repeat;
-    background-position: relative;
-    background-position: right;
-    background-size: 49vw;
-    margin-bottom: -18px;
+  width: 100vw;
+  height: 28vh;
+  background: #101113;
+  background-image: url(/static/media/olitas.74be3b79.png);
+  background-repeat: no-repeat;
+  background-position: relative;
+  background-position: right;
+  background-size: 52vw;
+  margin-bottom: -18px;
 }
 .fatherLogo {
   
@@ -22,4 +20,16 @@
     width: 15vw;
     height: 14vw;
   }
+  .header {
+    width: 100vw;
+    height: 30vh;
+    background: #101113;
+    background-image: url(/static/media/olitas.74be3b79.png);
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-position: right;
+    background-size: 40vw;
+    margin-bottom: -18px;
 }
+}
+
