@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
+import {
+  Card, CardBody,
+  CardTitle,
+  Button
+} from 'reactstrap';
 
 class Contador extends Component {
   constructor() {
@@ -56,11 +62,21 @@ class Contador extends Component {
 
   render() {
     return (
+
+      <div >
+        <div className={style.fatherButton}>
+        <button  className={style.optionBtn} onClick={this.startTimer}>Preparando</button>
+        <button  className={style.optionBtn} onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Terminado</button>
+        </div>
+        <div className={style.time}>
+         m: {this.state.time.m} s: {this.state.time.s}
+
       <div>
         <button onClick={this.startTimer}>Start</button>
         m: {this.state.time.m} s: {this.state.time.s}
 
         <button onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Stop</button>
+
       </div>
     );
   }

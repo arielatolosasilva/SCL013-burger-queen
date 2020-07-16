@@ -58,3 +58,8 @@
 .fatherButton{
   display:flex;
 }
+.time{
+  text-align: center;
+  font-family: 'Sedgwick Ave',
+  cursive;
+}
