@@ -36,6 +36,10 @@ class Contador extends Component {
     }
   }
 
+  timerHandler(timer, seconds, minutes) {
+    clearInterval(this.timer)
+    console.log('minutos: ' + minutes, 'segundos: ' + seconds);
+  }
   countDown() {
     // Remove one second, set state so a re-render happens.
     const seconds = this.state.seconds + 1;
@@ -54,8 +58,9 @@ class Contador extends Component {
     return (
       <div>
         <button onClick={this.startTimer}>Start</button>
-        m:
-        {this.state.time.m} s: {this.state.time.s}
+        m: {this.state.time.m} s: {this.state.time.s}
+
+        <button onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Stop</button>
       </div>
     );
   }
