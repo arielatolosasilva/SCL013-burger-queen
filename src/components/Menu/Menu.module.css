@@ -1,10 +1,24 @@
-.menu{
-    background: #CF152D;
-    font-family: 'Sedgwick Ave', cursive;
-    color: white;
-    padding: -2rem;
-    width: 100;
-    padding-bottom: 3rem;
+.mainContainer {
+  font-family: 'Sedgwick Ave',
+  cursive;
+  color: white;
+  background-color: #CF152D;
+  width: 100vw;
+  margin-top: 0.5rem;
+  margin-bottom: -10rem;
+  height: 85vh;
+}
+
+.menu {
+        background: #CF152D;
+        font-family: 'Sedgwick Ave',
+        cursive;
+        color: white;
+        padding: -2rem;
+        width: 51vw;
+        padding-bottom: 3rem;
+        margin-bottom: -5rem;
+        margin-top: 1rem;
 }
 
 .menuDesayuno {
@@ -21,10 +35,8 @@
     margin-right: 20%;
     display: table;
     margin-bottom: 2%;
-    border: 1px solid white;
 }
 .contenedorTabla{
-    border: 1px solid white;
     width: 51%;
     margin-left: 3%;
     margin-top: -3%;
@@ -47,9 +59,7 @@
     margin-left: 77%;
     margin-top: -24%;
 }
-.menuContainer{
-border: 1px solid white;
-}
+
 table{
   border-collapse: none !important;
 }
