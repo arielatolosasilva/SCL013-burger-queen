@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card, CardBody,
   CardTitle,
-  Button
 } from 'reactstrap';
 import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
 import olasCard from '../../assets/images/olitascard.png'
@@ -35,6 +34,9 @@ import Contador from '../Contador/Contador';
               </CardBody>
 
 
+
+
+
               <div className={style.fatherButton}>
                     <Button  className={style.optionBtn}>
                       Preparando
@@ -42,7 +44,7 @@ import Contador from '../Contador/Contador';
                     <Button  className={style.optionBtn}>
                     Terminado
                     </Button>
-                    </div>
+
                     <Contador/>
                     <img src={olasCard} className={style.olasCards} alt='olas'/>
              </Card>
