@@ -1,0 +1,65 @@
+.fatherCards{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+}
+
+
+.cardBody{
+  background-color: #CF152D;
+  color: white;
+  font-family: 'Sedgwick Ave', cursive;
+}
+.motherCards{
+  margin: 5px;
+  background-color: #CF152D;
+  border: 1px solid #E8FC07;
+  margin-left: 3%;
+  margin-top: 4%;
+}
+.olasCards{
+  width: 100%;
+}
+.nTable{
+  color: black;
+  font-family: 'Sedgwick Ave', cursive;
+  margin-bottom: 2rem;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: 1%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.chef{
+  color: white;
+  font-family: 'Sedgwick Ave', cursive;
+  margin-bottom: 2rem;
+  padding-top: 2%;
+  font-size: 1.5rem;
+  margin-left: 1%;
+
+}
+.incomingOrders{
+  color: white;
+  font-family: 'Sedgwick Ave', cursive;
+  text-align: center;
+  margin-top: -8%;
+  font-size: 1.4rem;
+}
+.optionBtn {
+  margin: 1rem;
+  width: 15rem;
+  cursor: pointer;
+  background:  rgba(230, 185, 69, 0.49);;
+  border: none;
+  font-family: 'Sedgwick Ave',
+  cursive;
+  padding: 0.5rem;
+}
+.fatherButton{
+  display:flex;
+}
+.time{
+  text-align: center;
+  font-family: 'Sedgwick Ave',
+  cursive;
+}

@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Button,
-  ModalBody,
-  Modal,
-  Table
-} from "reactstrap";
+import { Button, ModalBody, Modal, Table } from "reactstrap";
 import style from '../ModalLogin/ModalLogin.module.css';
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import styledos from './OrderModal.module.css';
 
 
 function OrderModal(props) {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-
-  console.log(props.order.products);
+  //props.order === this.state
+  //console.log(props.order.products);
   // props.order.products.map(product => console.log(product));
   let order = null;
   if (props.order.products !== undefined) {
@@ -31,16 +27,20 @@ function OrderModal(props) {
 
   const sendKitchen = () => {
   firebase.firestore().collection('resumen orden').add({
-    information:props.order.products,
-    id: props.order.orderId
+    information: props.order.products,
+    table: props.order.table,
+    /* id: props.order.orderId, */
+    state:'Pendiente',
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+
   }).then(()=>{console.log('enviado')})
     }
-  
-  
+
+
 
     return (
-        <React.Fragment>
-        <Button className={style.entrar} onClick={toggle}>
+        <div className={styledos.buttomContainer}>
+        <Button className={style.entrarCocina} onClick={toggle}>
           Ver resumen
         </Button>
         <Modal  className={style.modal} contentClassName={style.modalContent} isOpen={modal} toggle={toggle}>
@@ -53,7 +53,7 @@ function OrderModal(props) {
           </ModalBody>
 
         </Modal>
-    </React.Fragment>
+    </div>
   );
 }
 

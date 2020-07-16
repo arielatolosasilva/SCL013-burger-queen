@@ -17,33 +17,33 @@
 
 .entrar {
     position: absolute;
-    width: 145px;
-    height: 45px;
     left: 40%;
     top: 88%;
     border: none;
     font-family: 'Sedgwick Ave', cursive;
     font-size: 23px;
     color: #FFFFFF;
-    background-color: #ED1522;
+    background-color: #CF152D;
     display: flex;
     justify-content: center;
   
 }
 
 .entrar:hover {
-  background-color: #ED1522;
+  background-color: #CF152D;
 }
 .entrar:focus {
-  background-color: #ED1522;
+  background-color: #CF152D;
   outline: none;
 }
 
 .entrar:not(:disabled):not(.disabled){
-  background-color: #ED1522;
-  margin-top: -5%;
-    width: 13%;
+  background-color: #CF152D;
+    margin-top: -9.8%;
+    width: 12%;
+    height: 7%;
     margin-left: 4%;
+    font-size: 1.3em;
 }
 
 .modalContent {
@@ -66,19 +66,23 @@
 }
 
 .entrarCocina {
-  background-color: #ED1522;
-  top: 141%;
-  left: 72%;
+  background-color: #DE863E;
+  font-family: 'Sedgwick Ave',
+  cursive;
   width: 20%;
   height: 7%;
+  /* margin-top: -14%; */
+  margin-left: 14%;
   text-align: center;
   font-size: 1em;
+  border: none;
+  margin-bottom: -9rem;
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .entrar {
-    left: 44%;
-    top: 80%;
+    left: 40%;
+    top: 105%;
   }
 
   .modal {
@@ -86,16 +90,24 @@
     left: -9px;
   }
   .entrar:hover {
-    background-color: #ED1522;
+    background-color: #CF152D;
   }
   .entrar:focus {
-    background-color: #ED1522;
+    background-color: #CF152D;
     outline: none;
   }
   
-  .entrar:not(:disabled):not(.disabled){
-    background-color: #ED1522;
+  .entrarCocina:not(:disabled):not(.disabled){
+    background-color: #DE863E;
+    font-family: 'Sedgwick Ave', cursive;
+    margin-top: -1%;
+    width: 11%;
+    height: 7%;
+    margin-left: 18%;
+    font-size: 1.3em;
+    margin-bottom: -3rem;
   }
+  
 }
 
 
