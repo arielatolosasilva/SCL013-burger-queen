@@ -29,7 +29,7 @@ function OrderModal(props) {
     information: props.order.products,
     table: props.order.table,
     /* id: props.order.orderId, */
-    state:'pending',
+    state:'Pendiente',
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 
   }).then(()=>{console.log('enviado')})
