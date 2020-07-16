@@ -26,7 +26,7 @@ import Contador from '../Contador/Contador';
 
             <Card style={{ width: '15rem'}, { marginBottom: '4rem' }}   className={style.motherCards}>
               <CardBody className={style.cardBody}>
-                <CardTitle><p className={style.nTable}>Mesa nro. {order.table}</p></CardTitle>
+                <CardTitle><p className={style.nTable}>Mesa nro. {order.table} {order.date[0]}</p></CardTitle>
                   <u>{order.state}</u>
                   <ul>
                     {names}
