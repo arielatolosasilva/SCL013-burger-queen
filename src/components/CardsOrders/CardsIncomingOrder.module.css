@@ -63,3 +63,8 @@
   font-family: 'Sedgwick Ave',
   cursive;
 }
+@media (min-width: 1024px) {
+  .incomingOrders{
+    margin-top: -5%;
+  }
+}
