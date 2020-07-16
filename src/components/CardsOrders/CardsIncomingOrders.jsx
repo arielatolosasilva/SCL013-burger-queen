@@ -35,9 +35,19 @@ import Contador from '../Contador/Contador';
 
 
 
+
+
+              <div className={style.fatherButton}>
+                    <Button  className={style.optionBtn}>
+                      Preparando
+                    </Button>
+                    <Button  className={style.optionBtn}>
+                    Terminado
+                    </Button>
+
                     <Contador/>
                     <img src={olasCard} className={style.olasCards} alt='olas'/>
-            </Card>
+             </Card>
 
           </React.Fragment>
         )

@@ -155,10 +155,8 @@ componentDidUpdate(){
    // RETURN PRINCIPAL DEL COMPONENTE MENÚ
     return (
       <React.Fragment>
-        <section className={style.menu}>
-          <div className={style.text}>
+        <section className={style.mainContainer}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
-          <div className={style.contenedorTabla}>
           <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
@@ -191,8 +189,7 @@ componentDidUpdate(){
               </tbody>
 
             </Table>
-          </div>
-          </div>
+        
           <img src={tea} className={style.tea} alt="taza de té matcha"></img>
           <img src={rice} className={style.rice} alt="onigiri (bolas de arroz)"></img>
         </section>
