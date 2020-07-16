@@ -190,8 +190,8 @@ componentDidUpdate(){
 
             </Table>
         
-          <img src={tea} className={style.tea} alt="taza de té matcha"></img>
-          <img src={rice} className={style.rice} alt="onigiri (bolas de arroz)"></img>
+          <img src={this.props.type === 'breakfast' ? tea : null} className={style.tea} alt="taza de té matcha"></img>
+          <img src={this.props.type === 'breakfast' ? rice : null} className={style.rice} alt="onigiri (bolas de arroz)"></img>
         </section>
 
         <OrderModal order={this.state} />
