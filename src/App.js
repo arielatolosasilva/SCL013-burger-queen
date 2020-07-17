@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 //importando los componentes
 import Logo from "./components/Logo/Logo.jsx";
 import ModalLogin from "./components/ModalLogin/ModalLogin";
@@ -10,8 +10,11 @@ import Header from "./components/Header/Header.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "reactstrap";
 import style from "./App.module.css";
-import diabolo from './assets/images/diabolo.png';
+import diabolo from "./assets/images/diabolo.png";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
+import atras from "./assets/images/atras.png";
+import OrdersOk from "./components/ModalOrdenOk/OrdersOk.jsx";
+
 
 class App extends Component {
   state = {
@@ -69,51 +72,61 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-
         <Switch>
           <Route path="/" exact>
-            {this.state.role ===  pathRole ? path : null}
-            <Logo/>
-            <ModalLogin/>
+            {this.state.role === pathRole ? path : null}
+            <Logo />
+            <ModalLogin />
           </Route>
           <Route path="/mesero" exact>
-             <Header />
-             <section className={style.mainContainer}>
-               <img src={diabolo} className={style.diabolo} alt="Máscara de demonio japonés"></img>
+            <Header />
+            <section className={style.mainContainer}>
+              <OrdersOk/>
+              <img
+                src={diabolo}
+                className={style.diabolo}
+                alt="Máscara de demonio japonés"
+              ></img>
+
               <div className={style.btnContainer}>
                 <h4 className={style.meseroH1}>Mesero</h4>
                 <Link to="/mesero/menu-desayuno">
-                    <Button  className={style.optionBtn}>
-                      Menú desayuno
-                    </Button>
-                  </Link>
-                  <Link to="/mesero/menu-almuerzo-cena">
-                    <Button className={style.optionBtn}>
-                      Menú almuerzo y cena
-                    </Button>
-                  </Link>
+                  <Button className={style.optionBtn}>Menú desayuno</Button>
+                </Link>
+                <Link to="/mesero/menu-almuerzo-cena">
+                  <Button className={style.optionBtn}>
+                    Menú almuerzo y cena
+                  </Button>
+                </Link>
               </div>
-             </section>
+
+            </section>
           </Route>
           {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
-            <Header/>
-            <Menu type="breakfast"/>
+            <Header />
+
+            <Menu type="breakfast" />
+            <Link to="/mesero">
+              <img src={atras} alt="atras" />
+            </Link>
           </Route>
           <Route path="/mesero/menu-desayuno/resumen-pedido">
             <Header/>
             {/* <Order /> */}
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
-            <Header/>
+            <Header />
             <Menu type="lunch-dinner" />
+            <Link to="/mesero">
+              <img src={atras} alt="atras" />
+            </Link>
           </Route>
           <Route path="/chef" exact>
-            <Header/>
+            <Header />
             <IncomingOrders />
           </Route>
         </Switch>
-
       </BrowserRouter>
     );
   }

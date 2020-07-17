@@ -1,27 +1,26 @@
-.fatherCards{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+.fatherCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-
-.cardBody{
-  background-color: #CF152D;
+.cardBody {
+  background-color: #cf152d;
   color: white;
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: "Sedgwick Ave", cursive;
 }
-.motherCards{
+.motherCards {
   margin: 5px;
-  background-color: #CF152D;
-  border: 1px solid #E8FC07;
+  background-color: #cf152d;
+  border: 1px solid #e8fc07;
   margin-left: 3%;
   margin-top: 4%;
 }
-.olasCards{
+.olasCards {
   width: 100%;
 }
-.nTable{
+.nTable {
   color: black;
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: "Sedgwick Ave", cursive;
   margin-bottom: 2rem;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -29,18 +28,17 @@
   text-align: center;
   font-size: 1.2rem;
 }
-.chef{
+.chef {
   color: white;
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: "Sedgwick Ave", cursive;
   margin-bottom: 2rem;
   padding-top: 2%;
   font-size: 1.5rem;
   margin-left: 1%;
-
 }
-.incomingOrders{
+.incomingOrders {
   color: white;
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: "Sedgwick Ave", cursive;
   text-align: center;
   margin-top: -8%;
   font-size: 1.4rem;
@@ -49,22 +47,20 @@
   margin: 1rem;
   width: 15rem;
   cursor: pointer;
-  background:  rgba(230, 185, 69, 0.49);;
+  background: rgba(230, 185, 69, 0.49);
   border: none;
-  font-family: 'Sedgwick Ave',
-  cursive;
+  font-family: "Sedgwick Ave", cursive;
   padding: 0.5rem;
 }
-.fatherButton{
-  display:flex;
+.fatherButton {
+  display: flex;
 }
-.time{
+.time {
   text-align: center;
-  font-family: 'Sedgwick Ave',
-  cursive;
+  font-family: "Sedgwick Ave", cursive;
 }
 @media (min-width: 1024px) {
-  .incomingOrders{
+  .incomingOrders {
     margin-top: -5%;
   }
 }

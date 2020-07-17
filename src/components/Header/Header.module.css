@@ -10,12 +10,11 @@
   margin-bottom: -18px;
 }
 .fatherLogo {
-  
   display: flex;
   justify-content: center;
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .logoHeader {
     width: 15vw;
     height: 14vw;
@@ -30,6 +29,5 @@
     background-position: right;
     background-size: 40vw;
     margin-bottom: -18px;
+  }
 }
-}
-

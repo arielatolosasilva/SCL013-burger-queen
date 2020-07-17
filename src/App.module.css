@@ -31,10 +31,10 @@
     min-height: 83vh;
     display: flex;
     justify-content: center;
-   
+
 }
 .diabolo{
-      
+
       position: absolute;
       width: 25%;
       height: 30%;
@@ -50,7 +50,10 @@
     border-bottom: 2px solid white;
     padding-top: 1%;
 }
-
+.ok{
+  width: 41px;
+height: 42px;
+}
 @media (min-width: 1040px){
 .mainContainer{
   background-color: #CF152D;
