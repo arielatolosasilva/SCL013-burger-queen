@@ -113,10 +113,11 @@ class App extends Component {
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
-            <Menu type="lunch-dinner" />
             <Link to="/mesero">
               <img src={atras} alt="atras" />
             </Link>
+            <Menu type="lunch-dinner" />
+
           </Route>
           <Route path="/chef" exact>
             <Header />
