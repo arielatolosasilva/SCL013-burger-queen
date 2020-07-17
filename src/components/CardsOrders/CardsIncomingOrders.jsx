@@ -38,9 +38,7 @@ import Contador from '../Contador/Contador';
 
 
 
-              <div >
-
-
+              <div>
                     <Contador/>
                     <img src={olasCard} className={style.olasCards} alt='olas'/>
                     </div>
