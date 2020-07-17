@@ -11,7 +11,7 @@ class IncomingOrders extends Component {
 
   componentDidMount() {
     const db = firebase.firestore();
-    db.collection("resumen orden").onSnapshot((querySnapshot) => {
+    db.collection("resumen orden").where('state', '==', 'Pendiente').onSnapshot((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         this.arr.push({
           products: doc.data().information,
@@ -34,10 +34,12 @@ class IncomingOrders extends Component {
 
   render() {
     return (
-      <div className={style.container}>
-        <CardsIncomingOrders data={this.state} />
-        {/* {console.log(this.state.orders[0].id)} */}
-      </div>
+      <React.Fragment>
+        <div className={style.container}>
+          <CardsIncomingOrders data={this.state} />
+          {/* {console.log(this.state.orders[0].id)} */}
+        </div>
+      </React.Fragment>    
     );
   }
 }
