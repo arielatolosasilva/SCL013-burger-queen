@@ -14,70 +14,60 @@ import tortilla from '../../assets/images/tortilla.png';
 
 
 class Menu extends Component {
-  state = {
+  state = {};
 
+  arrayProducts = [];
+
+  sumTotal = (array) => {
+    let suma = 0;
+    array.forEach((element) => {
+      let multiplication = element.quantity * element.price;
+      suma += multiplication;
+    });
+    return suma;
   };
 
+  resume = (e) => {
+    let quantityProducts = e.target.value;
+    let quantityFather = e.target.parentElement.parentElement;
+    let quantityFatherChildren = quantityFather.childNodes;
+    let productsName = quantityFatherChildren[0].innerText;
+    let productPrice = quantityFatherChildren[1].outerText;
 
-  arrayProducts = [
+    let productsResume = {
+      name: productsName,
+      price: productPrice,
+      quantity: quantityProducts,
+    };
 
-  ]
+    if (quantityProducts > 0) {
+      this.arrayProducts.push(productsResume);
+      /*console.log(this.arrayProducts)*/
+    } else {
+      let productIndex = this.arrayProducts.findIndex(
+        (product) => product.name === productsResume.name
+      );
+      this.arrayProducts.splice(productIndex, 1);
+      /*console.log(this.arrayProducts)*/
+    }
 
-sumTotal = (array) => {
-  let suma = 0
-  array.forEach(element => {
-    let multiplication = element.quantity * element.price
-    suma += multiplication
+    this.setState({
+      orderId: Math.floor(Math.random() * 8000),
+      products: this.arrayProducts,
+      total: this.sumTotal(this.arrayProducts),
+    });
+  };
 
-  });
-  return suma
-}
+  table = (e) => {
+    let tableNumber = e.target.value;
+    this.setState({
+      table: tableNumber,
+    });
+  };
 
-resume = (e) => {
-  let quantityProducts = e.target.value
-  let quantityFather = e.target.parentElement.parentElement
-  let quantityFatherChildren = quantityFather.childNodes
-  let productsName = quantityFatherChildren[0].innerText
-  let productPrice = quantityFatherChildren[1].outerText
-
-
- let productsResume = {
-   name: productsName,
-   price: productPrice,
-   quantity: quantityProducts,
- }
-
- if(quantityProducts > 0){
-  this.arrayProducts.push(productsResume)
-  /*console.log(this.arrayProducts)*/
- } else {
-  let productIndex = this.arrayProducts.findIndex(product => product.name === productsResume.name)
-  this.arrayProducts.splice(productIndex, 1)
-  /*console.log(this.arrayProducts)*/
- }
-
- this.setState(
-   {
-    orderId: Math.floor(Math.random() * 8000),
-    products: this.arrayProducts,
-    total: this.sumTotal(this.arrayProducts),
-
-
-   }
-   )
-}
-
-table = (e) => {
-  let tableNumber = e.target.value
-  this.setState({
-    table: tableNumber
-  })
-}
-
-
-componentDidUpdate(){
-  console.log(this.state)
-}
+  componentDidUpdate() {
+    console.log(this.state);
+  }
 
   render() {
     // Uno u otro menú se guarda aquí dependiendo del resultado del if/else if
@@ -91,15 +81,18 @@ componentDidUpdate(){
     let drinksTitle = null;
     let extrasTitle = null;
 
-
-
     // Condicional según la propiedad type pasada en App.js al comp. Menu
     if (this.props.type === "breakfast") {
       let menuArray = Object.entries(DataMenu[0])[0][1].products;
       currentMenu = menuArray.map((product) => {
         return (
           <React.Fragment key={product.id}>
-            <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
+            <Product
+              id={product.id}
+              name={product.nombre}
+              price={product.valor}
+              change={(e) => this.resume(e)}
+            />
           </React.Fragment>
         );
       });
@@ -113,51 +106,70 @@ componentDidUpdate(){
       let menuArrayExtras = Object.entries(DataMenu[0])[1][1].extras;
       /*console.log(menuArrayExtras)*/
 
-
       //Esto es solo de prueba, hay que cambiarlo por el mapeo del menú almuerzo/cena
       mainCourse = menuArrayMainCourse.map((product) => {
         if (menuArrayMainCourse.length > 0) {
-          mainCourseTitle = 'PLATO DE FONDO'
+          mainCourseTitle = "PLATO DE FONDO";
         }
         return (
           <React.Fragment key={product.id}>
-            <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
+            <Product
+              id={product.id}
+              name={product.nombre}
+              price={product.valor}
+              change={(e) => this.resume(e)}
+            />
           </React.Fragment>
         );
-      })
+      });
 
-    sideDish =menuArraySideDish.map((product) => {
-      if (menuArraySideDish.length > 0) {
-        sideDishTitle = 'ACOMPAÑAMIENTOS'
-      }
-      return (
-        <React.Fragment key={product.id}>
-          <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
-        </React.Fragment>
-      );
-    })
-    drinks = menuArrayDrinks.map((product) => {
-      if (menuArrayDrinks.length > 0) {
-        drinksTitle = 'BEBESTIBLES'
-      }
-      return (
-        <React.Fragment key={product.id}>
-          <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
-        </React.Fragment>
-      );
-    })
-    extras=menuArrayExtras.map((product) => {
-      if (menuArrayExtras.length > 0) {
-        extrasTitle = 'EXTRAS'
-      }
-      return (
-        <React.Fragment key={product.id}>
-          <Product id={product.id} name={product.nombre} price={product.valor} change={(e)=>this.resume(e)}/>
-        </React.Fragment>
-      );
-    })
-   }
-   // RETURN PRINCIPAL DEL COMPONENTE MENÚ
+      sideDish = menuArraySideDish.map((product) => {
+        if (menuArraySideDish.length > 0) {
+          sideDishTitle = "ACOMPAÑAMIENTOS";
+        }
+        return (
+          <React.Fragment key={product.id}>
+            <Product
+              id={product.id}
+              name={product.nombre}
+              price={product.valor}
+              change={(e) => this.resume(e)}
+            />
+          </React.Fragment>
+        );
+      });
+      drinks = menuArrayDrinks.map((product) => {
+        if (menuArrayDrinks.length > 0) {
+          drinksTitle = "BEBESTIBLES";
+        }
+        return (
+          <React.Fragment key={product.id}>
+            <Product
+              id={product.id}
+              name={product.nombre}
+              price={product.valor}
+              change={(e) => this.resume(e)}
+            />
+          </React.Fragment>
+        );
+      });
+      extras = menuArrayExtras.map((product) => {
+        if (menuArrayExtras.length > 0) {
+          extrasTitle = "EXTRAS";
+        }
+        return (
+          <React.Fragment key={product.id}>
+            <Product
+              id={product.id}
+              name={product.nombre}
+              price={product.valor}
+              change={(e) => this.resume(e)}
+            />
+          </React.Fragment>
+        );
+      });
+    }
+    // RETURN PRINCIPAL DEL COMPONENTE MENÚ
     return (
       <React.Fragment>
         <section className={style.mainContainer}>
@@ -181,7 +193,7 @@ componentDidUpdate(){
               <tbody className={style.container}>
                 {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
                 {this.props.type === 'breakfast' ? currentMenu : null}
-    
+
                   <tr><td>{mainCourseTitle}</td></tr>
                     {mainCourse}
                   <tr><td>{sideDishTitle}</td></tr>
