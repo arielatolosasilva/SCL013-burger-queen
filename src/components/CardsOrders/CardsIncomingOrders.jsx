@@ -40,14 +40,18 @@ import Contador from '../Contador/Contador';
                 <ul>{names}</ul>
               </CardBody>
 
-              <div className={style.fatherButton}>
-                <Button className={style.optionBtn}>Preparando</Button>
-                <Button className={style.optionBtn}>Terminado</Button>
+
+
+
+
+              <div>
+                    <Contador/>
+                    <img src={olasCard} className={style.olasCards} alt='olas'/>
+                    </div>
+             </Card>
 
                 <Contador />
                 <img src={olasCard} className={style.olasCards} alt="olas" />
-              </div>
-            </Card>
           </React.Fragment>
         );
       })
