@@ -1,10 +1,37 @@
 .fatherCards{
 background-color: #8A8081;
 height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+margin-top: 16rem;
 }
 .container {
-  background-color: #CF152D;
-  min-height: 100vh;
-  height: auto;
+     background-color: #CF152D;
+     min-height: 100vh;
+     height: auto;
+     display: flex;
+     grid-column: 1/11;
+     grid-row: 2/11;
+     align-items: flex-start;
+    margin-top: -1rem;
 
+}
+
+.headingContainer {
+      color: white;
+      font-family: 'Sedgwick Ave',
+      cursive;
+      grid-row: 2;
+      grid-column: 1;
+      z-index: 1000;
+      display: flex;
+      width: 100vw;
+}
+
+.headingContainer h1 {
+  margin-left: 2rem;
+}
+
+.headingContainer h2 {
+  margin-left: 5rem;
 }

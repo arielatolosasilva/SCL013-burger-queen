@@ -65,33 +65,24 @@
   top:44%;
 }
 
-.entrarCocinaAlmuerzo {
-  background-color: #DE863E;
-    width: 19%;
-    font-family: 'Sedgwick Ave', cursive;
-    border: none;
-    margin-left: 14%;
-    margin-top: 14%;
-
+.entrarCocina {
+      background-color: #DE863E;
+      font-family: 'Sedgwick Ave',
+      cursive;
+      
+      font-size: 1.3em;
 }
 
-.entrarCocina {
-  background-color: #DE863E;
-  font-family: 'Sedgwick Ave', cursive;
-  width: 20%;
-  height: 7%;
-  margin-top: -61%;
-  margin-left: 14%;
-  text-align: center;
-  font-size: 1em;
-  border: none;
-  margin-bottom: 46rem;
+.entrarCocinaAlmuerzo {
+  background-color: blue;
+      background-color: #DE863E;
+      font-family: 'Sedgwick Ave',
+      cursive;
 }
 
 @media (min-width: 1024px) {
   .entrar {
-    left: 40%;
-    top: 105%;
+   
   }
 
   .modal {
@@ -109,12 +100,7 @@
   .entrarCocina:not(:disabled):not(.disabled){
     background-color: #DE863E;
     font-family: 'Sedgwick Ave', cursive;
-    margin-top: -24%;
-    width: 11%;
-    height: 7%;
-    margin-left: 16%;
-    font-size: 1.3em;
-    margin-bottom: 108rem;
+   
   }
 
 }
