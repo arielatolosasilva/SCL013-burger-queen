@@ -2,7 +2,7 @@
   width: 100vw;
   height: 28vh;
   background: #101113;
-  background-image: url(/static/media/olitas.74be3b79.png);
+  background-image: url(../../assets/images/olitas.png);
   background-repeat: no-repeat;
   background-position: relative;
   background-position: right;
@@ -23,7 +23,7 @@
     width: 100vw;
     height: 30vh;
     background: #101113;
-    background-image: url(/static/media/olitas.74be3b79.png);
+    background-image: url(../../assets/images/olitas.png);
     background-repeat: no-repeat;
     background-position: relative;
     background-position: right;

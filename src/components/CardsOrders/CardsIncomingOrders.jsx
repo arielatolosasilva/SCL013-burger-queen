@@ -57,13 +57,12 @@ import firebase from 'firebase';
 
 
               <div>
-                    <Contador/>
-                    <img src={olasCard} className={style.olasCards} alt='olas'/>
-                    </div>
-             </Card>
-
                 <Contador send={sendToFirebase} id={orderId} />
                 <img src={olasCard} className={style.olasCards} alt="olas" />
+              </div>
+             </Card>
+
+                
           </React.Fragment>
         );
       })
