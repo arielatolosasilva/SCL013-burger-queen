@@ -12,6 +12,7 @@ import { Button } from "reactstrap";
 import style from "./App.module.css";
 import diabolo from './assets/images/diabolo.png';
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
+import atras from './assets/images/atras.png'
 
 class App extends Component {
   state = {
@@ -98,11 +99,20 @@ class App extends Component {
           {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
             <Header/>
+            <Link to="/mesero">
+            <img src={atras}  alt='atras'/>
+
+                  </Link>
             <Menu type="breakfast"/>
+
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header/>
             <Menu type="lunch-dinner" />
+            <Link to="/mesero">
+            <img src={atras}  alt='atras'/>
+
+                  </Link>
           </Route>
           <Route path="/chef" exact>
             <Header/>
