@@ -3,9 +3,15 @@ import Product from "../Products/Product.jsx";
 import DataMenu from "../../DataMenu.json";
 import { Table } from "reactstrap";
 import style from "./Menu.module.css";
-import OrderModal from "../Order/OrderModal";
-import tea from "../../assets/images/tea.png";
-import rice from "../../assets/images/rice.png";
+import OrderModal from "../Order/OrderModal.jsx";
+import tea from '../../assets/images/tea.png';
+import rice from '../../assets/images/rice.png';
+import sake from '../../assets/images/sake.png';
+import ramenuno from '../../assets/images/ramenuno.png';
+import ramendos from '../../assets/images/ramendos.png';
+import ramentres from '../../assets/images/ramentres.png';
+import tortilla from '../../assets/images/tortilla.png';
+
 
 class Menu extends Component {
   state = {};
@@ -166,54 +172,59 @@ class Menu extends Component {
     // RETURN PRINCIPAL DEL COMPONENTE MENÚ
     return (
       <React.Fragment>
-        <section className={style.menu}>
-          <div className={style.text}>
-            <div className={style.contenedorTabla}>
-              <span className={style.table}> N° Mesa </span>
-              <select onChange={(e) => this.table(e)} min={0} max={10}>
-                <option value="0">0 </option>
-                <option value="1">1 </option>
-                <option value="2">2 </option>
-                <option value="3">3 </option>
-                <option value="4">4 </option>
-                <option value="5">5 </option>
-                <option value="6">6 </option>
-                <option value="7">7 </option>
-                <option value="8">8 </option>
-                <option value="9">9 </option>
-                <option value="10">10 </option>
-              </select>
-              <Table borderless className={style.menu}>
-                <tbody className={style.container}>
-                  {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
-                  {this.props.type === "breakfast" ? currentMenu : null}
+        <section className={style.mainContainer}>
+          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+          <span className={style.table}> N° Mesa </span>
+          <select onChange={(e)=>this.table(e)} min={0} max={10} >
+             <option value='0'>0 </option>
+             <option value='1'>1 </option>
+             <option value='2'>2 </option>
+             <option value='3'>3 </option>
+             <option value='4'>4 </option>
+             <option value='5'>5 </option>
+             <option value='6'>6 </option>
+             <option value='7'>7 </option>
+             <option value='8'>8 </option>
+             <option value='9'>9 </option>
+             <option value='10'>10 </option>
+             </select>
+            <Table borderless className={style.menu} >
 
-                  <tr>
-                    <td>{mainCourseTitle}</td>
-                  </tr>
-                  {mainCourse}
-                  <tr>
-                    <td>{sideDishTitle}</td>
-                  </tr>
-                  {sideDish}
-                  <tr>
-                    <td>{drinksTitle}</td>
-                  </tr>
-                  {drinks}
-                  <tr>
-                    <td>{extrasTitle}</td>
-                  </tr>
-                  {extras}
-                </tbody>
-              </Table>
-            </div>
-          </div>
-          <img src={tea} className={style.tea} alt="taza de té matcha"></img>
-          <img
-            src={rice}
-            className={style.rice}
-            alt="onigiri (bolas de arroz)"
-          ></img>
+              <tbody className={style.container}>
+                {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
+                {this.props.type === 'breakfast' ? currentMenu : null}
+
+                  <tr><td>{mainCourseTitle}</td></tr>
+                    {mainCourse}
+                  <tr><td>{sideDishTitle}</td></tr>
+                    {sideDish}
+                  <tr><td>{drinksTitle}</td></tr>
+                    {drinks}
+                  <tr><td>{extrasTitle}</td></tr>
+                    {extras}
+
+              </tbody>
+
+            </Table>
+
+            <img className={style.sake}
+            src={this.props.type === "breakfast" ? tea : sake}
+            className={this.props.type === "breakfast" ? style.tea : style.sake}
+            alt="taza de té matcha"></img>
+          <img className={style.ramenuno}
+            src={this.props.type === "breakfast" ? rice : ramenuno}
+            className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
+            alt="onigiri (bolas de arroz)"></img>
+          <img className={style.ramendos}
+            src={this.props.type === "breakfast" ? rice : ramentres}
+            className={this.props.type === "breakfast" ? style.rice : style.ramentres}
+
+            alt="onigiri (bolas de arroz)"></img>
+            <img className={style.tortilla}
+            src={this.props.type === "breakfast" ? rice : tortilla}
+            className={this.props.type === "breakfast" ? style.rice : style.tortilla}
+
+            alt="onigiri (bolas de arroz)"></img>
         </section>
 
         <OrderModal order={this.state} />

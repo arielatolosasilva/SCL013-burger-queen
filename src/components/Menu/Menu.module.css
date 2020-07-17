@@ -56,8 +56,28 @@
     position: absolute;
     width: 19%;
     height: 16%;
-    margin-left: 77%;
+    margin-left: 73%;
     margin-top: -24%;
+}
+
+.sake{
+
+}
+.tortilla {
+    position: absolute;
+    margin-top: -122%;
+    width: 29%;
+    margin-left: 6%;
+}
+.ramenuno{
+    margin-top: -116%;
+    position: absolute;
+    margin-left: 0%;
+    width: 42%;
+}
+
+.ramentres{
+
 }
 
 table{
