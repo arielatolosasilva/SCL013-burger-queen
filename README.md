@@ -1,47 +1,84 @@
-![logo]()
+![logo](logo.png)
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
+* [1. ¿Qué es Japan Queen](#1-introducción)
+* [2. Experiencia Japan Queen](#2-experiencia)
+* [3. Solucionando Problemas](#3-solución)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Pistas, tips y lecturas complementarias](#6-pistas-tips-y-lecturas-complementarias)
 
 ***
 
-## 1. Preámbulo
+## 1. ¿Qué es Japan Queen? 
 
-[React](https://es.reactjs.org/) y [Angular](https://angular.io/) son algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por
-lxs desarrolladorxs alrededor del mundo, y hay una razón para eso.
-En el contexto del navegador, [_mantener la interfaz sincronizada con el estado
-es difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).
-Al elegir un _framework_ o _librería_ para nuestra interfaz, nos apoyamos en una
-serie de convenciones e implementaciones _probadas_ y _documentadas_ para
-resolver un problema común a toda interfaz web. Esto nos permite concentrarnos
-mejor (dedicar más tiempo) en las caractrísticas _específicas_ de
-nuestra aplicación.
+Somos un restaurante Japonés, que por medio de la tradición e innovación en la cómida, buscamos brindar a nuestros clientes y a nuestros empleados una experiencia confortable y diferente. Es por lo anterior que proponemos a Japan Queen como app web diseñada para restaurantes, se origina como solución a la gestión de pedidos por medio de una  interfaz simple y amigable, evitando el antiguo uso de comandas y toma de ordenes a mano.
 
-Cuando elegimos una de estas tecnologías no solo importamos un pedacito de
-código para reusarlo (lo cuál es un gran valor per se), si no que adoptamos una
-**arquitectura**, una serie de **principios de diseño**, un **paradigma**, unas
-**abstracciones**, un **vocabulario**, una **comunidad**, etc...
 
-Como desarrolladora Front-end, estos kits de desarrollo pueden resultarte
-de gran ayuda para implementar rápidamente características de los proyectos en
-los que trabajes.
+## 2. Experiencia Japan Queen
 
-## 2. Resumen del proyecto
+Como toda innovación, la app web Japan Queen se gesta en la busqueda de mejorar la experiencia de usuario y como solución a un problema que debe ser acorde a las necesidades de nuestra época, esto es haciendo uso de las multiples opciones que nos ofrece la tecnología. Desde aquí comenzamos una investigación enfocada en nuestro clientes y nuestros empleados para saber de qué manera podríamos modernizar nuestra atención y así mismo facilitar el trabajo a nuestros empleados. Por medio de diversas entrevistas, definimos tres tipos de usuarios, los que definimos de la siguiente forma: 
 
-Esta vez tenemos un proyecto 100% por encargo. Si bien siempre puedes (y debes)
-hacer sugerencias de mejoras y/o cambios, muchas veces trabajarás en proyectos
-en los que primero hay que asegurarse de cumplir con lo requerido.
+* **Cliente (Usuario indirecto)** : Accederá a esta plataforma por medio de otro usuario que es el mesero.
+* **Mesero**: Accederá a la plataforma para generar el pedido del cliente
+* **Chef**: Recibirá el pedido 
 
-Un pequeño restaurante de hamburguesas, que está creciendo, necesita una
-interfaz en la que puedan tomar pedidos usando una _tablet_, y enviarlos
-a la cocina para que se preparen ordenada y eficientemente (a través de un
-  _backend_ del que nos darán detalles más adelante).
+El primer problema que detectamos, es que como la variedad de nuestra comida es tan interesante y llamativa, a nuestros clientes les resulta difícil decidir por una opción por lo que cambian su pedido varias veces antes de finalizarlo. Como nosotros buscamos ante todo la satisfacción de dichos clientes, nos tomaremos el tiempo necesario hasta que estén lo suficientemente seguros de su elección. En este caso, quien se enfrenta a esta situacion directamente es el mesero quien hasta ese momento utilizaría lapiz y papel para anotar la información del pedido. Esto supone una gran dificultad, si nuestro cliente tiende a cambiar de decisión, no es posible que nuestro mesero anote y tache reiteradamente, generando una confusión en el resumen del pedido y generando otro problema pensando en el tiempo en que este llegaría a cocina y si sería legible para el chef al momento de preparar la comida. Como nuestro objetivo también es que nuestros empleados tengan una buena experiencia al momento de la atención y que a la vez pueda facilitar su trabajo, indagamos en diferentes soluciones que pudieran dar efectividad a este proceso. 
+
+## 3.Solución al problema
+
+Según nuestra investigación y diferentes iteraciones, decidimos que la mejor solución sería diseñar una interfaz que funcione por medio de Tablet y computador, en la que como principal objetivo, se podrá tomar pedidos, eliminar y cambiar según la decisión del cliente.
+
+¿Cómo funciona?
+
+Nuestro objetivo es facilitar la usabilidad para nuestros meseros y chef, pero también pretendemos que esta aplicación pueda ser utilizada por cualquier persona, sin necesidad de tener grandes conocimientos sobre tecnología. 
+
+La funcionalidad es simple, nuestro mesero y chef acceden a la página principal donde se encuentra el logo de nuestro restaurante y nuestra app, bajo este logo se encuentra un botón el que deberá presionar para que se despliegue un formulario donde prodrá ingresar con un correo institucional y contraseña según su rol "Mesero/Chef". 
+
+Vistas
+
+![paginainicio](pantallainicio.png)
+
+![entrar](entrar.png)
+
+Al ingresar a la vista, nuestro mesero tendrá la opción de elegir entre en menu sencillo y tradiconal Japonés al  **Desayuno**  y uno un poco más elaborado a la hora del **Almuerzo y cena**. En este último podrá elegir diferentes productos en alternativas vegetarianas y no vegetarianas, así como también algunos extras para generar una experiencia personalizada.
+
+Vista Desayuno
+
+[FOTO]
+
+
+Vista Almuerzo y cena
+
+[FOTO]
+
+
+En cada vista nuestro mesero podra, acceder a un botón volver por si se quivocara de menú, podrá elegir productos por cantidad, editar la selección, borrar, seleccionar un número de mesa que servirá para identificar el pedido de cada cliente. Cuando el pedido se encuentre listo, se genera un resumen, el que se despliegará presionando el botón "Ver resumen". 
+
+Vista de Resumen de Pedidos
+
+[fotos]
+
+
+Cuando nuestro mesero se asegure de que nuestro cliente ha quedado satisfecho con su elección, deberá presionar el botón "enviar a cocina" que se encuentra dentro de la lista de resumen del pedido. El pedido será enviado al chef, quien ingresará directamente a la vista de pedidos entrantes en donde tomará el tiempo de preparación seleccionando el botón _"Preparando"_ y podrá presionar el botón _"Terminado"_, esto generará una alerta que aparecerá como un incono check en la vista de ingreso del mesero. De este modo, este último podrá retirar el pedido y entregarlo en poco tiempo a la mesa correspondiente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![burger-queen](https://user-images.githubusercontent.com/110297/42118136-996b4a52-7bc6-11e8-8a03-ada078754715.jpg)
 
