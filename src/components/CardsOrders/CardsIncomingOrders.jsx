@@ -10,9 +10,14 @@ import Contador from '../Contador/Contador';
 
  const CardsIncomingOrders = (props) => {
     let orders = null;
+    const formattingDate = (date) => {
+      const formattedDate = date.toDate().toString();
+      const splitDate = formattedDate.split(" ");
+      return `${splitDate[4]}`;
+    };
     if (props.data.orders[0].products !== undefined) {
       orders = props.data.orders.map(order => {
-        console.log(order);
+        console.log(order.date);
         let products = order.products;
         let names = products.map(product => {
           return (
@@ -23,36 +28,28 @@ import Contador from '../Contador/Contador';
 
         return (
           <React.Fragment key={Math.floor(Math.random() * 1000)}>
-
-            <Card style={{ width: '15rem'}, { marginBottom: '4rem' }}   className={style.motherCards}>
+            <Card
+              style={({ width: "15rem" }, { marginBottom: "4rem" })}
+              className={style.motherCards}>
               <CardBody className={style.cardBody}>
-                <CardTitle><p className={style.nTable}>Mesa nro. {order.table} {order.date[0]}</p></CardTitle>
-                  <u>{order.state}</u>
-                  <ul>
-                    {names}
-                  </ul>
-
+                <CardTitle>
+                  <p className={style.nTable}>Mesa nro. {order.table}</p>
+                </CardTitle>
+                <p>Hora: {formattingDate(order.date)}</p><br></br>
+                <>{order.state}</>
+                <ul>{names}</ul>
               </CardBody>
 
-
-
-
-
               <div className={style.fatherButton}>
-                    <Button  className={style.optionBtn}>
-                      Preparando
-                    </Button>
-                    <Button  className={style.optionBtn}>
-                    Terminado
-                    </Button>
+                <Button className={style.optionBtn}>Preparando</Button>
+                <Button className={style.optionBtn}>Terminado</Button>
 
-                    <Contador/>
-                    <img src={olasCard} className={style.olasCards} alt='olas'/>
-                    </div>
-             </Card>
-
+                <Contador />
+                <img src={olasCard} className={style.olasCards} alt="olas" />
+              </div>
+            </Card>
           </React.Fragment>
-        )
+        );
       })
     }
 

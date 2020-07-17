@@ -162,42 +162,56 @@ componentDidUpdate(){
         <section className={style.mainContainer}>
           <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
           <span className={style.table}> N° Mesa </span>
-          <select onChange={(e)=>this.table(e)} min={0} max={10} >
-             <option value='0'>0 </option>
-             <option value='1'>1 </option>
-             <option value='2'>2 </option>
-             <option value='3'>3 </option>
-             <option value='4'>4 </option>
-             <option value='5'>5 </option>
-             <option value='6'>6 </option>
-             <option value='7'>7 </option>
-             <option value='8'>8 </option>
-             <option value='9'>9 </option>
-             <option value='10'>10 </option>
-             </select>
-            <Table borderless className={style.menu} >
+          <select onChange={(e) => this.table(e)} min={0} max={10}>
+            <option value="0">0 </option>
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+            <option value="3">3 </option>
+            <option value="4">4 </option>
+            <option value="5">5 </option>
+            <option value="6">6 </option>
+            <option value="7">7 </option>
+            <option value="8">8 </option>
+            <option value="9">9 </option>
+            <option value="10">10 </option>
+          </select>
+          <Table borderless className={style.menu}>
+            <tbody className={style.container}>
+              {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
+              {this.props.type === "breakfast" ? currentMenu : null}
 
-              <tbody className={style.container}>
-                {/* se vuelve a evaluar para mostrar solo 1 menú por vista*/}
-                {this.props.type === 'breakfast' ? currentMenu : null}
-    
-                  <tr><td>{mainCourseTitle}</td></tr>
-                    {mainCourse}
-                  <tr><td>{sideDishTitle}</td></tr>
-                    {sideDish}
-                  <tr><td>{drinksTitle}</td></tr>
-                    {drinks}
-                  <tr><td>{extrasTitle}</td></tr>
-                    {extras}
+              <tr>
+                <td>{mainCourseTitle}</td>
+              </tr>
+              {mainCourse}
+              <tr>
+                <td>{sideDishTitle}</td>
+              </tr>
+              {sideDish}
+              <tr>
+                <td>{drinksTitle}</td>
+              </tr>
+              {drinks}
+              <tr>
+                <td>{extrasTitle}</td>
+              </tr>
+              {extras}
+            </tbody>
+          </Table>
 
-              </tbody>
+          <img
+            src={this.props.type === "breakfast" ? tea : sake}
+            className={this.props.type === "breakfast" ? style.tea : style.sake}
+            alt="taza de té matcha"></img>
+          <img
+            src={this.props.type === "breakfast" ? rice : ramenuno}
+            className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
+            alt="onigiri (bolas de arroz)"></img>
+          <img
+            src={this.props.type === "breakfast" ? rice : ramendos}
+            className={this.props.type === "breakfast" ? style.rice : style.ramendos}
 
-            </Table>
-        
-          <img src={this.props.type === 'breakfast' ? tea : sake} className={style.tea} alt="taza de té matcha"></img>
-          <img src={this.props.type === 'breakfast' ? rice : ramenuno} className={style.rice} alt="onigiri (bolas de arroz)"></img>
-          <img src={this.props.type === 'breakfast' ? rice : ramendos} className={style.rice} alt="onigiri (bolas de arroz)"></img>
-          <img src={this.props.type === 'breakfast' ? rice : ramentres} className={style.rice} alt="onigiri (bolas de arroz)"></img>
+            alt="onigiri (bolas de arroz)"></img>
         </section>
 
         <OrderModal order={this.state} />

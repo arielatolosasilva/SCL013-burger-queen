@@ -63,3 +63,11 @@
   font-family: 'Sedgwick Ave',
   cursive;
 }
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-left: -2rem;
+}
