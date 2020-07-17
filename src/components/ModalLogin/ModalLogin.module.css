@@ -65,18 +65,27 @@
   top:44%;
 }
 
+.entrarCocinaAlmuerzo {
+  background-color: #DE863E;
+    width: 19%;
+    font-family: 'Sedgwick Ave', cursive;
+    border: none;
+    margin-left: 14%;
+    margin-top: 14%;
+
+}
+
 .entrarCocina {
   background-color: #DE863E;
-  font-family: 'Sedgwick Ave',
-  cursive;
+  font-family: 'Sedgwick Ave', cursive;
   width: 20%;
   height: 7%;
-  /* margin-top: -14%; */
+  margin-top: -61%;
   margin-left: 14%;
   text-align: center;
   font-size: 1em;
   border: none;
-  margin-bottom: -9rem;
+  margin-bottom: 46rem;
 }
 
 @media (min-width: 1024px) {

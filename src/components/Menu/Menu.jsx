@@ -195,27 +195,25 @@ componentDidUpdate(){
 
             </Table>
         
-            <img className={style.sake}
+      <img className={style.sake}
             src={this.props.type === "breakfast" ? tea : sake}
             className={this.props.type === "breakfast" ? style.tea : style.sake}
-            alt="taza de té matcha"></img>
+    alt="taza de té matcha"></img>
           <img className={style.ramenuno}
             src={this.props.type === "breakfast" ? rice : ramenuno}
             className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
             alt="onigiri (bolas de arroz)"></img>
-          <img className={style.ramendos}
-            src={this.props.type === "breakfast" ? rice : ramentres}
-            className={this.props.type === "breakfast" ? style.rice : style.ramentres}
+         
 
-            alt="onigiri (bolas de arroz)"></img>
-            <img className={style.tortilla}
-            src={this.props.type === "breakfast" ? rice : tortilla}
-            className={this.props.type === "breakfast" ? style.rice : style.tortilla}
+            
+            <img className={style.sake}
+            src={this.props.type === "breakfast" ? rice : sake}
+            className={this.props.type === "breakfast" ? style.rice : style.sake}
 
             alt="onigiri (bolas de arroz)"></img>
         </section>
 
-        <OrderModal order={this.state} />
+        <OrderModal order={this.state} type={this.props.type}/>
       </React.Fragment>
     );
   }

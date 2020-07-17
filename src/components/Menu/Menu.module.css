@@ -5,6 +5,7 @@
     width: 100vw;
     margin-top: -0.5rem;
     margin-bottom: -13rem;
+    height: 155vw;
 }
 
 .menu {
@@ -35,6 +36,7 @@
     margin-right: 20%;
     display: table;
     margin-bottom: 2%;
+    
 }
 .contenedorTabla{
     width: 51%;
@@ -61,24 +63,21 @@
 }
 
 .sake{
-
-}
-.tortilla {
+    margin-top: -58%;
     position: absolute;
-    margin-top: -122%;
-    width: 29%;
-    margin-left: 6%;
+    margin-left: 38%;
+    height: 91%;
 }
+
+
 .ramenuno{
-    margin-top: -116%;
+    margin-top: -109%;
     position: absolute;
-    margin-left: 0%;
-    width: 42%;
+    margin-left: 49%;
+    width: 47%;
 }
 
-.ramentres{
 
-}
 
 table{
   border-collapse: none !important;
@@ -91,6 +90,7 @@ table{
 @media (min-width: 1040px) {
     .rice{
     margin-top: -19%;
+    margin-left: 77%;
     }
     .tea{
     margin-top: -32%;
@@ -100,6 +100,16 @@ table{
         margin-left: 4%;
         background-color: #DE863E;
         border-radius: 4px;
+    }
+
+    .sake{
+        margin-left: 46%;
+        margin-top: -37%;
+    }
+    .ramenuno{
+        margin-top: -73%;
+    width: 33%;
+    margin-left: 51%;
     }
 }
 

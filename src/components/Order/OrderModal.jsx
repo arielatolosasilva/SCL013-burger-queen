@@ -40,9 +40,11 @@ function OrderModal(props) {
 
     return (
         <div className={styledos.buttomContainer}>
-        <Button className={style.entrarCocina} onClick={toggle}>
+        {props.type === 'breakfast' ? <Button className={style.entrarCocina} onClick={toggle}>
           Ver resumen
-        </Button>
+        </Button> : <Button className={style.entrarCocinaAlmuerzo} onClick={toggle}>
+            Ver resumen
+        </Button>}
         <Modal  className={style.modal} contentClassName={style.modalContent} isOpen={modal} toggle={toggle}>
           <ModalBody className={style.modal} >
               <Table borderless>

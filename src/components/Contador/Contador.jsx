@@ -7,13 +7,14 @@ import {
 } from 'reactstrap';
 
 class Contador extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { time: {}, seconds: 0 };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
   }
+
 
   componentDidMount() {
     const timeLeftVar = this.secondsToTime(this.state.seconds);
@@ -42,9 +43,10 @@ class Contador extends Component {
     }
   }
 
-  timerHandler(timer, seconds, minutes) {
+  timerHandler(id, seconds, minutes) {
     clearInterval(this.timer)
-    console.log('minutos: ' + minutes, 'segundos: ' + seconds);
+    this.props.send(id, minutes, seconds);
+    //console.log('id: ' + id, 'minutos: ' + minutes, 'segundos: ' + seconds);
   }
   countDown() {
     // Remove one second, set state so a re-render happens.
@@ -65,8 +67,8 @@ class Contador extends Component {
 
       <div>
         <div className={style.fatherButton}>
-        <Button  className={style.optionBtn} onClick={this.startTimer}>Preparando</Button>
-        <Button  className={style.optionBtn} onClick={() => this.timerHandler(this.timer, this.state.time.s, this.state.time.m)}>Terminado</Button>
+        <Button  id={this.props.id} className={style.optionBtn} onClick={this.startTimer}>Preparando</Button>
+        <Button  id={this.props.id} className={style.optionBtn} onClick={() => this.timerHandler(this.props.id, this.state.time.s, this.state.time.m)}>Terminado</Button>
         </div>
         <div className={style.time}>
          m: {this.state.time.m} s: {this.state.time.s}
