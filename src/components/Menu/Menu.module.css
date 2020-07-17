@@ -122,5 +122,15 @@ select {
     .ramenuno{
         
     }
+
+    .mainContainer {
+        font-family: 'Sedgwick Ave', cursive;
+        color: white;
+        background-color: #CF152D;
+        width: 100vw;
+        margin-top: -0.5rem;
+        margin-bottom: -13rem;
+        height: 82vw;
+    }
 }
 
