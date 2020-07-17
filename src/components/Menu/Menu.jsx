@@ -10,6 +10,7 @@ import sake from '../../assets/images/sake.png';
 import ramenuno from '../../assets/images/ramenuno.png';
 import ramendos from '../../assets/images/ramendos.png';
 import ramentres from '../../assets/images/ramentres.png';
+import tortilla from '../../assets/images/tortilla.png';
 
 
 class Menu extends Component {
@@ -194,10 +195,24 @@ componentDidUpdate(){
 
             </Table>
         
-          <img src={this.props.type === 'breakfast' ? tea : sake} className={style.tea} alt="taza de té matcha"></img>
-          <img src={this.props.type === 'breakfast' ? rice : ramenuno} className={style.rice} alt="onigiri (bolas de arroz)"></img>
-          <img src={this.props.type === 'breakfast' ? rice : ramendos} className={style.rice} alt="onigiri (bolas de arroz)"></img>
-          <img src={this.props.type === 'breakfast' ? rice : ramentres} className={style.rice} alt="onigiri (bolas de arroz)"></img>
+            <img className={style.sake}
+            src={this.props.type === "breakfast" ? tea : sake}
+            className={this.props.type === "breakfast" ? style.tea : style.sake}
+            alt="taza de té matcha"></img>
+          <img className={style.ramenuno}
+            src={this.props.type === "breakfast" ? rice : ramenuno}
+            className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
+            alt="onigiri (bolas de arroz)"></img>
+          <img className={style.ramendos}
+            src={this.props.type === "breakfast" ? rice : ramentres}
+            className={this.props.type === "breakfast" ? style.rice : style.ramentres}
+
+            alt="onigiri (bolas de arroz)"></img>
+            <img className={style.tortilla}
+            src={this.props.type === "breakfast" ? rice : tortilla}
+            className={this.props.type === "breakfast" ? style.rice : style.tortilla}
+
+            alt="onigiri (bolas de arroz)"></img>
         </section>
 
         <OrderModal order={this.state} />
