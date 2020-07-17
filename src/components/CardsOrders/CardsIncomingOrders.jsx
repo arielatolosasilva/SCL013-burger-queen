@@ -70,8 +70,7 @@ import firebase from 'firebase';
 
     return (
       <React.Fragment>
-        <h1 className={style.chef}>Chef</h1>
-        <h2 className={style.incomingOrders}> Pedidos entrantes</h2>
+       
 
       <div className={style.fatherCards}>
 

@@ -1,23 +1,38 @@
 .mainContainer {
-    font-family: 'Sedgwick Ave', cursive;
-    color: white;
-    background-color: #CF152D;
-    width: 100vw;
-    margin-top: -0.5rem;
-    margin-bottom: -13rem;
-    height: 155vw;
+  font-family: 'Sedgwick Ave',
+  cursive;
+  color: white;
+  background-color: #CF152D;
+  width: 100vw;
+  margin-top: -1rem;
+  margin-bottom: -13rem;
+  grid-row: 2/11;
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+}
+
+.headingContainer {
+      background-color: blue;
+      height: 43%;
+      margin-top: 3rem;
+      margin-bottom: -9rem;
+      margin-left: 3rem;
+}
+
+.imgContainer {
+ background-color: black;
+ height: 71vh;
+ /* width: 78vw; */
+ margin-left: 10rem;
 }
 
 .menu {
-        background: #CF152D;
-        font-family: 'Sedgwick Ave',
-        cursive;
-        color: white;
-        padding: -2rem;
-        width: 51vw;
-        padding-bottom: 3rem;
-        margin-bottom: -5rem;
-        margin-top: 1rem;
+      background: #CF152D;
+      font-family: 'Sedgwick Ave',
+      cursive;
+      color: white;
+      width: 50%;
+      grid-column: 1;
 }
 
 
@@ -31,7 +46,6 @@
 .container {
     margin-top: 0%;
     background-color: #CF152D;
-    width: 91%;
     margin-left: 4%;
     margin-right: 20%;
     display: table;
@@ -48,33 +62,29 @@
 }
 
 .tea{
-    position: absolute;
-    width: 21%;
-    height: 35%;
-    margin-left: 58%;
-    margin-top: -48%;
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  left: 12%;
+  top: 6%;
 }
 .rice{
-    position: absolute;
-    width: 19%;
-    height: 16%;
-    margin-left: 73%;
-    margin-top: -24%;
+  width: 14rem;
+  height: 10rem;
+  position: relative;
+  top: 39%;
+  left: -3%;
 }
 
 .sake{
-    margin-top: -58%;
-    position: absolute;
-    margin-left: 38%;
-    height: 91%;
+     width: 10rem;
+     height: 10rem;
 }
 
 
 .ramenuno{
-    margin-top: -109%;
-    position: absolute;
-    margin-left: 49%;
-    width: 47%;
+   width: 10rem;
+   height: 10rem;
 }
 
 
@@ -86,30 +96,31 @@ table{
     margin-left: 4%;
     background-color: #DE863E;
     border-radius: 4px;
+    width: 5rem;
+}
+
+select {
+  width: 5rem;
 }
 @media (min-width: 1040px) {
-    .rice{
-    margin-top: -19%;
-    margin-left: 77%;
+    .rice {
+          width: 14rem;
+          height: 10rem;
+          position: relative;
+          top: 51%;
+          left: 32%;
     }
     .tea{
-    margin-top: -32%;
     }
 
     .table{
-        margin-left: 4%;
         background-color: #DE863E;
-        border-radius: 4px;
     }
 
     .sake{
-        margin-left: 46%;
-        margin-top: -37%;
     }
     .ramenuno{
-        margin-top: -73%;
-    width: 33%;
-    margin-left: 51%;
+        
     }
 }
 
