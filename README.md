@@ -76,4 +76,4 @@ A medida que fuimos cumpliendo metas en cada sprint, comenzamos a desarrollar nu
 Teniendo en cuenta lo anterior, creamos nuestro prototipo de alta fidelidad. Hicimos una nueva iteración en la que nuestros usuarios y clientes acreditaron que efectivamente el nuevo diseño representa y proporciona una identidad única a nuestra app. 
 En cuanto a la interfaz, nuestros usuarios declararon que es importante que existan la menor cantidad de "clicks" para llegar a la información importante y que debe ser touch ya que si bien, será adaptado a la pantalla de computador, su uso principal está enfocado a tablet. De este modo, finalizamos el diseño de nuestro prototipo y lo puedes ver [Acá](https://www.figma.com/proto/rv6kNzclwAkIjKlEznJ5Lh/Untitled?node-id=1%3A11&scaling=scale-down)
 
-En base a toda la información que recopilamos según nuestra investigación e iteraciones, creamos nuestra aplicación. Te invitamos a conocer [Japan Queen](https://burger-queen2020.web.app/)
+En base a toda la información que recopilamos según nuestra investigación e iteraciones, creamos nuestra aplicación. Te invitamos a conocer [Japan Queen](https://burger-queen2020.web.app/) 
