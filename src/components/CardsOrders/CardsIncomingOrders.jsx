@@ -7,8 +7,20 @@ import {
 import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
 import olasCard from '../../assets/images/olitascard.png'
 import Contador from '../Contador/Contador';
+import firebase from 'firebase';
 
  const CardsIncomingOrders = (props) => {
+
+   const sendToFirebase = (id, minutes, seconds) => {
+     console.log(id, minutes, seconds);
+     firebase.firestore().collection('resumen orden').doc(`${id}`).update({
+       state: 'Lista para entrega',
+       readyTime: firebase.firestore.FieldValue.serverTimestamp(),
+       delay: [minutes, seconds]
+
+     }).then(() => { console.log('Enviado a Firebase como "Listo para entregar"') })
+   }
+
     let orders = null;
     const formattingDate = (date) => {
       const formattedDate = date.toDate().toString();
@@ -17,8 +29,8 @@ import Contador from '../Contador/Contador';
     };
     if (props.data.orders[0].products !== undefined) {
       orders = props.data.orders.map(order => {
-        console.log(order.date);
         let products = order.products;
+        let orderId = order.id;
         let names = products.map(product => {
           return (
           <React.Fragment
@@ -28,7 +40,7 @@ import Contador from '../Contador/Contador';
 
         return (
           <React.Fragment key={Math.floor(Math.random() * 1000)}>
-            <Card
+            <Card id={orderId}
               style={({ width: "15rem" }, { marginBottom: "4rem" })}
               className={style.motherCards}>
               <CardBody className={style.cardBody}>
@@ -50,7 +62,7 @@ import Contador from '../Contador/Contador';
                     </div>
              </Card>
 
-                <Contador />
+                <Contador send={sendToFirebase} id={orderId} />
                 <img src={olasCard} className={style.olasCards} alt="olas" />
           </React.Fragment>
         );

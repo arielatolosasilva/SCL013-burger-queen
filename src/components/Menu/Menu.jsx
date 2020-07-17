@@ -215,7 +215,7 @@ componentDidUpdate(){
             alt="onigiri (bolas de arroz)"></img>
         </section>
 
-        <OrderModal order={this.state} />
+        <OrderModal order={this.state} type={this.props.type}/>
       </React.Fragment>
     );
   }

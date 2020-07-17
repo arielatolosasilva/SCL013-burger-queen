@@ -79,6 +79,10 @@
   margin-bottom: -9rem;
 }
 
+.entrarCocinaAlmuerzo {
+  background-color: blue;
+}
+
 @media (min-width: 1024px) {
   .entrar {
     left: 40%;
