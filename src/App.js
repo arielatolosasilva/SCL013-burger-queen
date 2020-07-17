@@ -111,10 +111,6 @@ class App extends Component {
               <img src={atras} alt="atras" />
             </Link>
           </Route>
-          <Route path="/mesero/menu-desayuno/resumen-pedido">
-            <Header/>
-            {/* <Order /> */}
-          </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
             <Menu type="lunch-dinner" />

@@ -173,10 +173,8 @@ class Menu extends Component {
     return (
       <React.Fragment>
         <section className={style.mainContainer}>
-          <div className={style.headingContainer}>
-            <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
-          </div>
-          {/* <span className={style.table}> N° Mesa </span>
+          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+          <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
              <option value='1'>1 </option>
@@ -189,7 +187,7 @@ class Menu extends Component {
              <option value='8'>8 </option>
              <option value='9'>9 </option>
              <option value='10'>10 </option>
-             </select> */}
+             </select>
             <Table borderless className={style.menu} >
 
               <tbody className={style.container}>
@@ -208,30 +206,26 @@ class Menu extends Component {
               </tbody>
 
             </Table>
-        <div className={style.imgContainer}>
+        
+      <img className={style.sake}
+            src={this.props.type === "breakfast" ? tea : sake}
+            className={this.props.type === "breakfast" ? style.tea : style.sake}
+    alt="taza de té matcha"></img>
+          <img className={style.ramenuno}
+            src={this.props.type === "breakfast" ? rice : ramenuno}
+            className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
+            alt="onigiri (bolas de arroz)"></img>
+         
+
+            
             <img className={style.sake}
-              src={this.props.type === "breakfast" ? tea : sake}
-              className={this.props.type === "breakfast" ? style.tea : style.sake}
-              alt="taza de té matcha"></img>
-            <img className={style.ramenuno}
-              src={this.props.type === "breakfast" ? rice : ramenuno}
-              className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
-              alt="onigiri (bolas de arroz)"></img>
+            src={this.props.type === "breakfast" ? rice : sake}
+            className={this.props.type === "breakfast" ? style.rice : style.sake}
 
-
-
-           {/*  <img className={style.sake}
-              src={this.props.type === "breakfast" ? rice : sake}
-              className={this.props.type === "breakfast" ? style.rice : style.sake}
-
-              alt="onigiri (bolas de arroz)"></img> */}
-        </div>
-
-          <OrderModal order={this.state} type={this.props.type} />
-      
+            alt="onigiri (bolas de arroz)"></img>
         </section>
 
-        
+        <OrderModal order={this.state} type={this.props.type}/>
       </React.Fragment>
     );
   }

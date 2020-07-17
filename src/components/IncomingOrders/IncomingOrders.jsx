@@ -34,17 +34,10 @@ class IncomingOrders extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className={style.headingContainer}>
-          <h1 className={style.chef}>Chef</h1>
-          <h2 className={style.incomingOrders}> Pedidos entrantes</h2>
-        </div>
-        
-        <div className={style.container}>
-          <CardsIncomingOrders data={this.state} />
-          {/* {console.log(this.state.orders[0].id)} */}
-        </div>
-      </React.Fragment>    
+      <div className={style.container}>
+        <CardsIncomingOrders data={this.state} />
+        {/* {console.log(this.state.orders[0].id)} */}
+      </div>
     );
   }
 }
