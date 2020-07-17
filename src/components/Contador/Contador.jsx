@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import style from '../../components/CardsOrders/CardsIncomingOrder.module.css'
 import {
-  Card, CardBody,
-  CardTitle,
   Button
 } from 'reactstrap';
 
