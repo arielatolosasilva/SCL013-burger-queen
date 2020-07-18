@@ -81,6 +81,7 @@ class App extends Component {
           <Route path="/mesero" exact>
             <Header />
             <section className={style.mainContainer}>
+              <img></img>
               <OkOrders/>
               <img
                 src={diabolo}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ok from '../../assets/images/ok.png';
 import firebase from 'firebase';
+import style from './OkOrders.module.css';
 
 class OkOrders extends Component {
 
@@ -76,6 +77,7 @@ componentDidUpdate() {
       <div>
         <img
                 src={ok}
+                className={style.ok}
 
                 alt="ok"
                 onClick={()=> this.delivery()}
