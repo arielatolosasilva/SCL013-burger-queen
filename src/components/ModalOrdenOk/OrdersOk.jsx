@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Button, ModalBody, Modal, Table } from "reactstrap";
 import ok from '../../assets/images/ok.png'
-import style from './OrdersOk.module.css';
-import cerrar from '../../assets/images/cerrarsesion.png';
 
 
 function OrdersOk(props) {
@@ -55,7 +53,7 @@ function OrdersOk(props) {
                 src={ok}
 
                 alt="ok"
-                onClick={()=> ordersDelivery()}
+                onClick={toggle}
               ></img>
 
         <Modal  isOpen={modal} toggle={toggle}>

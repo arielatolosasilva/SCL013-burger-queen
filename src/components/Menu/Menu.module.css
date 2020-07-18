@@ -23,7 +23,7 @@
 
 
 .menuDesayuno {
-    margin-left: 7%;
+    margin-left: 15%;
     padding: 3%;
     font-size: 1.5em;
 }
@@ -118,8 +118,8 @@ table{
         background-color: #CF152D;
         width: 100vw;
         margin-top: -0.5rem;
-        margin-bottom: -28rem;
-        height: 112vw;
+        margin-bottom: -13rem;
+        height: 82vw;
     }
 }
 

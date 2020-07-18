@@ -14,7 +14,6 @@ import diabolo from "./assets/images/diabolo.png";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
 import atras from "./assets/images/atras.png";
 import OrdersOk from "./components/ModalOrdenOk/OrdersOk.jsx";
-import cerrar from "./assets/images/cerrarsesion.png";
 
 
 class App extends Component {
@@ -106,28 +105,21 @@ class App extends Component {
           {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
             <Header />
-            <Link to="/mesero">
-              <img src={atras} className={style.backto} alt="atras" />
-              <img src={cerrar} className={style.close} alt="close"/>
-            </Link>
 
             <Menu type="breakfast" />
-            
+            <Link to="/mesero">
+              <img src={atras} alt="atras" />
+            </Link>
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
-            <Link to="/mesero">
-              <img src={atras} className={style.back} alt="atras" />
-              <img src={cerrar} className={style.closeto} alt="close"/>
-            </Link>
             <Menu type="lunch-dinner" />
-            
+            <Link to="/mesero">
+              <img src={atras} alt="atras" />
+            </Link>
           </Route>
           <Route path="/chef" exact>
             <Header />
-            <Link to="/chef">
-            <img src={cerrar} className={style.closetochef} alt="close"/>
-            </Link>
             <IncomingOrders />
           </Route>
         </Switch>
