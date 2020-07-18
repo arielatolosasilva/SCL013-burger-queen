@@ -13,7 +13,7 @@ import style from "./App.module.css";
 import diabolo from "./assets/images/diabolo.png";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
 import atras from "./assets/images/atras.png";
-import OrdersOk from "./components/ModalOrdenOk/OrdersOk.jsx";
+import OkOrders from "./components/ModalOrdenOk/OkOrders.jsx";
 
 
 class App extends Component {
@@ -81,7 +81,7 @@ class App extends Component {
           <Route path="/mesero" exact>
             <Header />
             <section className={style.mainContainer}>
-              <OrdersOk/>
+              <OkOrders/>
               <img
                 src={diabolo}
                 className={style.diabolo}
@@ -105,17 +105,19 @@ class App extends Component {
           {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
             <Header />
-
-            <Menu type="breakfast" />
             <Link to="/mesero">
-              <img src={atras} alt="atras" />
+            <img src={atras} className={style.back} alt="atras" />
             </Link>
+            <Menu type="breakfast" />
+            
+              
+            
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
             <Menu type="lunch-dinner" />
             <Link to="/mesero">
-              <img src={atras} alt="atras" />
+            <img src={atras} className={style.backto} alt="atras" />
             </Link>
           </Route>
           <Route path="/chef" exact>
