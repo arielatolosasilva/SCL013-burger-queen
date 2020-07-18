@@ -13,7 +13,7 @@ import style from "./App.module.css";
 import diabolo from "./assets/images/diabolo.png";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
 import atras from "./assets/images/atras.png";
-import OrdersOk from "./components/ModalOrdenOk/OrdersOk.jsx";
+import OkOrders from "./components/ModalOrdenOk/OkOrders";
 
 
 class App extends Component {
@@ -81,7 +81,7 @@ class App extends Component {
           <Route path="/mesero" exact>
             <Header />
             <section className={style.mainContainer}>
-              <OrdersOk/>
+              <OkOrders/>
               <img
                 src={diabolo}
                 className={style.diabolo}
