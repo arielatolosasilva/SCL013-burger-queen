@@ -26,9 +26,6 @@ function OrderModal(props) {
   }
 
   const sendKitchen = () => {
-
-    if(props.order.table > 0){
-
   firebase.firestore().collection('resumen orden').add({
     information: props.order.products,
     table: props.order.table,
@@ -36,17 +33,8 @@ function OrderModal(props) {
     state:'Pendiente',
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 
-  }).then(()=>{
-
-    alert('Pedido enviado a cocina')
-
-})
-}else{
-
-  alert('Debe Seleccionar una mesa');
-}
-
-}
+  }).then(()=>{alert('Pedido enviado a cocina')})
+    }
 
 
 
