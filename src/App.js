@@ -79,9 +79,9 @@ class App extends Component {
           </Route>
           <Route path="/mesero" exact>
             <Header />
-            <img src={close} className={style.close} onClick={() => this.signOut()}></img>
+
             <section className={style.mainContainer}>
-              <OkOrders/>
+              <OkOrders className={style.pedidolisto} />
               <img
                 src={diabolo}
                 className={style.diabolo}
@@ -103,13 +103,15 @@ class App extends Component {
 
             </section>
           </Route>
-          {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
+
           <Route path="/mesero/menu-desayuno" exact>
             <Header />
             <Link to="/mesero">
             <img src={atras} className={style.back} alt="atras" />
+            <img src={close} className={style.closeto}></img>
+
             </Link>
-            <img src={close} onClick={() => this.signOut()}></img>
+
 
             <Menu type="breakfast" />
 
@@ -118,8 +120,9 @@ class App extends Component {
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
+            <img src={close} className={style.closeto}></img>
             <Menu type="lunch-dinner" />
-            <img src={close}></img>
+
 
             <Link to="/mesero">
             <img src={atras} className={style.backto} alt="atras" />
@@ -127,7 +130,7 @@ class App extends Component {
           </Route>
           <Route path="/chef" exact>
             <Header />
-            <img src={close}></img>
+            <img src={close} className={style.closetochef}></img>
 
             <IncomingOrders />
           </Route>

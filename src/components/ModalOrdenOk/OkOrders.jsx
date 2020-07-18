@@ -3,6 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ok from '../../assets/images/ok.png';
 import firebase from 'firebase';
 import style from './OkOrders.module.css';
+import cerrar from '../../assets/images/cerrarsesion.png';
 
 class OkOrders extends Component {
 
@@ -82,10 +83,11 @@ componentDidUpdate() {
                 alt="ok"
                 onClick={()=> this.delivery()}
               ></img>
+              <img src={cerrar} className={style.cerrar} alt="cerrar"></img>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle} >
-          <ModalHeader toggle={this.toggle}>Pedidos listo para entrega</ModalHeader>
-          <ModalBody>
+          <ModalHeader  toggle={this.toggle}>Pedidos listo para entrega</ModalHeader>
+          <ModalBody >
 
     <ul>{this.orderCheck}</ul>
 
