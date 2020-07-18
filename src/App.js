@@ -46,6 +46,7 @@ class App extends Component {
           auth: false,
           role: null,
         });
+
         console.log(
           "Sesión cerrada correctamente",
           this.state.auth,
@@ -54,6 +55,7 @@ class App extends Component {
         alert(
           "Sesión cerrada"
         );
+
       });
   }
   render() {
@@ -108,11 +110,11 @@ class App extends Component {
             <Header />
             <Link to="/mesero">
             <img src={atras} className={style.back} alt="atras" />
-            <img src={close} className={style.closeto}></img>
 
             </Link>
-
-
+            <Link to="/">
+            <img src={close} className={style.closeto}  onClick={() => this.signOut()}></img>
+            </Link>
             <Menu type="breakfast" />
 
 
@@ -120,7 +122,7 @@ class App extends Component {
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
-            <img src={close} className={style.closeto}></img>
+            <img src={close} className={style.closeto} onClick={() => this.signOut()}></img>
             <Menu type="lunch-dinner" />
 
 
@@ -130,7 +132,7 @@ class App extends Component {
           </Route>
           <Route path="/chef" exact>
             <Header />
-            <img src={close} className={style.closetochef}></img>
+            <img src={close} className={style.closetochef}  onClick={() => this.signOut()}></img>
 
             <IncomingOrders />
           </Route>

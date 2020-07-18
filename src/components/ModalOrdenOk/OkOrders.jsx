@@ -4,6 +4,8 @@ import ok from '../../assets/images/ok.png';
 import firebase from 'firebase';
 import style from './OkOrders.module.css';
 import cerrar from '../../assets/images/cerrarsesion.png';
+import olitas from '../../assets/images/olitas.png'
+import { Link } from "react-router-dom";
 
 class OkOrders extends Component {
 
@@ -68,9 +70,27 @@ componentDidUpdate() {
   console.log('trajo los pedidos')
 }
 
+signOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      this.setState({
+        auth: false,
+        role: null,
+      });
 
+      console.log(
+        "Sesión cerrada correctamente",
+        this.state.auth,
+        this.state.role
+      );
+      alert(
+        "Sesión cerrada"
+      );
+    });
 
-
+  }
 
 
   render() {
@@ -83,13 +103,15 @@ componentDidUpdate() {
                 alt="ok"
                 onClick={()=> this.delivery()}
               ></img>
-              <img src={cerrar} className={style.cerrar} alt="cerrar"></img>
-
-        <Modal isOpen={this.state.modal} toggle={this.toggle} >
+              <Link to="/">
+              <img src={cerrar} className={style.cerrar} onClick={() => this.signOut()} alt="cerrar"></img>
+              </Link>
+        <Modal contentClassName={style.modalContent} isOpen={this.state.modal} toggle={this.toggle}  >
           <ModalHeader  toggle={this.toggle}>Pedidos listo para entrega</ModalHeader>
           <ModalBody >
 
     <ul>{this.orderCheck}</ul>
+    <img src={olitas}className={style.olitas} ></img>
 
           </ModalBody>
 
