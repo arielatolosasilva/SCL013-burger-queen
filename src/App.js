@@ -13,7 +13,8 @@ import style from "./App.module.css";
 import diabolo from "./assets/images/diabolo.png";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
 import atras from "./assets/images/atras.png";
-import OkOrders from"./components/ModalOrdenOk/OkOrders.jsx"
+import OkOrders from "./components/ModalOrdenOk/OkOrders.jsx";
+import close from './assets/images/cerrarsesion.png';
 
 
 class App extends Component {
@@ -33,30 +34,28 @@ class App extends Component {
       });
     }
 
-    //Función para probar flujo con logout automático al cerrar app (solo prueba)
-    if (firebase.auth().currentUser !== null) {
-      setTimeout(() => {
-        firebase
-          .auth()
-          .signOut()
-          .then(() => {
-            this.setState({
-              auth: false,
-              role: null,
-            });
-            console.log(
-              "Sesión cerrada correctamente",
-              this.state.auth,
-              this.state.role
-            );
-            alert(
-              "Sesión cerrada automáticamente (prueba) - Después de esto se debería redireccionar a la pantalla de inicio."
-            );
-          });
-      }, 8000);
-    }
+
   });
 
+    signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        this.setState({
+          auth: false,
+          role: null,
+        });
+        console.log(
+          "Sesión cerrada correctamente",
+          this.state.auth,
+          this.state.role
+        );
+        alert(
+          "Sesión cerrada"
+        );
+      });
+  }
   render() {
     let path = null;
     let pathRole = null;
@@ -80,8 +79,8 @@ class App extends Component {
           </Route>
           <Route path="/mesero" exact>
             <Header />
+            <img src={close} className={style.close} onClick={() => this.signOut()}></img>
             <section className={style.mainContainer}>
-              <img></img>
               <OkOrders/>
               <img
                 src={diabolo}
@@ -94,6 +93,7 @@ class App extends Component {
                 <Link to="/mesero/menu-desayuno">
                   <Button className={style.optionBtn}>Menú desayuno</Button>
                 </Link>
+
                 <Link to="/mesero/menu-almuerzo-cena">
                   <Button className={style.optionBtn}>
                     Menú almuerzo y cena
@@ -106,21 +106,29 @@ class App extends Component {
           {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
           <Route path="/mesero/menu-desayuno" exact>
             <Header />
+            <Link to="/mesero">
+            <img src={atras} className={style.back} alt="atras" />
+            </Link>
+            <img src={close} onClick={() => this.signOut()}></img>
 
             <Menu type="breakfast" />
-            <Link to="/mesero">
-              <img src={atras} alt="atras" />
-            </Link>
+
+
+
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
             <Menu type="lunch-dinner" />
+            <img src={close}></img>
+
             <Link to="/mesero">
-              <img src={atras} alt="atras" />
+            <img src={atras} className={style.backto} alt="atras" />
             </Link>
           </Route>
           <Route path="/chef" exact>
             <Header />
+            <img src={close}></img>
+
             <IncomingOrders />
           </Route>
         </Switch>

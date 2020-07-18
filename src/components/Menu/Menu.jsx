@@ -173,7 +173,7 @@ class Menu extends Component {
     return (
       <React.Fragment>
         <section className={style.mainContainer}>
-          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+        {this.props.type === 'breakfast' ?  <h2 className={style.menuDesayuno}> Menú Desayuno</h2> : <h2 className={style.menuDesayuno}> Menú Almuerzo-Cena</h2>}
           <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>
@@ -206,7 +206,7 @@ class Menu extends Component {
               </tbody>
 
             </Table>
-        
+
       <img className={style.sake}
             src={this.props.type === "breakfast" ? tea : sake}
             className={this.props.type === "breakfast" ? style.tea : style.sake}
@@ -215,9 +215,9 @@ class Menu extends Component {
             src={this.props.type === "breakfast" ? rice : ramenuno}
             className={this.props.type === "breakfast" ? style.rice : style.ramenuno}
             alt="onigiri (bolas de arroz)"></img>
-         
 
-            
+
+
             <img className={style.sake}
             src={this.props.type === "breakfast" ? rice : sake}
             className={this.props.type === "breakfast" ? style.rice : style.sake}

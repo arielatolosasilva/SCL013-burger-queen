@@ -53,18 +53,18 @@
 
 .back {
   position: absolute;
-  margin-top: 142%;
+  margin-top: 69%;
   margin-left: 3%;
 }
-
 .backto {
   position: absolute;
-  margin-top: -3%;
-  margin-left: 3%;
+    margin-top: -5%;
+    margin-left: 3%;
 }
+
 .close{
   position: absolute;
-    width: 3%;
+    width: 5%;
     margin-left: 94%;
     margin-top: 3%;
 }
@@ -146,5 +146,3 @@
   margin-top: 2%;
 }
 }
-
-
