@@ -173,7 +173,8 @@ class Menu extends Component {
     return (
       <React.Fragment>
         <section className={style.mainContainer}>
-          <h2 className={style.menuDesayuno}> Menú Desayuno</h2>
+        {this.props.type === 'breakfast' ?  <h2 className={style.menuDesayuno}> Menú Desayuno</h2> : <h2 
+        className={style.menuDesayuno}> Menú Almuerzo-Cena</h2>}
           <span className={style.table}> N° Mesa </span>
           <select onChange={(e)=>this.table(e)} min={0} max={10} >
              <option value='0'>0 </option>

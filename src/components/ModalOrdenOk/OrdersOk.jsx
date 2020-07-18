@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, ModalBody, Modal, Table } from "reactstrap";
 import ok from '../../assets/images/ok.png'
+import style from './OrdersOk.module.css';
+import cerrar from '../../assets/images/cerrarsesion.png';
 
 
 function OrdersOk(props) {
@@ -9,12 +11,8 @@ function OrdersOk(props) {
   return (
     <div>
        <div >
-       <img
-                src={ok}
-
-                alt="ok"
-                onClick={toggle}
-              ></img>
+       <img src={ok} className={style.ok} alt="ok" onClick={toggle}></img>
+       <img src={cerrar} className={style.cerrar} alt="cerrar"></img>
 
         <Modal  isOpen={modal} toggle={toggle}>
           <ModalBody  >
