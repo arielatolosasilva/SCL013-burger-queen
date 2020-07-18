@@ -14,6 +14,7 @@ import diabolo from "./assets/images/diabolo.png";
 import IncomingOrders from "./components/IncomingOrders/IncomingOrders";
 import atras from "./assets/images/atras.png";
 import OkOrders from "./components/ModalOrdenOk/OkOrders.jsx";
+import close from './assets/images/cerrarsesion.png';
 
 
 class App extends Component {
@@ -80,8 +81,9 @@ class App extends Component {
           </Route>
           <Route path="/mesero" exact>
             <Header />
+        
             <section className={style.mainContainer}>
-              <OkOrders/>
+              <OkOrders className={style.pedidolisto} />
               <img
                 src={diabolo}
                 className={style.diabolo}
@@ -93,6 +95,7 @@ class App extends Component {
                 <Link to="/mesero/menu-desayuno">
                   <Button className={style.optionBtn}>Menú desayuno</Button>
                 </Link>
+
                 <Link to="/mesero/menu-almuerzo-cena">
                   <Button className={style.optionBtn}>
                     Menú almuerzo y cena
@@ -102,26 +105,35 @@ class App extends Component {
 
             </section>
           </Route>
-          {/*Se pasa un type diferente a <Menu /> según la ruta del navegador*/}
+         
           <Route path="/mesero/menu-desayuno" exact>
             <Header />
             <Link to="/mesero">
             <img src={atras} className={style.back} alt="atras" />
+            <img src={close} className={style.closeto}></img>
+
             </Link>
+           
+
             <Menu type="breakfast" />
             
-              
-            
+
+
           </Route>
           <Route path="/mesero/menu-almuerzo-cena" exact>
             <Header />
+            <img src={close} className={style.closeto}></img>
             <Menu type="lunch-dinner" />
+            
+
             <Link to="/mesero">
             <img src={atras} className={style.backto} alt="atras" />
             </Link>
           </Route>
           <Route path="/chef" exact>
             <Header />
+            <img src={close} className={style.closetochef}></img>
+
             <IncomingOrders />
           </Route>
         </Switch>
